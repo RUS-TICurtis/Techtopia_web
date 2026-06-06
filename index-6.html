@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html lang="en" class="home-six">
+
+
+<!-- Mirrored from wowtheme7.com/tf/sasstech/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Nov 2025 16:07:37 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="IT Solution, Sass and Multipurpose HTML Template">
+  <meta name="keywords" content="IT Solution, Sass and Multipurpose HTML Template">
+  <meta name="robots" content="INDEX,FOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Title -->
+  <title>
+    SassTech - Saas Software and IT Solution Multipurpose HTML Template
+  </title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/logo/favicon.png">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- aos -->
+  <link rel="stylesheet" href="assets/css/aos.css">
+  <!-- Swiper -->
+  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <!-- Magnific -->
+  <link rel="stylesheet" href="assets/css/magnific-popup.css">
+  <!-- Satoshi -->
+  <link rel="stylesheet" href="assets/css/satoshi.css">
+  <!-- Main css -->
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+  <!--==================== Preloader Start ====================-->
+  <div class="preloader">
+    <div class="cssload-loading"><i></i><i></i><i></i><i></i></div>
+  </div>
+  <!--==================== Preloader End ====================-->
+
+  <!-- ========================== Settings Panel start ==================================== -->
+<div class="settings-panel position-fixed top-50 translate-middle-y tw-z-999 d-flex align-items-center">
+  <button type="button"
+    class="settings-button tw-w-12 tw-h-12 bg-main-600 text-white hover-bg-main-800 tw-duration-100 d-flex justify-content-center align-items-center">
+    <i class="ph-fill ph-gear-six setting-icon tw-text-2xl tw-leading-none animation-rotate tw-w-6 tw-h-6"></i>
+    <i class="ph-bold ph-x close-icon tw-text-2xl tw-leading-none tw-w-6 tw-h-6"></i>
+  </button>
+
+  <div class="settings-panel__content bg-white tw-px-6 tw-py-13 d-flex flex-column tw-gap-10 scroll-sm overflow-y-auto">
+    <div class="d-flex flex-column tw-gap-10">
+      <div class="">
+        <h6 class="settings-panel__title text-center tw-mb-6 text-uppercase">
+          Cursor
+        </h6>
+        <div class="settings-panel__buttons cursor__buttons d-flex tw-gap-4">
+          <button type="button"
+            class="settings-panel__button cursor-animate bg-main-two-600 hover-bg-main-600 tw-duration-300 text-white tw-text-base tw-py-305 tw-px-3 fw-medium active-scale-094 flex-grow-1 active">
+            Animate
+          </button>
+          <button type="button"
+            class="settings-panel__button cursor-default bg-main-two-600 hover-bg-main-600 tw-duration-300 text-white tw-text-base tw-py-305 tw-px-3 fw-medium active-scale-094 flex-grow-1">
+            Default
+          </button>
+        </div>
+      </div>
+      <div class="">
+        <h6 class="settings-panel__title text-center tw-mb-6 text-uppercase">
+          Direction
+        </h6>
+        <div class="settings-panel__buttons d-flex tw-gap-4">
+          <button type="button"
+            class="settings-panel__button direction-ltr bg-main-two-600 hover-bg-main-600 tw-duration-300 text-white tw-text-base tw-py-305 tw-px-3 fw-medium active-scale-094 flex-grow-1 active">
+            LTR
+          </button>
+          <button type="button"
+            class="settings-panel__button direction-rtl bg-main-two-600 hover-bg-main-600 tw-duration-300 text-white tw-text-base tw-py-305 tw-px-3 fw-medium active-scale-094 flex-grow-1">
+            RTL
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ========================== Settings Panel end ==================================== -->
+
+  <!--==================== Overlay Start ====================-->
+  <div class="overlay"></div>
+  <!--==================== Overlay End ====================-->
+
+  <!--==================== Sidebar Overlay End ====================-->
+  <div class="side-overlay"></div>
+  <!--==================== Sidebar Overlay End ====================-->
+
+  <!-- Custom Toast Message start -->
+  <div id="toast-container"></div>
+  <!-- Custom Toast Message End -->
+
+  <!-- ==================== Scroll to Top End Here ==================== -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+  <!-- ==================== Scroll to Top End Here ==================== -->
+
+  <!-- Custom Cursor Start -->
+  <div class="cursor"></div>
+  <span class="dot"></span>
+  <!-- Custom Cursor End -->
+
+  <!-- ==================== Mobile Menu Start Here ==================== -->
+<div class="mobile-menu d-lg-none d-block scroll-sm position-fixed bg-white tw-w-300-px tw-h-screen overflow-y-auto tw-p-6 tw-z-999 tw--translate-x-full tw-pb-68 ">
+
+    <button type="button" class="close-button position-absolute tw-end-0 top-0 tw-me-2 tw-mt-2 tw-w-605 tw-h-605 rounded-circle d-flex justify-content-center align-items-center text-neutral-900 bg-neutral-200 hover-bg-neutral-900 hover-text-white"> 
+        <i class="ph ph-x"></i>
+    </button>
+
+    <div class="mobile-menu__inner">
+        <a href="index.html" class="mobile-menu__logo">
+            <img src="assets/images/logo/logo.png" alt="Logo">
+        </a>
+        <div class="mobile-menu__menu">
+            <!-- Nav menu Start -->
+<ul class="nav-menu d-lg-flex align-items-center nav-menu--mobile d-block tw-mt-8">
+    <li class="nav-menu__item has-submenu activePage">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-heading tw-py-9 fw-semibold w-100">Home</a>
+        <!-- mega menu start -->
+<div
+    class="mega-menu tw-p-6 tw-rounded-lg scroll-sm nav-submenu position-absolute start-0 top-100 tw-w-max bg-white tw-rounded-md tw-z-99">
+    <div class="row g-4 row-cols-1 row-cols-lg-3 row-cols-xl-4">
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img1.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">IT
+                        Solution</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-2.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img2.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-2.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-2.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Web
+                        Hosting</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-3.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img3.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-3.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-3.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Task
+                        Management</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-4.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img4.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-4.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-4.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">CRM
+                        Software
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-5.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img5.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-5.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-5.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">App
+                        Landing</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-6.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img6.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-6.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-6.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Payment
+                        Solution</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <span class="d-block">
+                        <img src="assets/images/thumbs/coming-soon-img.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </span>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <span class="text-heading fw-semibold tw-text-md text-capitalize line-clamp-1">Home 7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- mega menu end -->
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-heading tw-py-9 fw-semibold w-100">Pages</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="pricing-plan.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Pricing
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="about.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    About Us
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="app-intigration.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    App Integration
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="intigration-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Integration Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="policy-privacy.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Privacy Policy
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="faq.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    FAQ
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="project-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Project Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="service-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Service Details
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-heading tw-py-9 fw-semibold w-100">Shop</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="shop.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Shop
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="shop-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Shop Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="cart.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Cart
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="checkout.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Checkout
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-heading tw-py-9 fw-semibold w-100">Blog</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="blog.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Blog
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="blog-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Blog Details
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item">
+        <a href="contact.html"
+            class="nav-menu__link hover--translate-y-1 text-heading tw-py-9 fw-semibold w-100">Contact</a>
+    </li>
+</ul>
+<!-- Nav menu End  -->
+        </div>
+        <a href="register.html" class="btn btn-main-two hover-style-two button--stroke d-sm-none d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-8 rounded-pill tw-mt-6" data-block="button">
+            <span class="button__flair"></span>
+            <span class="button__label">Sign Up Now</span>
+        </a>
+    </div>
+</div>
+<!-- ==================== Mobile Menu End Here ==================== -->
+
+<div id="smooth-wrapper">
+
+    <!-- ==================== Header Three Start Here ==================== -->
+<header class="header py-0 top-0 tw-start-0 tw-end-0 w-100 tw-z-99 position-absolute">
+    <div class="container max-w-1720-px">
+        <div class="header-three__inner py-2 py-lg-0 transition-all">
+            <nav class="d-flex align-items-center justify-content-between position-relative">
+                <!-- Logo Start -->
+                <div class="logo">
+                    <a href="index.html" class="link hover--translate-y-1 active--translate-y-scale-9">
+                        <img src="assets/images/logo/logo-white-three.png" alt="Logo" class="max-w-200-px">
+                    </a>
+                </div>
+                <!-- Logo End  -->
+
+                <!-- Menu Start  -->
+                <div class="header-menu d-lg-block d-none">
+                    <!-- Nav menu Three Start -->
+<ul class="nav-menu d-lg-flex align-items-center tw-gap-7">
+    <li class="nav-menu__item has-submenu activePage">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-white tw-py-9 fw-semibold w-100">Home</a>
+        <!-- mega menu start -->
+<div
+    class="mega-menu tw-p-6 tw-rounded-lg scroll-sm nav-submenu position-absolute start-0 top-100 tw-w-max bg-white tw-rounded-md tw-z-99">
+    <div class="row g-4 row-cols-1 row-cols-lg-3 row-cols-xl-4">
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img1.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">IT
+                        Solution</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-2.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img2.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-2.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-2.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Web
+                        Hosting</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-3.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img3.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-3.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-3.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Task
+                        Management</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-4.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img4.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-4.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-4.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">CRM
+                        Software
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-5.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img5.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-5.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-5.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">App
+                        Landing</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <a href="index-6.html" class="d-block">
+                        <img src="assets/images/thumbs/home-img6.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </a>
+                    <div class="d-lg-flex d-none">
+                        <div
+                            class="mega-menu-item__overlay position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1 tw-scale-08 group-hover-item-scale-1 tw-rounded-lg pointer-event-none">
+                        </div>
+                        <div
+                            class="mega-menu-item__buttons position-absolute top-0 tw-start-0 w-100 h-100 d-flex justify-content-center align-items-center flex-column tw-gap-4 tw-invisible opacity-0 group-hover-item-visible group-hover-item-opacity-1">
+                            <a href="index-6.html" target="_blank"
+                                class="btn btn-main hover-style-one button--stroke active-scale-094 tw-duration-100 d-inline-flex align-items-center justify-content-center tw-gap-705 group active--translate-y-2 tw-p-1 tw-ps-8 rounded-pill group-item"
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Live Preview</span>
+                                <span
+                                    class="tw-w-12 tw-h-12 bg-white text-main-600 tw-text-xl rounded-circle d-flex justify-content-center align-items-center position-relative tw-duration-500">
+                                    <i
+                                        class="ph-bold ph-arrow-right tw-rotate--45-deg group-hover-item-rotate-0-deg tw-duration-300"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <a href="index-6.html"
+                        class="text-heading hover-text-main-600 fw-semibold tw-text-md text-capitalize line-clamp-1">Payment
+                        Solution</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mega-menu-item group-item">
+                <div class="position-relative border border-neutral-200 tw-rounded-lg overflow-hidden">
+                    <span class="d-block">
+                        <img src="assets/images/thumbs/coming-soon-img.png" alt="Home Page Image"
+                            class="tw-h-440-px w-100 object-fit-cover object-top">
+                    </span>
+                </div>
+                <div class="tw-mt-4 text-center">
+                    <span class="text-heading fw-semibold tw-text-md text-capitalize line-clamp-1">Home 7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- mega menu end -->
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-white tw-py-9 fw-semibold w-100">Pages</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="pricing-plan.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Pricing
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="about.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    About Us
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="app-intigration.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    App Integration
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="intigration-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Integration Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="policy-privacy.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Privacy Policy
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="faq.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    FAQ
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="project-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Project Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="service-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Service Details
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-white tw-py-9 fw-semibold w-100">Portfolio</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="javascript:void(0)"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Portfolio
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-white tw-py-9 fw-semibold w-100">Shop</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="shop.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Shop
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="shop-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Shop Details
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="cart.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Cart
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="checkout.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Checkout
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item has-submenu position-relative">
+        <a href="javascript:void(0)"
+            class="nav-menu__link hover--translate-y-1 tw-pe-5 text-white tw-py-9 fw-semibold w-100">Blog</a>
+        <ul
+            class="nav-submenu scroll-sm position-absolute tw-start-0 top-100 tw-w-max bg-white tw-rounded-md overflow-y-auto tw-p-2 tw-mt-4 tw-duration-200 tw-z-99">
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="blog.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Blog
+                </a>
+            </li>
+            <li class="nav-submenu__item d-block tw-rounded tw-duration-200 position-relative">
+                <a href="blog-details.html"
+                    class="nav-submenu__link hover-bg-neutral-200 text-heading fw-semibold w-100 d-block tw-py-2 tw-px-305 tw-rounded">
+                    Blog Details
+                </a>
+            </li>
+        </ul>
+    </li>
+    <li class="nav-menu__item">
+        <a href="contact.html"
+            class="nav-menu__link hover--translate-y-1 text-white tw-py-9 fw-semibold w-100">Contact</a>
+    </li>
+</ul>
+<!-- Nav menu Three End  -->
+                </div>
+                <!-- Menu End  -->
+
+                <!-- Header Right start -->
+                <div class="d-flex align-items-center tw-gap-6">
+                    <div class="d-flex align-items-center tw-gap-6">
+                        <a href="login.html"
+                            class="d-flex align-items-center tw-gap-105 d-xl-flex d-none text-white hover-text-main-600">
+                            <span class="tw-text-base text-main-600 d-flex tw-leading-none">
+                                <i class="ph-bold ph-user"></i>
+                            </span>
+                            <span class="fw-semibold tw-text-sm ">Sign in</span>
+                        </a>
+
+                        <a href="register.html"
+                            class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-lg-flex d-none align-items-center justify-content-center tw-gap-5 group active--translate-y-2 px-xxl-5 px-xl-4 px-3 tw-py-405 fw-medium rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white"
+                            data-block="button">
+                            <span class="button__flair"></span>
+                            <span class="button__label">Get Started</span>
+                        </a>
+                    </div>
+                    <button type="button" class="toggle-mobileMenu leading-none d-lg-none text-white tw-text-9">
+                        <i class="ph ph-list"></i>
+                    </button>
+                </div>
+                <!-- Header Right End  -->
+            </nav>
+        </div>
+    </div>
+</header>
+<!-- ==================== Header Three End Here ==================== -->
+
+    <div id="smooth-content" class="">
+
+        <!-- ========================== Banner six section start =============================== -->
+<section class="banner-six position-relative z-1 overflow-hidden">
+    <div class="background-img bg-img position-absolute top-0 tw-start-0 w-100 h-100 z-n1"
+        data-background-image="assets/images/bg/banner-six-gradient-bg.png"></div>
+
+    <img src="assets/images/thumbs/payment-cards.png" alt="Payment Cards"
+        class="payment-cards position-absolute tw-end-0 bottom-0 z-n1" data-aos="fade-left" data-aos-duration="800"
+        data-aos-delay="300">
+
+    <div class="container max-w-1400-px">
+        <div class="banner-six__content max-w-910-px">
+            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-main-600" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="100">With the world's favorite
+                CRM</span>
+            <h1 class="text-white" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">Simplify Payments.
+                Empower <span class="text-main-600">Business.</span></h1>
+            <p class="text-white tw-text-lg tw-mt-6 max-w-672-px" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="300">Sassly-CRM in the past allowing you to focus more on
+                your business
+                or
+                simply enjoy
+                your newfound legal time to reflect leaving pen-and-paper.</p>
+            <div class="tw-mt-10 d-flex align-items-center flex-sm-nowrap flex-wrap tw-gap-3">
+                <a href="register.html"
+                    class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 px-xxl-5 px-xl-4 px-3 tw-py-405 fw-medium rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white"
+                    data-block="button" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                    <span class="button__flair"></span>
+                    <span class="button__label">Get Started</span>
+                </a>
+                <div class="d-flex align-items-center tw-gap-205" data-aos="fade-up" data-aos-duration="800"
+                    data-aos-delay="450">
+                    <span
+                        class="tw-w-705 tw-h-705 rounded-circle bg-white-08 text-white d-flex justify-content-center align-items-center   ">
+                        <i class="ph-bold ph-check"></i>
+                    </span>
+                    <span class="text-neutral-300">No credit card required</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ========================== Banner six section end =============================== -->
+
+        <!-- ============================ Brand Three section start =========================== -->
+<div class="brand-three pt-120">
+    <div class="container">
+
+        <div class="text-center tw-mb-16">
+            <h5 class="mb-0 line-clamp-1">Loved by next-gen B2B <span class="text-gradient-teal">SaaS</span> compnaies.....</h5>
+        </div>
+        <div class="brand-three-slider swiper left-right-gradient gradient-width-200">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="600">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img1.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="700">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img2.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img3.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="600">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img4.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="700">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img5.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img6.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="600">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img7.png" alt="Logo">
+                    </div>
+                </div>
+                <div class="swiper-slide d-flex align-items-center justify-content-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="700">
+                    <div class="">
+                        <img src="assets/images/thumbs/brand-three-img5.png" alt="Logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ Brand Three section end =========================== -->
+
+        <!-- ================================ How it works section start ========================== -->
+<section class="how-it-works-six py-120">
+    <div class="container">
+        <!-- Section Heading start -->
+        <div class="section-heading max-w-780-px text-center mx-auto tw-mb-6" data-aos="fade-up" data-aos-duration="800"
+            data-aos-delay="100">
+            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green">With the world's favorite
+                CRM</span>
+            <h2 class="text-heading">How It Works</h2>
+        </div>
+        <!-- Section Heading end -->
+
+        <div class="row gy-4">
+            <div class="col-lg-4 col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+                <div
+                    class="how-it-works-six-item bg-white tw-rounded-xl tw-px-48-px tw-py-54-px bg-white tw-duration-300 animation-item border border-neutral-200 hover-border-main-two-600 hover-bg-neutral-100 common-shadow-thirty hover-shadow-none h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <h4 class="">01</h4>
+                        <h4 class="tw-mt-2">Create Account</h4>
+                        <p class="tw-mt-4 text-heading">Chatsonic understands voice commands and
+                            responds just like Siri / Google Assistant.</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between tw-gap-4 tw-mt-80-px">
+                        <div class="">
+                            <img src="assets/images/shapes/curve-arrow-six.png" alt="Arrow"
+                                class="left-right-animation">
+                        </div>
+                        <div class="">
+                            <img src="assets/images/icons/how-it-works-six-icon1.png" alt="Icon"
+                                class="animate__heartBeat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <div
+                    class="how-it-works-six-item bg-white tw-rounded-xl tw-px-48-px tw-py-54-px bg-white tw-duration-300 animation-item border border-neutral-200 hover-border-main-two-600 hover-bg-neutral-100 common-shadow-thirty hover-shadow-none h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <h4 class="">02</h4>
+                        <h4 class="tw-mt-2">Connect Your Bank</h4>
+                        <p class="tw-mt-4 text-heading">Chatsonic understands voice commands and
+                            responds just like Siri / Google Assistant.</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between tw-gap-4 tw-mt-80-px">
+                        <div class="">
+                            <img src="assets/images/shapes/curve-arrow-six.png" alt="Arrow"
+                                class="left-right-animation">
+                        </div>
+                        <div class="">
+                            <img src="assets/images/icons/how-it-works-six-icon2.png" alt="Icon"
+                                class="animate__heartBeat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                <div
+                    class="how-it-works-six-item bg-white tw-rounded-xl tw-px-48-px tw-py-54-px bg-white tw-duration-300 animation-item border border-neutral-200 hover-border-main-two-600 hover-bg-neutral-100 common-shadow-thirty hover-shadow-none h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <h4 class="">03</h4>
+                        <h4 class="tw-mt-2">Accepting Payments</h4>
+                        <p class="tw-mt-4 text-heading">Chatsonic understands voice commands and
+                            responds just like Siri / Google Assistant.</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between tw-gap-4 tw-mt-80-px">
+                        <div class="">
+                            <img src="assets/images/shapes/curve-arrow-six.png" alt="Arrow"
+                                class="left-right-animation">
+                        </div>
+                        <div class="">
+                            <img src="assets/images/icons/how-it-works-six-icon3.png" alt="Icon"
+                                class="animate__heartBeat">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================================ How it works section end ========================== -->
+
+        <!-- ======================== About Six section start ============================ -->
+<section class="about-six py-120 position-relative">
+    <div class="container">
+        <div class="row gy-4 flex-wrap-reverse">
+            <div class="col-lg-6">
+                <div class="about-six-image">
+                    <img src="assets/images/thumbs/about-six-img.png" alt="Thumbnail" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="100">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="">
+                    <div class="">
+                        <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">With the world's
+                            favorite
+                            CRM</span>
+                        <h2 class="text-heading text-capitalize splitTextStyleOne">Your data is encrypted, secure &
+                            fully
+                            compliant</h2>
+                        <p class="text-neutral-600 tw-text-lg tw-mt-6 max-w-570-px" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="300">Sassly-CRM in the past allowing you
+                            to
+                            focus
+                            more on
+                            your business
+                            or
+                            simply enjoy
+                            your newfound legal time to reflect leaving pen-and-paper.</p>
+                    </div>
+                    <div class="tw-mt-9 d-flex flex-column tw-gap-5">
+                        <div class="d-flex align-items-center tw-gap-5 animation-item" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">
+                            <span
+                                class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                <i class="ph-bold ph-check animate__heartBeat"></i>
+                            </span>
+                            <p class="fw-semibold text-heading tw-text-lg">PCI-DSS Level 1 Certified</p>
+                        </div>
+                        <div class="d-flex align-items-center tw-gap-5 animation-item" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">
+                            <span
+                                class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                <i class="ph-bold ph-check animate__heartBeat"></i>
+                            </span>
+                            <p class="fw-semibold text-heading tw-text-lg">End-to-End Encryption</p>
+                        </div>
+                        <div class="d-flex align-items-center tw-gap-5 animation-item" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">
+                            <span
+                                class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                <i class="ph-bold ph-check animate__heartBeat"></i>
+                            </span>
+                            <p class="fw-semibold text-heading tw-text-lg">2FA & Tokenization</p>
+                        </div>
+                        <div class="d-flex align-items-center tw-gap-5 animation-item" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">
+                            <span
+                                class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                <i class="ph-bold ph-check animate__heartBeat"></i>
+                            </span>
+                            <p class="fw-semibold text-heading tw-text-lg">Fraud Monitoring & Alerts</p>
+                        </div>
+                    </div>
+                    <div class="tw-mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                        <a href="register.html"
+                            class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-9 tw-py-505 fw-semibold rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white "
+                            data-block="button">
+                            <span class="button__flair"></span>
+                            <span class="button__label">Start Your Free Trial</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================== About Six section end ============================ -->
+
+        <!-- ======================== Service Six section start ============================ -->
+<section class="service-six section-box py-120 position-relative z-1">
+    <div class="background-img bg-img position-absolute top-0 tw-start-0 w-100 h-100 z-n1"
+        data-background-image="assets/images/bg/service-six-bg.png"></div>
+
+    <div class="container">
+        <div class="max-w-620-px mx-auto text-center tw-mb-10">
+            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+            <h2 class="text-heading text-capitalize splitTextStyleOne">Powerful Features for
+                Modern Businesses</h2>
+            <p class="text-neutral-600 tw-text-lg tw-mt-6" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="300">Sassly-CRM in the past allowing you to focus more on your business
+                simply enjoy your newfound legal time to reflect leaving pen</p>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon1.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Real-Time Dashboard</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon2.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Recurring Billing</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon3.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Multi-Currency Support</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon4.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Refunds & Disputes</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon5.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Payment Links & QR Code</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+            <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div
+                    class="service-six-item bg-white tw-rounded-3xl border border-neutral-200 hover-border-main-two-600 tw-duration-300 tw-p-44-px animation-item h-100 d-flex flex-column justify-content-between">
+                    <div class="">
+                        <span class="">
+                            <img src="assets/images/icons/service-six-icon6.png" alt="Icon" class="animate__wobble">
+                        </span>
+                        <h5 class="tw-mt-8">Instant Notifications</h5>
+                        <p class="text-neutral-600 tw-mt-6 tw-text-lg">Optimize tracking across platforms
+                            & product lines using multiple. </p>
+                    </div>
+                    <a href="service-details.html"
+                        class="font-heading tw-text-lg text-heading fw-bold tw-mt-9 d-flex align-items-center tw-gap-4 hover-underline">
+                        Read More
+                        <img src="assets/images/icons/arrow-long.svg" alt="arrow icon">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ======================== Service Six section End ============================ -->
+
+        <!-- ================================ Payment Method section start ======================== -->
+<section class="payment-method py-120">
+    <div class="container">
+        <div class="row gy-4 align-items-center">
+            <div class="col-lg-6">
+                <div class="">
+                    <div class="">
+                        <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">With the world's
+                            favorite
+                            CRM</span>
+                        <h2 class="text-heading text-capitalize splitTextStyleOne">Accept Every Major Payment Method
+                        </h2>
+                        <p class="text-neutral-600 tw-text-lg tw-mt-6 max-w-570-px" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="300">Sassly-CRM in the past allowing you
+                            to
+                            focus
+                            more on
+                            your business
+                            or
+                            simply enjoy
+                            your newfound legal time to reflect leaving pen-and-paper.</p>
+                    </div>
+
+                    <div class="tw-mt-9 d-flex flex-column tw-gap-4 ">
+                        <div class="d-flex tw-gap-4">
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                <img src="assets/images/thumbs/payment-method-img1.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                                <img src="assets/images/thumbs/payment-method-img2.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                                <img src="assets/images/thumbs/payment-method-img3.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                        </div>
+                        <div class="d-flex tw-gap-4 tw-ps-13">
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                <img src="assets/images/thumbs/payment-method-img4.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                                <img src="assets/images/thumbs/payment-method-img5.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                            <div class="border border-neutral-200 tw-rounded-lg max-w-154-px tw-max-h-110-px d-flex align-items-center justify-content-center w-100 h-100 aspect-1 hover-bg-neutral-100 tw-duration-300 tw-px-4 animation-item text-center"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                                <img src="assets/images/thumbs/payment-method-img6.png" alt="Payment Method Image"
+                                    class="animate__flipInY">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="ps-lg-5">
+                    <img src="assets/images/thumbs/payment-method-img.png" alt="Image"
+                        class="tw-rounded-3xl h-100 w-100 object-fit-cover">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ================================ Payment Method section end ======================== -->
+
+        <!-- ======================== Download App Six section start ============================ -->
+<section class="download-app-six section-box py-120 position-relative z-1 overflow-hidden">
+    <div class="background-img bg-img position-absolute top-0 tw-start-0 w-100 h-100 z-n1"
+        data-background-image="assets/images/bg/download-app-six-bg.png"></div>
+
+    <img src="assets/images/shapes/pattern-shape-six.png" alt="Shape"
+        class="position-absolute bottom-0 tw-start-0 left-right-animation">
+    <div class="position-absolute bottom-50 tw-end-0 tw-pe-100-px">
+        <img src="assets/images/shapes/curve-shape-six.png" alt="Shape" class="animated-upDown">
+    </div>
+
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-7">
+                <div class="">
+                    <div class="max-w-780-px text-start tw-mb-10">
+                        <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-main-600" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+                        <h2 class="text-white text-capitalize splitTextStyleOne">Seamless Payments on the <br>
+                            Go - Download the App</h2>
+                        <p class="text-neutral-300 tw-text-lg tw-mt-6 max-w-570-px" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="300">Sassly-CRM in the past allowing you to focus
+                            more on your business
+                            simply enjoy your newfound legal time to reflect leaving pen</p>
+                    </div>
+                    <div class="tw-mt-10 d-flex tw-gap-42-px" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-delay="300">
+                        <div class="">
+                            <h3 class="text-main-600">1.75m</h3>
+                            <span class="tw-text-lg fw-medium text-white">Total Active user</span>
+                        </div>
+                        <div class="tw-my-2">
+                            <span class="tw-w-1-px h-100 bg-main-600"></span>
+                        </div>
+                        <div class="">
+                            <h3 class="text-main-600">1.75m</h3>
+                            <span class="tw-text-lg fw-medium text-white">Total Active user</span>
+                        </div>
+                    </div>
+                    <div class="tw-mt-10 d-flex align-items-center tw-gap-205">
+                        <a href="https://www.playstore.com/" class="" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="100">
+                            <img src="assets/images/icons/download-app-six-img1.png" alt="Google Logo"
+                                class="tw-rounded-xl w-100 h-100 active-scale-09 tw-duration-100">
+                        </a>
+                        <a href="https://www.playstore.com/" class="" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="200">
+                            <img src="assets/images/icons/download-app-six-img1.png" alt="Google Logo"
+                                class="tw-rounded-xl w-100 h-100 active-scale-09 tw-duration-100">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 d-lg-block d-none">
+                <div class="download-app-six-thumbs position-absolute bottom-0" data-aos="fade-up"
+                    data-aos-duration="800" data-aos-delay="300">
+                    <img src="assets/images/thumbs/download-app-six-thumb.png" alt="Image">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- ======================== Download App Six section End ============================ -->
+
+        <!-- ========================== Pricing plan six section start ============================ -->
+<section class="pricing-plan-six pt-120 tw-pb-17">
+    <div class="container">
+        <div class="max-w-780-px mx-auto text-center tw-mb-10">
+            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+            <h2 class="text-heading text-capitalize splitTextStyleOne">Choose the Perfect Plan for
+                Your Payment Needs</h2>
+            <p class="text-neutral-600 tw-text-lg tw-mt-6" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="300">Sassly-CRM in the past allowing you to focus more on your business
+                simply enjoy your newfound legal time to reflect leaving pen</p>
+        </div>
+
+        <div class="row gy-4">
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="pricing-plan-six-item tw-rounded-xl bg-white border border-neutral-200 tw-px-44-px tw-py-66-px hover-common-shadow-thirty tw-duration-300 h-100">
+                    <div class="tw-mb-6 tw-pb-6 border-bottom border-neutral-200">
+                        <h5 class="fw-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Personal
+                            Plan</h5>
+                        <p class="text-neutral-500 tw-mt-1" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="200">Customized anything in anytime</p>
+                    </div>
+                    <div class="">
+                        <h2 class="" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">$1.99 <span
+                                class="h6 fw-semibold">/Yearly</span> </h2>
+                        <div class="tw-mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                            <a href="register.html"
+                                class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-9 tw-py-505 fw-semibold rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white "
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Start Free Trial</span>
+                            </a>
+                            <p class="font-heading text-heading  fw-bold tw-text-base text-center tw-mt-2">Renews at
+                                $9.88/month
+                            </p>
+                            <div class="tw-mt-10 d-flex flex-column tw-gap-6">
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time tracking and notifications
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time analytics</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Drag and drop templates</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Project Management</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">24/7 email and chat support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="pricing-plan-six-item tw-rounded-xl bg-white border border-neutral-200 tw-px-44-px tw-py-66-px hover-common-shadow-thirty tw-duration-300 h-100">
+                    <div class="tw-mb-6 tw-pb-6 border-bottom border-neutral-200">
+                        <h5 class="fw-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Personal
+                            Plan</h5>
+                        <p class="text-neutral-500 tw-mt-1" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="200">Customized anything in anytime</p>
+                    </div>
+                    <div class="">
+                        <h2 class="" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">$1.99 <span
+                                class="h6 fw-semibold">/Yearly</span> </h2>
+                        <div class="tw-mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                            <a href="register.html"
+                                class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-9 tw-py-505 fw-semibold rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white "
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Start Free Trial</span>
+                            </a>
+                            <p class="font-heading text-heading  fw-bold tw-text-base text-center tw-mt-2">Renews at
+                                $9.88/month
+                            </p>
+                            <div class="tw-mt-10 d-flex flex-column tw-gap-6">
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time tracking and notifications
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time analytics</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Drag and drop templates</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Project Management</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">24/7 email and chat support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div
+                    class="pricing-plan-six-item tw-rounded-xl bg-white border border-neutral-200 tw-px-44-px tw-py-66-px hover-common-shadow-thirty tw-duration-300 h-100">
+                    <div class="tw-mb-6 tw-pb-6 border-bottom border-neutral-200">
+                        <h5 class="fw-bold" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">Personal
+                            Plan</h5>
+                        <p class="text-neutral-500 tw-mt-1" data-aos="fade-up" data-aos-duration="800"
+                            data-aos-delay="200">Customized anything in anytime</p>
+                    </div>
+                    <div class="">
+                        <h2 class="" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">$1.99 <span
+                                class="h6 fw-semibold">/Yearly</span> </h2>
+                        <div class="tw-mt-8" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                            <a href="register.html"
+                                class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-9 tw-py-505 fw-semibold rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white "
+                                data-block="button">
+                                <span class="button__flair"></span>
+                                <span class="button__label">Start Free Trial</span>
+                            </a>
+                            <p class="font-heading text-heading  fw-bold tw-text-base text-center tw-mt-2">Renews at
+                                $9.88/month
+                            </p>
+                            <div class="tw-mt-10 d-flex flex-column tw-gap-6">
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time tracking and notifications
+                                    </p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Real-time analytics</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Drag and drop templates</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">Project Management</p>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-5 animation-item aos-init aos-animate"
+                                    data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                                    <span
+                                        class="tw-w-8 tw-h-8 rounded-circle bg-neutral-100 d-flex justify-content-center align-items-center text-heading tw-text-base">
+                                        <i class="ph-bold ph-check animate__heartBeat"></i>
+                                    </span>
+                                    <p class="fw-semibold text-heading tw-text-lg">24/7 email and chat support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ========================== Pricing plan six section end ============================ -->
+
+        <!-- =========================== FAQ Six section start ================================ -->
+<section class="faq-six">
+    <div class="container">
+        <div class="tw-pt-17 border-top border-neutral-200">
+            <div class="row gy-4">
+                <div class="col-lg-6">
+                    <div class="pe-xxl-5">
+                        <div class="">
+                            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green"
+                                data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">With the world's
+                                favorite
+                                CRM</span>
+                            <h2 class="text-heading text-capitalize splitTextStyleOne">Fast, Secure, Reliable Payments
+                                system</h2>
+                            <p class="text-neutral-600 tw-text-lg tw-mt-6 max-w-570-px" data-aos="fade-up"
+                                data-aos-duration="800" data-aos-delay="300">Sassly-CRM in the past allowing you to
+                                focus
+                                more on your business
+                                simply enjoy your newfound legal time to reflect leaving pen.</p>
+                        </div>
+
+                        <div class="accordion common-accordion tw-mt-15 style-three" id="accordionExample"
+                            data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                            <div class="accordion-item border-0 rounded-0 border-bottom border-neutral-200 mb-0 tw-pb-7 tw-mt-7"
+                                data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                                <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                                    <button
+                                        class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Choose Payment Method
+                                    </button>
+                                </h5>
+                                <div id="collapseTwo" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 tw-mt-4 max-w-548-px">
+                                        <p class="text-neutral-500">It only takes 5 minutes. Set-up is smooth and
+                                            simple, with fully customizable page design to reflect your brand.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 rounded-0 border-bottom border-neutral-200 mb-0 tw-pb-7 tw-mt-7"
+                                data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                                <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                                    <button class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="true" aria-controls="collapseThree">
+                                        Enter Payment Details
+                                    </button>
+                                </h5>
+                                <div id="collapseThree" class="accordion-collapse collapse show"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 tw-mt-4 max-w-548-px">
+                                        <p class="text-neutral-500">It only takes 5 minutes. Set-up is smooth and
+                                            simple, with fully customizable page design to reflect your brand.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item border-0 rounded-0 border-bottom border-neutral-200 mb-0 tw-pb-7 tw-mt-7"
+                                data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                                <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                                    <button
+                                        class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseFour">
+                                        Confirm & Complete
+                                    </button>
+                                </h5>
+                                <div id="collapseFour" class="accordion-collapse collapse"
+                                    data-bs-parent="#accordionExample">
+                                    <div class="accordion-body p-0 tw-mt-4 max-w-548-px">
+                                        <p class="text-neutral-500">It only takes 5 minutes. Set-up is smooth and
+                                            simple, with fully customizable page design to reflect your brand.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                    <div class="ps-xl-5 h-100">
+                        <img src="assets/images/thumbs/faq-six-img.png" alt="Image"
+                            class="tw-rounded-3xl h-100 w-100 object-fit-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- =========================== FAQ Six section end ================================ -->
+
+        <!-- =========================== Powerful Feature section start =============================== -->
+<section class="powerful-feature py-120">
+    <div class="container max-w-1290-px">
+        <div class="position-relative distraction__inner">
+            <div
+                class="max-w-602-px w-100 text-center mx-auto position-absolute z-1 tw-start-50 translate-middle-x top-0 mt-5 pt-lg-5 pt-4">
+                <div class="max-w-780-px mx-auto text-center tw-mb-10">
+                    <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                        data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+                    <h2 class="text-heading text-capitalize splitTextStyleOne">Powerful Features for Modern Businesses
+                    </h2>
+                </div>
+            </div>
+
+            <div class="">
+                <img src="assets/images/shapes/net-shape.png" alt="Net Shape" data-aos="zoom-in"
+                    data-aos-duration="1500">
+            </div>
+            <div class="">
+                <div class="distraction-icon one position-absolute z-1 animation-scalation">
+                    <img src="assets/images/thumbs/powerful-feature-icon1.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon two position-absolute z-1 animation-upDown">
+                    <img src="assets/images/thumbs/powerful-feature-icon2.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon three position-absolute z-1 animation-upDown animation-delay-1">
+                    <img src="assets/images/thumbs/powerful-feature-icon3.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon four position-absolute z-1 animation-upDown animation-delay-2">
+                    <img src="assets/images/thumbs/powerful-feature-icon4.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon five position-absolute z-1 animation-scalation animation-delay-1">
+                    <img src="assets/images/thumbs/powerful-feature-icon5.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon six position-absolute z-1 animation-scalation animation-delay-2">
+                    <img src="assets/images/thumbs/powerful-feature-icon6.png" alt="Icon Image">
+                </div>
+                <div class="distraction-icon seven position-absolute z-1">
+                    <img src="assets/images/thumbs/powerful-feature-icon7.png" alt="Icon Image" class="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- =========================== Powerful Feature section end =============================== -->
+
+        <!-- ============================ Testimonials Six Section start ============================ -->
+<section class="testimonials-six py-120 position-relative z-1">
+    <div class="background-img bg-img position-absolute top-0 tw-start-0 w-100 h-100 z-n1"
+        data-background-image="assets/images/bg/testimonials-six-bg.png"></div>
+    <div class="position-absolute top-50 translate-middle-y z-n1">
+        <img src="assets/images/shapes/testimonials-six-shape.png" alt="Shape" class="animated-upDown">
+    </div>
+
+    <div class="container">
+        <div class="max-w-570-px mx-auto text-center tw-mb-10">
+            <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-olive-green" data-aos="fade-up"
+                data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+            <h2 class="text-heading text-capitalize splitTextStyleOne">What Businesses Say
+                About services</h2>
+            <p class="text-neutral-600 tw-text-lg tw-mt-6 fw-medium" data-aos="fade-up" data-aos-duration="800"
+                data-aos-delay="300">Sassly-CRM in the past allowing you to focus more on your business
+                simply enjoy your newfound legal time to reflect leaving pen</p>
+        </div>
+    </div>
+
+    <div class="testimonials-six-slider swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div
+                    class="testimonials-four-item tw-py-54-px tw-rounded-3xl tw-duration-300 common-shadow-13 bg-white">
+                    <div class="">
+                        <div
+                            class="tw-px-54-px d-flex align-items-center tw-gap-2 flex-wrap tw-pb-705 border-bottom border-neutral-200">
+                            <h6 class="fw-bold tw-duration-300">
+                                Robert J. Hare/
+                            </h6>
+                            <span class="tw-text-sm text-heading fw-medium tw-duration-300">Graphics
+                                Designer</span>
+                        </div>
+                        <div class="tw-px-54-px tw-pt-705">
+                            <p class="text-heading h5 font-body tw-duration-300 tw-leading-18">
+                                Sasstech hires great people from a widely variety
+                                of backgrounds, which simply makes our compan
+                                stronger, and we couldn't be prouder of that.
+                                elevating your optimizing Business Growth.
+                            </p>
+                            <div class="d-flex align-items-center tw-gap-1 tw-mt-12">
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div
+                    class="testimonials-four-item tw-py-54-px tw-rounded-3xl tw-duration-300 common-shadow-13 bg-white">
+                    <div class="">
+                        <div
+                            class="tw-px-54-px d-flex align-items-center tw-gap-2 flex-wrap tw-pb-705 border-bottom border-neutral-200">
+                            <h6 class="fw-bold tw-duration-300">
+                                Robiul Hasan /
+                            </h6>
+                            <span class="tw-text-sm text-heading fw-medium tw-duration-300">Front End Developer</span>
+                        </div>
+                        <div class="tw-px-54-px tw-pt-705">
+                            <p class="text-heading h5 font-body tw-duration-300 tw-leading-18">
+                                Sasstech hires great people from a widely variety
+                                of backgrounds, which simply makes our compan
+                                stronger, and we couldn't be prouder of that.
+                                elevating your optimizing Business Growth.
+                            </p>
+                            <div class="d-flex align-items-center tw-gap-1 tw-mt-12">
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div
+                    class="testimonials-four-item tw-py-54-px tw-rounded-3xl tw-duration-300 common-shadow-13 bg-white">
+                    <div class="">
+                        <div
+                            class="tw-px-54-px d-flex align-items-center tw-gap-2 flex-wrap tw-pb-705 border-bottom border-neutral-200">
+                            <h6 class="fw-bold tw-duration-300">
+                                Mehedi Mohammad /
+                            </h6>
+                            <span class="tw-text-sm text-heading fw-medium tw-duration-300">UX/UI Designer</span>
+                        </div>
+                        <div class="tw-px-54-px tw-pt-705">
+                            <p class="text-heading h5 font-body tw-duration-300 tw-leading-18">
+                                Sasstech hires great people from a widely variety
+                                of backgrounds, which simply makes our compan
+                                stronger, and we couldn't be prouder of that.
+                                elevating your optimizing Business Growth.
+                            </p>
+                            <div class="d-flex align-items-center tw-gap-1 tw-mt-12">
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div
+                    class="testimonials-four-item tw-py-54-px tw-rounded-3xl tw-duration-300 common-shadow-13 bg-white">
+                    <div class="">
+                        <div
+                            class="tw-px-54-px d-flex align-items-center tw-gap-2 flex-wrap tw-pb-705 border-bottom border-neutral-200">
+                            <h6 class="fw-bold tw-duration-300">
+                                Robert J. Hare/
+                            </h6>
+                            <span class="tw-text-sm text-heading fw-medium tw-duration-300">Graphics
+                                Designer</span>
+                        </div>
+                        <div class="tw-px-54-px tw-pt-705">
+                            <p class="text-heading h5 font-body tw-duration-300 tw-leading-18">
+                                Sasstech hires great people from a widely variety
+                                of backgrounds, which simply makes our compan
+                                stronger, and we couldn't be prouder of that.
+                                elevating your optimizing Business Growth.
+                            </p>
+                            <div class="d-flex align-items-center tw-gap-1 tw-mt-12">
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                                <span class="tw-leading-none text-warning tw-text-xl"><i
+                                        class="ph-fill ph-star"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================ Testimonials Six Section end ============================ -->
+
+        <!-- ============================ FAQ Six Two section start =============================== -->
+<section class="faq-six-two py-120 mt-120 section-box position-relative z-1 overflow-hidden">
+    <div class="background-img bg-img position-absolute top-0 tw-start-0 w-100 h-100 z-n1"
+        data-background-image="assets/images/bg/download-app-six-bg.png"></div>
+
+    <div class="container">
+        <div class="row gy-4">
+            <div class="col-lg-6">
+                <div class="">
+                    <div class="max-w-780-px text-start tw-mb-10">
+                        <span class="text-capitalize font-caveat fw-bold tw-mb-3 h5 text-main-600" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="100">with the world's favorite CRM</span>
+                        <h2 class="text-white text-capitalize splitTextStyleOne">Accept Every Major
+                            Payment Method</h2>
+                        <p class="text-neutral-300 tw-text-lg tw-mt-6 max-w-570-px" data-aos="fade-up"
+                            data-aos-duration="800" data-aos-delay="300">Sassly-CRM in the past allowing you to focus
+                            more on your business
+                            simply enjoy your newfound legal time to reflect leaving pen</p>
+                    </div>
+                    <div class="tw-mt-10 d-flex tw-gap-42-px" data-aos="fade-up" data-aos-duration="800"
+                        data-aos-delay="300">
+                        <div class="">
+                            <h3 class="text-main-600">1.75m</h3>
+                            <span class="tw-text-lg fw-medium text-white">Total Active user</span>
+                        </div>
+                        <div class="tw-my-2">
+                            <span class="tw-w-1-px h-100 bg-main-600"></span>
+                        </div>
+                        <div class="">
+                            <h3 class="text-main-600">1.75m</h3>
+                            <span class="tw-text-lg fw-medium text-white">Total Active user</span>
+                        </div>
+                    </div>
+                    <div class="tw-mt-10 d-flex align-items-center tw-gap-205">
+                        <a href="register.html"
+                            class="hover--translate-y-1 active--translate-y-scale-9 btn button--stroke d-inline-flex align-items-center justify-content-center tw-gap-5 group active--translate-y-2 tw-px-9 tw-py-405 fw-medium rounded-pill btn-main hover-style-one common-shadow-inset-one text-heading hover-text-white"
+                            data-block="button" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+                            <span class="button__flair"></span>
+                            <span class="button__label">Start Your Free Trial</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="accordion common-accordion style-two style-four" id="accordionExampleTwo">
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixTwo"
+                                aria-expanded="false" aria-controls="collapseTwoSixTwo">
+                                How does GoDaddy help small business owners succeed?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixTwo" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixThree"
+                                aria-expanded="false" aria-controls="collapseTwoSixThree">
+                                Why do I need a website for my business?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixThree" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixFour"
+                                aria-expanded="false" aria-controls="collapseTwoSixFour">
+                                Why do I need a professional email?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixFour" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixFive"
+                                aria-expanded="false" aria-controls="collapseTwoSixFive">
+                                What makes GoDaddy Web Hosting the world leader?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixFive" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixSix"
+                                aria-expanded="false" aria-controls="collapseTwoSixSix">
+                                Why choose GoDaddy for WordPress?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixSix" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item tw-py-8 tw-px-6 tw-rounded-xl bg-transparent mb-0" data-aos="fade-up"
+                        data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                        <h5 class="accordion-header d-flex align-items-center justify-content-between tw-gap-3">
+                            <button
+                                class="accordion-button shadow-none p-0 line-clamp-3 bg-transparent h5 text-white collapsed"
+                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoSixSeven"
+                                aria-expanded="false" aria-controls="collapseTwoSixSeven">
+                                Why should I transfer my domain, website or web hosting to GoDaddy?
+                            </button>
+                        </h5>
+                        <div id="collapseTwoSixSeven" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionExampleTwo">
+                            <div class="accordion-body p-0 tw-mt-605 max-w-620-px">
+                                <p class="text-neutral-200 tw-leading-212">GoDaddy offers more than just a platform to
+                                    build your website, we offer
+                                    everything you need to create an effective, memorable online presence.
+                                    Already have a site? We offer hosting plans that will keep it fast.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================ FAQ Six Two section end =============================== -->
+
+        <!-- ========================== Footer Six Start ============================= -->
+<footer class="footer-six section-box position-relative z-1 overflow-hidden tw-mt-705 bg-neutral-100 tw-mb-10">
+    <div class="container">
+        <div
+            class="tw-pt-10 tw-pb-10 border-bottom border-neutral-300 d-flex align-items-center flex-sm-nowrap flex-wrap justify-content-between tw-gap-6">
+            <h4 class="max-w-388-px">Get Our Latest's News & Updates</h4>
+            <form action="#" class="position-relative common-shadow-twentySeven rounded-pill max-w-602-px w-100">
+                <input type="text"
+                    class="form-control shadow-none bg-white border border-white focus-border-main-600 text-heading fw-medium tw-px-6 tw-py-4 rounded-pill focus-outline-0 tw-ps-12 tw-pe-14"
+                    placeholder="Business email address">
+                <span
+                    class="text-neutral-600 tw-text-xl position-absolute tw-start-0 top-50 translate-middle-y tw-ms-5 tw-leading-none d-flex">
+                    <i class="ph-bold ph-envelope-simple"></i>
+                </span>
+                <button type="button"
+                    class="flex-grow-1 hover--translate-y-1 active--translate-y-scale-9 btn btn-main hover-style-one button--stroke align-items-center d-flex justify-content-center tw-gap-5 group active--translate-y-2 rounded-pill fw-bold p-0 tw-w-11 tw-h-11 bg-main-600 tw-text-xl text-heading rounded-circle position-absolute tw-end-0 top-50 translate-middle-y tw-me-2 hover-text-white"
+                    data-block="button">
+                    <span class="button__flair"></span>
+                    <span class="button__label"><i class="ph-bold ph-arrow-up-right"></i></span>
+                </button>
+            </form>
+        </div>
+
+        <div class="pt-120 tw-pb-17">
+            <div class="row gy-4">
+                <div class="col-xl-3 col-sm-6">
+                    <div class="footer-six-item">
+                        <a href="index.html" class="link hover--translate-y-1 active--translate-y-scale-9 tw-mb-6">
+                            <img src="assets/images/logo/logo-four.png" alt="">
+                        </a>
+                        <p class="max-w-250-px tw-text-lg text-neutral-600">Our highly skilled development teams
+                            specialized in data analysis.</p>
+                        <div class="d-flex align-items-center tw-gap-3 tw-mt-705">
+                            <a href="https://www.facebook.com/"
+                                class="fw-bold p-0 tw-w-11 tw-h-11 border border-neutral-200 bg-white hover-bg-main-two-600 hover-text-white tw-text-xl text-heading hover-border-main-600 tw-duration-300 rounded-circle common-shadow-one d-flex justify-content-center align-items-center">
+                                <i class="ph-fill ph-facebook-logo"></i>
+                            </a>
+                            <a href="https://www.twitter.com/"
+                                class="fw-bold p-0 tw-w-11 d-flex justify-content-center align-items-center tw-h-11 border border-neutral-200 bg-white hover-bg-main-two-600 hover-text-white tw-text-xl text-heading hover-border-main-600 tw-duration-300 rounded-circle common-shadow-one">
+                                <i class="ph-fill ph-twitter-logo"></i>
+                            </a>
+                            <a href="https://www.instagram.com/"
+                                class="fw-bold p-0 tw-w-11 tw-h-11 border border-neutral-200 bg-white hover-bg-main-two-600 hover-text-white tw-text-xl text-heading hover-border-main-600 tw-duration-300 rounded-circle common-shadow-one d-flex justify-content-center align-items-center">
+                                <i class="ph-fill ph-instagram-logo"></i>
+                            </a>
+                            <a href="https://www.pinterest.com/"
+                                class="fw-bold p-0 tw-w-11 tw-h-11 border border-neutral-200 bg-white hover-bg-main-two-600 hover-text-white tw-text-xl text-heading hover-border-main-600 tw-duration-300 rounded-circle common-shadow-one d-flex justify-content-center align-items-center">
+                                <i class="ph-fill ph-pinterest-logo"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="footer-six-item">
+                        <div class="">
+                            <h5 class="fw-semibold fw-bold text-heading tw-mb-8 text-uppercase">Developers</h5>
+                            <ul class="d-flex flex-column tw-gap-4">
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">API
+                                        Documentation </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Integration
+                                        Guide
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">SDK
+                                        Downloads</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Status
+                                        Page
+                                    </a>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Help
+                                        Center
+                                    </a>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Support
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="footer-six-item">
+                        <div class="">
+                            <h5 class="fw-semibold fw-bold text-heading tw-mb-8 text-uppercase">Solutions</h5>
+                            <ul class="d-flex flex-column tw-gap-4">
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Point
+                                        of Sale (POS)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Online
+                                        Payments</a>
+                                </li>
+                                <li>
+                                    <a href="contact.html"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">QR
+                                        Code Payments
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Subscription
+                                        Billing</a>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">International
+                                        Payments</a>
+                                </li>
+                                <li class="mb-0">
+                                    <a href="javascript:void(0)"
+                                        class="hover-arrow-start text-heading hover-underline hover--translate-y-1 active--translate-y-scale-9">Mobile
+                                        Wallet Integration</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                    <div class="footer-six-item">
+                        <div class="">
+                            <h5 class="fw-semibold fw-bold text-heading tw-mb-8 text-uppercase">Contact Us </h5>
+                            <div class="tw-mt-6 d-flex flex-column tw-gap-5">
+                                <div class="d-flex align-items-center tw-gap-3">
+                                    <span class="">
+                                        <img src="assets/images/icons/contact-six-icon1.png" alt="Icon">
+                                    </span>
+                                    <h6 class="fw-semibold text-heading">+806 (000) 88 99</h6>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-3">
+                                    <span class="">
+                                        <img src="assets/images/icons/contact-six-icon2.png" alt="Icon">
+                                    </span>
+                                    <span class="fw-semibold text-heading">contact@info.com</span>
+                                </div>
+                                <div class="d-flex align-items-center tw-gap-3">
+                                    <span class="">
+                                        <img src="assets/images/icons/contact-six-icon3.png" alt="Icon">
+                                    </span>
+                                    <span class="fw-semibold text-heading">1234 North Avenue Luke Lane,
+                                        South Bend, </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-four-bottom">
+            <div class="container">
+                <div
+                    class="d-flex align-items-center justify-content-between tw-gap-4 flex-wrap border-top border-neutral-300 tw-py-7">
+                    <p class="fw-semibold text-heading">Copyright &copy; 2025 <a href="index.html"
+                            class="text-blue hover-underline">wowtheme7</a> All Rights Reserved by</p>
+                    <ul class="d-flex align-items-center flex-wrap tw-gap-4">
+                        <li>
+                            <a href="javascript:void(0)"
+                                class="text-neutral-500 fw-semibold hover-text-neutral-900 hover-underline hover--translate-y-1 active--translate-y-scale-9">Faqs</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"
+                                class="text-neutral-500 fw-semibold hover-text-neutral-900 hover-underline hover--translate-y-1 active--translate-y-scale-9">Setting</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"
+                                class="text-neutral-500 fw-semibold hover-text-neutral-900 hover-underline hover--translate-y-1 active--translate-y-scale-9">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)"
+                                class="text-neutral-500 fw-semibold hover-text-neutral-900 hover-underline hover--translate-y-1 active--translate-y-scale-9">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</footer>
+<!-- ========================== Footer Six End ============================= -->
+
+    </div>
+</div>
+
+    <!-- Jquery js -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- phosphor Js -->
+    <script src="assets/js/phosphor-icon.js"></script>
+    <!-- Bootstrap Bundle Js -->
+    <script src="assets/js/boostrap.bundle.min.js"></script>
+
+    <!-- GSAP js -->
+    <script src="assets/js/gsap.min.js"></script>
+    <!-- Scroll Trigger -->
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+    <!-- ScrollSmoother -->
+    <script src="assets/js/ScrollSmoother.min.js"></script>
+    <!-- SplitText -->
+    <script src="assets/js/SplitText.min.js"></script>
+    <!-- custom GSAP -->
+    <script src="assets/js/custom-gsap.js"></script>
+
+    <!-- aos Js -->
+    <script src="assets/js/aos.js"></script>
+    <!-- counter up Js -->
+    <script src="assets/js/counterup.min.js"></script>
+    <!-- swiper Js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Marquee js -->
+    <script src="assets/js/jquery.marquee.min.js"></script>
+    <!-- magnific js -->
+    <script src="assets/js/magnific-popup.min.js"></script>
+
+    <!-- main js -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+
+<!-- Mirrored from wowtheme7.com/tf/sasstech/index-6.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Nov 2025 16:07:49 GMT -->
+</html>
