@@ -129,106 +129,45 @@ export default function Hero() {
 
         {/* HERO RIGHT VISUALS */}
         <motion.div 
-          className="lg:col-span-6 relative"
+          className="lg:col-span-6 relative flex justify-center py-6"
           variants={rightVisualVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Main Visual Composition */}
-          <div className="grid grid-cols-12 gap-4 relative select-none">
+          <div className="relative w-full max-w-md md:max-w-lg select-none">
+            {/* Main 3D Banner Image */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-150/40 bg-white p-3 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <img 
+                src="/assets/images/thumbs/banner-five-thumb.png" 
+                alt="Techtopia Platform Mockup" 
+                className="w-full h-auto rounded-2xl object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
+                }}
+              />
+            </div>
             
-            {/* Main Interactive App Canvas */}
-            <div className="col-span-8 bg-white p-6 rounded-3xl border border-slate-150/60 shadow-xl relative overflow-hidden group hover:shadow-2xl hover:border-slate-200 transition-all duration-300">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-12 -mt-12 transition-transform duration-500 group-hover:scale-110" />
-              
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary shadow-sm">
-                    <Code className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-neutral-dark text-sm leading-none">{BRAND_NAME} Ecosystem</h3>
-                    <span className="text-[10px] text-slate-400 font-semibold pt-1 block">Full-Stack Development</span>
-                  </div>
-                </div>
-                <span className="bg-emerald-100 text-emerald-700 text-[9px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Active</span>
+            {/* Floating SLA Retention Card overlay */}
+            <div className="absolute -bottom-6 -left-6 bg-gradient-to-tr from-secondary to-primary p-4 rounded-2xl text-white shadow-xl hover:scale-[1.02] transition-all duration-300 hidden sm:flex flex-col justify-between w-40 border border-white/15">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[9px] uppercase font-extrabold tracking-widest text-white/80">Client Retention</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               </div>
-
-              {/* Stack mockup layout metrics */}
-              <div className="space-y-4">
-                <div className="space-y-2">
-                  <div className="flex justify-between text-xs font-bold text-slate-700">
-                    <span>Performance Rating</span>
-                    <span>99.8%</span>
-                  </div>
-                  <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-primary rounded-full" style={{ width: "99.8%" }} />
-                  </div>
-                </div>
-
-                {/* Sub features preview inside mock application dashboard */}
-                <div className="pt-2 grid grid-cols-2 gap-3">
-                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:bg-slate-100/50 transition-colors duration-200">
-                    <span className="text-[10px] text-slate-400 font-bold block mb-1">Architecture</span>
-                    <span className="text-xs font-bold text-neutral-dark">Robust Scaling</span>
-                  </div>
-                  <div className="p-3 bg-slate-50 rounded-xl border border-slate-100 hover:bg-slate-100/50 transition-colors duration-200">
-                    <span className="text-[10px] text-slate-400 font-bold block mb-1">Databases</span>
-                    <span className="text-xs font-bold text-neutral-dark">Secure Schema</span>
-                  </div>
-                </div>
-              </div>
+              <h4 className="text-2xl font-black text-white leading-none">100%</h4>
+              <p className="text-[8px] text-white/70 font-semibold pt-1">Ghana & International</p>
             </div>
 
-            {/* SLA Retention Card */}
-            <div className="col-span-4 bg-gradient-to-tr from-secondary to-primary p-6 rounded-3xl text-white shadow-xl relative overflow-hidden flex flex-col justify-between min-h-[175px] hover:shadow-2xl hover:scale-[1.01] transition-all duration-300">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-10 -mt-10" />
-              <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center text-white mb-4">
-                <Users className="w-4 h-4" />
+            {/* Floating Performance Indicator Card overlay */}
+            <div className="absolute -top-6 -right-6 bg-slate-900 text-white p-4 rounded-2xl shadow-xl hover:scale-[1.02] transition-all duration-300 hidden sm:flex flex-col justify-between w-44 border border-slate-800">
+              <div className="flex items-center justify-between mb-2">
+                <span className="text-[8px] uppercase font-bold text-slate-400 tracking-wider">Performance</span>
+                <span className="text-emerald-450 text-[9px] font-bold text-emerald-400">99.8%</span>
               </div>
-              <div className="mt-auto">
-                <span className="text-[10px] uppercase font-extrabold tracking-widest text-white/70 block mb-1">Client Retention</span>
-                <h4 className="text-4xl font-black text-white leading-none">100%</h4>
-                <p className="text-[9px] text-white/80 font-medium whitespace-nowrap pt-1">Ghana & International</p>
+              <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden mb-1">
+                <div className="h-full bg-primary rounded-full" style={{ width: "99.8%" }} />
               </div>
+              <span className="text-[8px] text-slate-500 font-medium block">Active Cloud Sync</span>
             </div>
-
-            {/* Security Audit Protection Card */}
-            <div className="col-span-4 bg-slate-900 text-white p-6 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-[1.01] transition-all duration-300 flex flex-col justify-between min-h-[160px] border border-slate-800">
-              <div className="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-4">
-                <ShieldCheck className="w-4.5 h-4.5" />
-              </div>
-              <div>
-                <span className="text-[9px] uppercase font-bold text-slate-400 tracking-wider">Compliance</span>
-                <h4 className="text-lg font-bold text-white mt-1 leading-tight">Secure Cloud Isolation</h4>
-                <span className="text-[9px] text-slate-500 font-medium block pt-1">ISO 27001 Prepared</span>
-              </div>
-            </div>
-
-            {/* Micro Dynamic Resource Stat Card */}
-            <div className="col-span-8 bg-white p-6 rounded-3xl border border-slate-150/60 shadow-xl group hover:shadow-2xl hover:border-slate-200 transition-all duration-300 flex flex-col justify-between">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center">
-                    <Database className="w-4.5 h-4.5" />
-                  </div>
-                  <span className="text-xs font-bold text-neutral-dark">Enterprise Databases</span>
-                </div>
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-              </div>
-              
-              <div className="grid grid-cols-2 gap-4 divide-x divide-slate-100">
-                <div className="pr-4">
-                  <span className="text-[10px] text-slate-400 font-extrabold block uppercase tracking-wider">Database Type</span>
-                  <span className="text-xs font-extrabold text-neutral-dark block mt-1">Direct Cloud SQL</span>
-                </div>
-                <div className="pl-4">
-                  <span className="text-[10px] text-slate-400 font-extrabold block uppercase tracking-wider">Data Sync SLA</span>
-                  <span className="text-xs font-extrabold text-neutral-dark block mt-1">Real-time / Instant</span>
-                </div>
-              </div>
-            </div>
-
           </div>
         </motion.div>
 

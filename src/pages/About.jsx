@@ -22,7 +22,12 @@ export default function About() {
     <div className="w-full">
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(55,114,255,0.15),transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(55,114,255,0.15),transparent)] pointer-events-none z-0" />
+        <img 
+          src="/assets/images/shapes/wave-line-shadow.png" 
+          alt="Wave Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+        />
         <div className="max-w-7xl mx-auto px-6 relative z-1 text-center md:text-left">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Ghanaian IT Excellence</span>
           <h1 className="text-4xl font-extrabold tracking-tight">About Us</h1>
@@ -92,6 +97,29 @@ export default function About() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 GALLERY SHOWCASE SECTION */}
+      <section className="pb-20 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((num) => (
+              <div 
+                key={num} 
+                className="h-40 md:h-56 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-slate-100 group"
+              >
+                <img 
+                  src={`/assets/images/thumbs/about-banner-img${num}.png`} 
+                  alt={`Office Showcase ${num}`} 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  onError={(e) => {
+                    e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
+                  }}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

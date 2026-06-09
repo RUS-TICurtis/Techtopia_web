@@ -95,3 +95,17 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   animation: marquee 30s linear infinite;
 }
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 5s ease-in-out infinite;
+}
+

@@ -169,26 +169,35 @@ export default function Home() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-max blur-2xl opacity-10 flex space-x-12 select-none pointer-events-none">
           <span className="text-8xl font-black uppercase tracking-widest select-none text-white/5 whitespace-nowrap">ACCRA TECH</span>
         </div>
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-1">
-          <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider mb-4 opacity-90">
-            Have a project in mind? We'd love to help!
-          </span>
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight max-w-2xl mx-auto">
-            Stay Connected With Cutting Edge IT
-          </h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              to="/contact"
-              className="bg-primary hover:bg-primary/95 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/20"
-            >
-              Get A Quote
-            </Link>
-            <a
-              href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`}
-              className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto transition-colors"
-            >
-              Call {CORE_PHONE}
-            </a>
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-1">
+          <div className="md:col-span-8 text-center md:text-left">
+            <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider mb-4 opacity-90">
+              Have a project in mind? We'd love to help!
+            </span>
+            <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight">
+              Stay Connected With Cutting Edge IT
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+              <Link
+                to="/contact"
+                className="bg-primary hover:bg-primary/95 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/20 text-center"
+              >
+                Get A Quote
+              </Link>
+              <a
+                href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`}
+                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto transition-colors text-center"
+              >
+                Call {CORE_PHONE}
+              </a>
+            </div>
+          </div>
+          <div className="md:col-span-4 hidden md:flex justify-end relative">
+            <img 
+              src="/assets/images/thumbs/laptop-man.png" 
+              alt="Laptop Man" 
+              className="max-h-56 object-contain animate-bounce-slow"
+            />
           </div>
         </div>
       </section>

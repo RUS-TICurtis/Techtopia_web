@@ -28,7 +28,12 @@ export default function Services() {
     <div className="w-full">
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(55,114,255,0.15),transparent)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(55,114,255,0.15),transparent)] pointer-events-none z-0" />
+        <img 
+          src="/assets/images/shapes/wave-line-shadow.png" 
+          alt="Wave Background" 
+          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
+        />
         <div className="max-w-7xl mx-auto px-6 relative z-1 text-center md:text-left">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Our Capabilities</span>
           <h1 className="text-4xl font-extrabold tracking-tight">Services & Solutions</h1>
@@ -197,19 +202,26 @@ export default function Services() {
 
       {/* 5. DYNAMIC CALL OUT BANNER PHONE SUPPORT */}
       <section className="bg-neutral-dark text-white py-16 relative overflow-hidden">
-        <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 relative z-1 text-center md:text-left">
-          <div className="max-w-xl">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-1">
+          <div className="md:col-span-8 text-center md:text-left">
             <h3 className="text-2xl md:text-3xl font-extrabold mb-3">Custom Enterprise Audits</h3>
-            <p className="text-slate-400 text-xs md:text-sm leading-relaxed">
+            <p className="text-slate-400 text-xs md:text-sm leading-relaxed mb-6">
               If your organization requires unique databases mappings, multi-tenant cloud sync endpoints, or 3rd-party banking APIs integrations, our team is equipped to execute.
             </p>
+            <Link
+              to="/contact"
+              className="inline-flex items-center space-x-2 bg-primary hover:bg-primary/95 text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md"
+            >
+              <span>Consult with our Lead Architect</span>
+            </Link>
           </div>
-          <Link
-            to="/contact"
-            className="flex items-center space-x-2 bg-primary hover:bg-primary/95 text-white font-semibold py-3.5 px-6 rounded-xl transition-all shadow-md flex-shrink-0"
-          >
-            <span>Consult with our Lead Architect</span>
-          </Link>
+          <div className="md:col-span-4 hidden md:flex justify-end relative">
+            <img 
+              src="/assets/images/thumbs/laptop-man.png" 
+              alt="Laptop Man" 
+              className="max-h-48 object-contain animate-bounce-slow"
+            />
+          </div>
         </div>
       </section>
     </div>
