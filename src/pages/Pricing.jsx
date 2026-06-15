@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Check, HelpCircle, ArrowRight } from "lucide-react";
 import { PRICING_PLANS, BRAND_NAME } from "../types";
+import RoiCalculator from "../components/interactive/RoiCalculator";
 
 export default function Pricing() {
   return (
@@ -96,6 +97,9 @@ export default function Pricing() {
               );
             })}
           </div>
+
+          {/* 2.5 ROI CALCULATOR */}
+          <RoiCalculator />
         </div>
       </section>
 

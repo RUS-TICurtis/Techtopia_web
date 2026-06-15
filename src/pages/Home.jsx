@@ -6,6 +6,7 @@ import ServiceCard from "../components/ServiceCard";
 import Testimonial from "../components/Testimonial";
 import Hero from "../components/Hero";
 import PartnerCarousel from "../components/PartnerCarousel";
+import SmartEngagement from "../components/interactive/SmartEngagement";
 
 export default function Home() {
   const steps = [
@@ -122,6 +123,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* 4.5 SMART ENGAGEMENT RANDOMIZER */}
+      <SmartEngagement />
+
       {/* 5. STANDARD WORK PROCESS PROGRESS WORK TIMELINE */}
       <section className="py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
@@ -180,13 +184,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
               <Link
                 to="/contact"
-                className="bg-primary hover:bg-primary/95 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto shadow-lg shadow-primary/20 text-center"
+                className="theme-btn w-full sm:w-auto text-center"
               >
                 Get A Quote
               </Link>
               <a
                 href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`}
-                className="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold py-3.5 px-8 rounded-xl w-full sm:w-auto transition-colors text-center"
+                className="theme-btn hover-white border border-white bg-transparent text-white font-semibold w-full sm:w-auto transition-colors text-center"
               >
                 Call {CORE_PHONE}
               </a>

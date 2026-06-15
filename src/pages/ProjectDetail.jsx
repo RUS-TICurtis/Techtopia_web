@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { ArrowLeft, Clock, Award, ShieldCheck, HelpCircle } from "lucide-react";
 import { PROJECTS, BRAND_NAME, CORE_PHONE } from "../types";
+import BeforeAfterSlider from "../components/interactive/BeforeAfterSlider";
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
@@ -99,6 +100,9 @@ export default function ProjectDetail() {
                 }}
               />
             </div>
+
+            {/* INTERACTIVE BEFORE/AFTER SLIDER */}
+            <BeforeAfterSlider />
 
             <div>
               <span className="text-primary text-xs font-extrabold uppercase tracking-widest block mb-2">Detailed Scoping</span>

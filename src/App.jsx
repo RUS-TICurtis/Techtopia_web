@@ -11,6 +11,8 @@ import Pricing from "./pages/Pricing";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Integrations from "./pages/Integrations";
+import Portal from "./pages/Portal";
+import ChatbotFAB from "./components/interactive/ChatbotFAB";
 
 export default function App() {
   return (
@@ -28,10 +30,12 @@ export default function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/portal" element={<Portal />} />
           
           {/* Catch-all unrecognized paths and redirect to Home */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <ChatbotFAB />
       </Layout>
     </Router>
   );

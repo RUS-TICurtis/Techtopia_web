@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Send, CheckCircle2, Sparkles } from "lucide-react";
 import { CORE_PHONE, CORE_EMAIL, CORE_HOURS, CORE_LOCATION, BRAND_NAME } from "../types";
+import BookingWidget from "../components/interactive/BookingWidget";
 
 export default function Contact() {
   const [searchParams] = useSearchParams();
@@ -261,6 +262,17 @@ export default function Contact() {
 
                 </form>
               )}
+            </div>
+
+            {/* SEAMLESS BOOKING WIDGET */}
+            <div className="mt-12 pt-12 border-t border-slate-200">
+              <div className="text-center mb-6">
+                <h3 className="text-xl font-bold tracking-tight text-neutral-dark">
+                  Prefer a direct meeting?
+                </h3>
+                <p className="text-sm text-slate-500">Book a slot on our calendar below.</p>
+              </div>
+              <BookingWidget />
             </div>
 
           </div>

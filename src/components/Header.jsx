@@ -137,15 +137,13 @@ export default function Header() {
 
         {/* CTA Dashboard Login Actions */}
         <div className="hidden lg:flex items-center space-x-4">
-          <a
-            href="https://leads.techtopiagh.online/authentication/login"
-            target="_blank"
-            rel="noreferrer referrer"
+          <Link
+            to="/portal"
             className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-primary transition-all py-2 px-4 rounded-xl border border-slate-200 hover:border-primary"
           >
             <LogIn className="w-4 h-4 text-slate-400 group-hover:text-primary" />
             <span>Login</span>
-          </a>
+          </Link>
           <Link
             to="/contact"
             className="bg-primary hover:bg-primary/90 text-white text-sm font-semibold py-2.5 px-5 rounded-xl transition-all shadow-sm hover:shadow"
@@ -214,15 +212,14 @@ export default function Header() {
 
             {/* CTA Buttons in Mobile Panel */}
             <div className="pt-4 flex flex-col space-y-3">
-              <a
-                href="https://leads.techtopiagh.online/authentication/login"
-                target="_blank"
-                rel="noreferrer referrer"
+              <Link
+                to="/portal"
+                onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center space-x-2 text-sm font-semibold text-slate-800 py-3 rounded-xl border border-slate-200 hover:border-primary text-center"
               >
                 <LogIn className="w-4 h-4 text-slate-500" />
                 <span>Client Portal Login</span>
-              </a>
+              </Link>
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
