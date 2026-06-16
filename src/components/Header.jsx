@@ -69,28 +69,30 @@ export default function Header() {
             
             if (link.name === "Services") {
               return (
-                <div key={link.name} className="relative group py-2">
-                  <button className="flex items-center text-sm font-semibold text-slate-700 hover:text-primary transition-colors cursor-pointer">
+                <div key={link.name} className="relative group py-4 -my-2">
+                  <button className="flex items-center text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors cursor-pointer">
                     {link.name}
                     <ChevronDown className="w-4 h-4 ml-1 text-slate-400 group-hover:text-primary transition-colors" />
                   </button>
-                  {/* Dropdown Menu */}
-                  <div className="absolute top-full left-0 mt-1 w-56 rounded-xl bg-white border border-slate-100 shadow-lg py-2 hidden group-hover:block transition-all z-50">
-                    <Link
-                      to="/services"
-                      className="block px-4 py-2.5 text-xs font-bold text-slate-400 uppercase tracking-wider hover:bg-slate-55"
-                    >
-                      All Services
-                    </Link>
-                    {solutionsLinks.map((sublink) => (
+                  {/* Dropdown Menu Wrapper with padding bridge */}
+                  <div className="absolute top-full left-0 pt-2 w-56 hidden group-hover:block transition-all z-50">
+                    <div className="rounded-xl bg-white border border-slate-100 shadow-lg py-2">
                       <Link
-                        key={sublink.name}
-                        to={sublink.path}
-                        className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                        to="/services"
+                        className="block px-4 py-2.5 text-xs font-bold text-slate-400 uppercase tracking-wider hover:bg-slate-50"
                       >
-                        {sublink.name}
+                        All Services
                       </Link>
-                    ))}
+                      {solutionsLinks.map((sublink) => (
+                        <Link
+                          key={sublink.name}
+                          to={sublink.path}
+                          className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                        >
+                          {sublink.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               );
@@ -98,22 +100,24 @@ export default function Header() {
 
             if (link.name === "Pages") {
               return (
-                <div key={link.name} className="relative group py-2">
-                  <button className="flex items-center text-sm font-semibold text-slate-700 hover:text-primary transition-colors cursor-pointer">
+                <div key={link.name} className="relative group py-4 -my-2">
+                  <button className="flex items-center text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors cursor-pointer">
                     {link.name}
                     <ChevronDown className="w-4 h-4 ml-1 text-slate-400 group-hover:text-primary transition-colors" />
                   </button>
-                  {/* Dropdown Menu */}
-                  <div className="absolute top-full left-0 mt-1 w-56 rounded-xl bg-white border border-slate-100 shadow-lg py-2 hidden group-hover:block transition-all z-50">
-                    {pageDropdownLinks.map((sublink) => (
-                      <Link
-                        key={sublink.name}
-                        to={sublink.path}
-                        className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
-                      >
-                        {sublink.name}
-                      </Link>
-                    ))}
+                  {/* Dropdown Menu Wrapper with padding bridge */}
+                  <div className="absolute top-full left-0 pt-2 w-56 hidden group-hover:block transition-all z-50">
+                    <div className="rounded-xl bg-white border border-slate-100 shadow-lg py-2">
+                      {pageDropdownLinks.map((sublink) => (
+                        <Link
+                          key={sublink.name}
+                          to={sublink.path}
+                          className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                        >
+                          {sublink.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               );

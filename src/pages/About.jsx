@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Cpu, ArrowRight, HelpCircle, ChevronDown, ChevronUp, Sparkles, CheckCircle2 } from "lucide-react";
+import PageBannerBg from "../components/interactive/PageBannerBg";
 import {
   BRAND_NAME,
   CORE_VALUES,
@@ -22,12 +23,7 @@ export default function About() {
     <div className="w-full">
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(55,114,255,0.15),transparent)] pointer-events-none z-0" />
-        <img 
-          src="/assets/images/shapes/wave-line-shadow.png" 
-          alt="Wave Background" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none z-0"
-        />
+        <PageBannerBg />
         <div className="max-w-7xl mx-auto px-6 relative z-1 text-center md:text-left">
           <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Ghanaian IT Excellence</span>
           <h1 className="text-4xl font-extrabold tracking-tight">About Us</h1>
