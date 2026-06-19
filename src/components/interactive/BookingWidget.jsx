@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Calendar as CalendarIcon, Clock, ChevronRight, ChevronLeft, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { supabase } from "../../lib/supabase";
 
 export default function BookingWidget() {
   const [step, setStep] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
   
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [details, setDetails] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
   // Mock calendar data
   const dates = Array.from({ length: 7 }, (_, i) => {
     const d = new Date();
@@ -16,9 +23,26 @@ export default function BookingWidget() {
 
   const times = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
 
-  const handleBook = (e) => {
+  const handleBook = async (e) => {
     e.preventDefault();
-    setStep(3);
+    setIsSubmitting(true);
+    setErrorMsg("");
+
+    const { error } = await supabase.from('bookings').insert([{
+      name,
+      email,
+      details,
+      date: selectedDate.toISOString().split('T')[0],
+      time: selectedTime,
+    }]);
+
+    setIsSubmitting(false);
+
+    if (error) {
+      setErrorMsg("Failed to confirm booking. Please try again.");
+    } else {
+      setStep(3);
+    }
   };
 
   return (
@@ -104,13 +128,19 @@ export default function BookingWidget() {
             </button>
             <h4 className="text-sm font-semibold text-slate-800 mb-4">2. Your Details</h4>
             
+            {errorMsg && (
+              <div className="mb-4 p-3 bg-red-50 border border-red-100 text-red-600 text-xs rounded-xl">
+                {errorMsg}
+              </div>
+            )}
+
             <form onSubmit={handleBook} className="space-y-4">
-              <input type="text" required placeholder="Full Name" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
-              <input type="email" required placeholder="Work Email" className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
-              <textarea placeholder="Tell us about your project... (Optional)" rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary resize-none" />
+              <input type="text" required placeholder="Full Name" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
+              <input type="email" required placeholder="Work Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
+              <textarea placeholder="Tell us about your project... (Optional)" value={details} onChange={e => setDetails(e.target.value)} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary resize-none" />
               
-              <button type="submit" className="w-full theme-btn py-3 rounded-xl flex items-center justify-center">
-                Confirm Booking
+              <button type="submit" disabled={isSubmitting} className="w-full theme-btn py-3 rounded-xl flex items-center justify-center disabled:opacity-70">
+                {isSubmitting ? "Confirming..." : "Confirm Booking"}
               </button>
             </form>
           </motion.div>
@@ -130,7 +160,7 @@ export default function BookingWidget() {
             <p className="text-sm text-slate-500 mb-6">
               You are scheduled for a Scoping Consultation on <strong className="text-slate-700">{selectedDate?.toLocaleDateString()} at {selectedTime}</strong>. A calendar invite has been sent to your email.
             </p>
-            <button onClick={() => {setStep(1); setSelectedDate(null); setSelectedTime(null);}} className="text-sm font-semibold text-primary hover:underline">
+            <button onClick={() => {setStep(1); setSelectedDate(null); setSelectedTime(null); setName(""); setEmail(""); setDetails("");}} className="text-sm font-semibold text-primary hover:underline">
               Book another session
             </button>
           </motion.div>

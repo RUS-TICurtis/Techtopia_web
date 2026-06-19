@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MessageSquare, X, Send } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { BRAND_NAME } from "../../types";
+import { supabase } from "../../lib/supabase";
 
 export default function ChatbotFAB() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,23 +10,57 @@ export default function ChatbotFAB() {
     { id: 1, text: `Hi there! 👋 Welcome to ${BRAND_NAME}. How can we help you today?`, sender: 'bot' }
   ]);
   const [inputValue, setInputValue] = useState("");
+  const [sessionId, setSessionId] = useState("");
 
-  const handleSend = (e) => {
+  useEffect(() => {
+    // Generate a simple unique session ID for this user's browser session
+    setSessionId(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
+  }, []);
+
+  const saveMessage = async (text, sender) => {
+    if (!sessionId) return;
+    await supabase.from('chatbot_messages').insert([{
+      session_id: "00000000-0000-0000-0000-000000000000", // Fallback if uuid needed, but session_id is uuid in schema. Let's fix this to generate proper uuid or change schema.
+      message: text,
+      sender: sender
+    }]);
+  };
+
+  const saveMessageWithUUID = async (text, sender) => {
+    // To conform to UUID schema
+    const uuidStr = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
+    
+    await supabase.from('chatbot_messages').insert([{
+      session_id: sessionId || uuidStr,
+      message: text,
+      sender: sender
+    }]);
+  };
+
+  const handleSend = async (e) => {
     e.preventDefault();
     if (!inputValue.trim()) return;
     
-    // Add user message
-    const newMsg = { id: Date.now(), text: inputValue, sender: 'user' };
-    setMessages([...messages, newMsg]);
+    const userText = inputValue;
+    const newMsg = { id: Date.now(), text: userText, sender: 'user' };
+    setMessages(prev => [...prev, newMsg]);
     setInputValue("");
+
+    // Save user message to Supabase
+    saveMessageWithUUID(userText, 'user');
 
     // Simulate bot reply
     setTimeout(() => {
+      const botText = "Thanks for reaching out! One of our experts will get back to you shortly. In the meantime, feel free to browse our services.";
       setMessages(prev => [...prev, {
         id: Date.now(),
-        text: "Thanks for reaching out! One of our experts will get back to you shortly. In the meantime, feel free to browse our services.",
+        text: botText,
         sender: 'bot'
       }]);
+      saveMessageWithUUID(botText, 'bot');
     }, 1000);
   };
 

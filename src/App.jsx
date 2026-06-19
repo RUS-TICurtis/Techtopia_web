@@ -12,6 +12,7 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import Integrations from "./pages/Integrations";
 import Portal from "./pages/Portal";
+import NotFound from "./pages/NotFound";
 import ChatbotFAB from "./components/interactive/ChatbotFAB";
 
 export default function App() {
@@ -32,8 +33,8 @@ export default function App() {
           <Route path="/terms" element={<Terms />} />
           <Route path="/portal" element={<Portal />} />
           
-          {/* Catch-all unrecognized paths and redirect to Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Catch-all unrecognized paths */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatbotFAB />
       </Layout>

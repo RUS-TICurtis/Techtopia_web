@@ -1,21 +1,97 @@
-import React, { useState } from "react";
-import { Lock, FileText, CheckCircle, Clock } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { Lock, FileText, CheckCircle, Clock, Plus } from "lucide-react";
 import { motion } from "motion/react";
 import { BRAND_NAME } from "../types";
+import { supabase } from "../lib/supabase";
 
 export default function Portal() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [session, setSession] = useState(null);
+  const [loading, setLoading] = useState(true);
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [authError, setAuthError] = useState("");
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
+  
+  const [tickets, setTickets] = useState([]);
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email && password) {
-      setIsAuthenticated(true);
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setLoading(false);
+      if (session) fetchTickets();
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+      if (session) fetchTickets();
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  const fetchTickets = async () => {
+    const { data, error } = await supabase
+      .from('tickets')
+      .select('*')
+      .order('created_at', { ascending: false });
+    if (!error && data) {
+      setTickets(data);
     }
   };
 
-  if (!isAuthenticated) {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    if (!email || !password) return;
+    
+    setIsAuthenticating(true);
+    setAuthError("");
+    
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
+
+    if (error) {
+      // If login fails, try to sign up since we don't have a registration flow in the UI yet
+      // This is just to make the demo work easily for new users testing the portal
+      const { error: signUpError } = await supabase.auth.signUp({
+        email,
+        password,
+      });
+      if (signUpError) {
+        setAuthError(signUpError.message);
+      }
+    }
+    setIsAuthenticating(false);
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
+
+  const handleCreateTicket = async () => {
+    const title = prompt("Enter ticket issue description:");
+    if (!title) return;
+
+    const { error } = await supabase.from('tickets').insert([
+      { title, user_id: session.user.id }
+    ]);
+    
+    if (!error) {
+      fetchTickets();
+    } else {
+      alert("Error creating ticket: " + error.message);
+    }
+  };
+
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 font-semibold">Loading Portal...</div>;
+  }
+
+  if (!session) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center bg-slate-50 py-12 px-6">
         <motion.div 
@@ -31,6 +107,12 @@ export default function Portal() {
           <h2 className="text-2xl font-bold text-center text-neutral-dark mb-2">Client Portal</h2>
           <p className="text-sm text-slate-500 text-center mb-8">Secure access to your {BRAND_NAME} dashboard.</p>
           
+          {authError && (
+            <div className="mb-4 p-3 bg-red-50 border border-red-100 text-red-600 text-sm rounded-xl">
+              {authError}
+            </div>
+          )}
+
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
               <label className="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
@@ -54,8 +136,8 @@ export default function Portal() {
                 placeholder="••••••••" 
               />
             </div>
-            <button type="submit" className="w-full theme-btn py-3 rounded-xl text-center flex justify-center mt-2">
-              Secure Login
+            <button type="submit" disabled={isAuthenticating} className="w-full theme-btn py-3 rounded-xl text-center flex justify-center mt-2 disabled:opacity-70">
+              {isAuthenticating ? "Authenticating..." : "Secure Login"}
             </button>
           </form>
         </motion.div>
@@ -68,10 +150,10 @@ export default function Portal() {
       <div className="max-w-6xl mx-auto">
         <header className="flex justify-between items-end mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-neutral-dark">Welcome back, {email.split('@')[0]}</h1>
+            <h1 className="text-3xl font-bold text-neutral-dark">Welcome back, {session.user.email.split('@')[0]}</h1>
             <p className="text-slate-500 mt-1">Here is the status of your current projects and tickets.</p>
           </div>
-          <button onClick={() => setIsAuthenticated(false)} className="text-sm font-semibold text-slate-500 hover:text-red-500 transition-colors">
+          <button onClick={handleLogout} className="text-sm font-semibold text-slate-500 hover:text-red-500 transition-colors">
             Logout
           </button>
         </header>
@@ -114,27 +196,32 @@ export default function Portal() {
           {/* Support Tickets */}
           <div className="space-y-6">
             <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
-              <h3 className="text-lg font-bold text-slate-800 mb-4">Support Tickets</h3>
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="text-lg font-bold text-slate-800">Support Tickets</h3>
+              </div>
               
-              <div className="space-y-3 mb-6">
-                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-amber-500 mt-0.5" />
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-800">API Webhook Issue</h5>
-                    <p className="text-xs text-slate-500">Ticket #1042 • In Progress</p>
-                  </div>
-                </div>
-                <div className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5" />
-                  <div>
-                    <h5 className="text-sm font-semibold text-slate-800">Add new admin user</h5>
-                    <p className="text-xs text-slate-500">Ticket #1041 • Resolved</p>
-                  </div>
-                </div>
+              <div className="space-y-3 mb-6 max-h-[300px] overflow-y-auto pr-1">
+                {tickets.length === 0 ? (
+                  <p className="text-sm text-slate-500 text-center py-4 bg-white rounded-xl border border-slate-100">No tickets found.</p>
+                ) : (
+                  tickets.map(ticket => (
+                    <div key={ticket.id} className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
+                      {ticket.status === 'resolved' || ticket.status === 'closed' ? (
+                        <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
+                      ) : (
+                        <Clock className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
+                      )}
+                      <div>
+                        <h5 className="text-sm font-semibold text-slate-800">{ticket.title}</h5>
+                        <p className="text-xs text-slate-500 capitalize">Status: {ticket.status}</p>
+                      </div>
+                    </div>
+                  ))
+                )}
               </div>
 
-              <button className="w-full bg-white border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm">
-                Submit New Ticket
+              <button onClick={handleCreateTicket} className="w-full bg-white border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2">
+                <Plus className="w-4 h-4" /> Submit New Ticket
               </button>
             </div>
           </div>
