@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MessageSquare, X, Send } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { BRAND_NAME } from "../../types";
@@ -6,38 +6,78 @@ import { supabase } from "../../lib/supabase";
 
 export default function ChatbotFAB() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    { id: 1, text: `Hi there! 👋 Welcome to ${BRAND_NAME}. How can we help you today?`, sender: 'bot' }
-  ]);
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [sessionId, setSessionId] = useState("");
+  const messagesEndRef = useRef(null);
 
-  useEffect(() => {
-    // Generate a simple unique session ID for this user's browser session
-    setSessionId(Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15));
-  }, []);
-
-  const saveMessage = async (text, sender) => {
-    if (!sessionId) return;
-    await supabase.from('chatbot_messages').insert([{
-      session_id: "00000000-0000-0000-0000-000000000000", // Fallback if uuid needed, but session_id is uuid in schema. Let's fix this to generate proper uuid or change schema.
-      message: text,
-      sender: sender
-    }]);
-  };
-
-  const saveMessageWithUUID = async (text, sender) => {
-    // To conform to UUID schema
-    const uuidStr = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-      var r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
+  // Helper to generate a valid UUID v4
+  const generateUUID = () => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0, v = c === 'x' ? r : (r & 0x3 | 0x8);
       return v.toString(16);
     });
-    
-    await supabase.from('chatbot_messages').insert([{
-      session_id: sessionId || uuidStr,
-      message: text,
-      sender: sender
-    }]);
+  };
+
+  useEffect(() => {
+    // Load or initialize session
+    let sid = localStorage.getItem("techtopia_chat_session_id");
+    if (!sid) {
+      sid = generateUUID();
+      localStorage.setItem("techtopia_chat_session_id", sid);
+    }
+    setSessionId(sid);
+
+    // Load or initialize messages
+    const savedMessages = localStorage.getItem("techtopia_chat_messages");
+    if (savedMessages) {
+      setMessages(JSON.parse(savedMessages));
+    } else {
+      const initMessage = { id: Date.now(), text: `Hi there! 👋 Welcome to ${BRAND_NAME}. How can we help you today?`, sender: 'bot' };
+      setMessages([initMessage]);
+      localStorage.setItem("techtopia_chat_messages", JSON.stringify([initMessage]));
+    }
+  }, []);
+
+  useEffect(() => {
+    // Scroll to bottom when messages change
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+    // Update localStorage
+    if (messages.length > 0) {
+      localStorage.setItem("techtopia_chat_messages", JSON.stringify(messages));
+    }
+  }, [messages, isOpen]);
+
+  const saveMessageToDB = async (text, sender) => {
+    if (!sessionId) return;
+    try {
+      await supabase.from('chatbot_messages').insert([{
+        session_id: sessionId,
+        message: text,
+        sender: sender
+      }]);
+    } catch (e) {
+      console.error("Failed to save chat message", e);
+    }
+  };
+
+  const getAutoResponse = (text) => {
+    const lower = text.toLowerCase();
+    if (lower.includes("pricing") || lower.includes("cost") || lower.includes("how much")) {
+      return "Our pricing depends on the scope of the project. We have Starter, Growth, and Premium packages. Check out our Pricing page or book a scoping consultation!";
+    }
+    if (lower.includes("contact") || lower.includes("phone") || lower.includes("email")) {
+      return "You can reach us at info@techtopiagh.com or call +233 2004 46877.";
+    }
+    if (lower.includes("support") || lower.includes("help") || lower.includes("ticket")) {
+      return "If you are an existing client, please log in to the Client Portal to submit a support ticket. Our SLA guarantees a quick response!";
+    }
+    if (lower.includes("service") || lower.includes("do you do")) {
+      return "We offer Web & App Development, UI/UX Design, IT Support, and Digital Marketing. What are you looking for?";
+    }
+    return "Thanks for reaching out! One of our experts will get back to you shortly. Feel free to browse our website in the meantime.";
   };
 
   const handleSend = async (e) => {
@@ -50,17 +90,17 @@ export default function ChatbotFAB() {
     setInputValue("");
 
     // Save user message to Supabase
-    saveMessageWithUUID(userText, 'user');
+    saveMessageToDB(userText, 'user');
 
-    // Simulate bot reply
+    // Simulate bot typing and auto-reply
     setTimeout(() => {
-      const botText = "Thanks for reaching out! One of our experts will get back to you shortly. In the meantime, feel free to browse our services.";
+      const botText = getAutoResponse(userText);
       setMessages(prev => [...prev, {
-        id: Date.now(),
+        id: Date.now() + 1,
         text: botText,
         sender: 'bot'
       }]);
-      saveMessageWithUUID(botText, 'bot');
+      saveMessageToDB(botText, 'bot');
     }, 1000);
   };
 
@@ -95,6 +135,7 @@ export default function ChatbotFAB() {
                   </div>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </div>
 
             {/* Input Area */}

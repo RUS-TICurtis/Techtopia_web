@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Calendar as CalendarIcon, Clock, ChevronRight, ChevronLeft, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { supabase } from "../../lib/supabase";
@@ -7,6 +7,8 @@ export default function BookingWidget() {
   const [step, setStep] = useState(1);
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
+  const [bookedTimes, setBookedTimes] = useState([]);
+  const [isLoadingTimes, setIsLoadingTimes] = useState(false);
   
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -14,25 +16,71 @@ export default function BookingWidget() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
-  // Mock calendar data
-  const dates = Array.from({ length: 7 }, (_, i) => {
+  // Generate next 14 days for the calendar slider
+  const dates = Array.from({ length: 14 }, (_, i) => {
     const d = new Date();
     d.setDate(d.getDate() + i + 1);
     return d;
   });
 
-  const times = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+  const allTimes = ["09:00 AM", "10:30 AM", "01:00 PM", "02:30 PM", "04:00 PM"];
+
+  useEffect(() => {
+    if (selectedDate) {
+      checkAvailability(selectedDate);
+    } else {
+      setBookedTimes([]);
+    }
+  }, [selectedDate]);
+
+  const checkAvailability = async (date) => {
+    setIsLoadingTimes(true);
+    const dateStr = date.toISOString().split('T')[0];
+    
+    try {
+      const { data, error } = await supabase
+        .from('bookings')
+        .select('time')
+        .eq('date', dateStr);
+
+      if (!error && data) {
+        setBookedTimes(data.map(b => b.time));
+      } else {
+        setBookedTimes([]);
+      }
+    } catch (e) {
+      console.error(e);
+      setBookedTimes([]);
+    } finally {
+      setIsLoadingTimes(false);
+    }
+  };
 
   const handleBook = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMsg("");
 
+    const dateStr = selectedDate.toISOString().split('T')[0];
+
+    // Double check availability before inserting
+    const { data: existing } = await supabase
+      .from('bookings')
+      .select('id')
+      .eq('date', dateStr)
+      .eq('time', selectedTime);
+
+    if (existing && existing.length > 0) {
+      setErrorMsg("This time slot was just booked by someone else. Please select another time.");
+      setIsSubmitting(false);
+      return;
+    }
+
     const { error } = await supabase.from('bookings').insert([{
       name,
       email,
       details,
-      date: selectedDate.toISOString().split('T')[0],
+      date: dateStr,
       time: selectedTime,
     }]);
 
@@ -68,20 +116,26 @@ export default function BookingWidget() {
             <h4 className="text-sm font-semibold text-slate-800 mb-3">1. Select a Date & Time</h4>
             
             <div className="flex gap-2 overflow-x-auto pb-4 mb-4 snap-x hide-scrollbar">
-              {dates.map((date, i) => (
-                <button
-                  key={i}
-                  onClick={() => { setSelectedDate(date); setSelectedTime(null); }}
-                  className={`flex-shrink-0 snap-center w-16 p-2 rounded-2xl border-2 transition-all flex flex-col items-center justify-center ${
-                    selectedDate?.toDateString() === date.toDateString() 
-                      ? 'border-primary bg-primary/5 text-primary' 
-                      : 'border-slate-100 text-slate-500 hover:border-slate-200'
-                  }`}
-                >
-                  <span className="text-xs font-semibold uppercase">{date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                  <span className="text-xl font-bold">{date.getDate()}</span>
-                </button>
-              ))}
+              {dates.map((date, i) => {
+                // Avoid weekends
+                const day = date.getDay();
+                if (day === 0 || day === 6) return null;
+
+                return (
+                  <button
+                    key={i}
+                    onClick={() => { setSelectedDate(date); setSelectedTime(null); }}
+                    className={`flex-shrink-0 snap-center w-16 p-2 rounded-2xl border-2 transition-all flex flex-col items-center justify-center ${
+                      selectedDate?.toDateString() === date.toDateString() 
+                        ? 'border-primary bg-primary/5 text-primary' 
+                        : 'border-slate-100 text-slate-500 hover:border-slate-200'
+                    }`}
+                  >
+                    <span className="text-xs font-semibold uppercase">{date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                    <span className="text-xl font-bold">{date.getDate()}</span>
+                  </button>
+                )
+              })}
             </div>
 
             {selectedDate && (
@@ -90,19 +144,28 @@ export default function BookingWidget() {
                 animate={{ opacity: 1, height: 'auto' }}
                 className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-6"
               >
-                {times.map((time) => (
-                  <button
-                    key={time}
-                    onClick={() => setSelectedTime(time)}
-                    className={`py-2 px-3 rounded-xl border text-sm font-semibold transition-all flex items-center justify-center gap-1.5 ${
-                      selectedTime === time 
-                        ? 'bg-primary border-primary text-white shadow-md' 
-                        : 'bg-white border-slate-200 text-slate-600 hover:border-primary'
-                    }`}
-                  >
-                    {time}
-                  </button>
-                ))}
+                {isLoadingTimes ? (
+                  <div className="col-span-full py-4 text-center text-sm text-slate-400">Checking availability...</div>
+                ) : (
+                  allTimes.map((time) => {
+                    const isBooked = bookedTimes.includes(time);
+                    return (
+                      <button
+                        key={time}
+                        disabled={isBooked}
+                        onClick={() => setSelectedTime(time)}
+                        className={`py-2 px-3 rounded-xl border text-sm font-semibold transition-all flex items-center justify-center gap-1.5 ${
+                          isBooked ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed line-through' :
+                          selectedTime === time 
+                            ? 'bg-primary border-primary text-white shadow-md' 
+                            : 'bg-white border-slate-200 text-slate-600 hover:border-primary'
+                        }`}
+                      >
+                        {time}
+                      </button>
+                    )
+                  })
+                )}
               </motion.div>
             )}
 
