@@ -1,7 +1,5 @@
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
-
 CREATE TABLE public.tickets (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
     title TEXT NOT NULL,
     status TEXT NOT NULL DEFAULT 'open',
@@ -9,7 +7,7 @@ CREATE TABLE public.tickets (
 );
 
 CREATE TABLE public.bookings (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     details TEXT,
@@ -20,7 +18,7 @@ CREATE TABLE public.bookings (
 );
 
 CREATE TABLE public.contact_inquiries (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     name TEXT NOT NULL,
     email TEXT NOT NULL,
     message TEXT NOT NULL,
@@ -28,7 +26,7 @@ CREATE TABLE public.contact_inquiries (
 );
 
 CREATE TABLE public.chatbot_messages (
-    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
     session_id UUID NOT NULL,
     message TEXT NOT NULL,
     sender TEXT NOT NULL,

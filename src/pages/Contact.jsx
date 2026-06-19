@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Send, CheckCircle2, Sparkles } from "lucide-react";
+import { Phone, Mail, MapPin, Send, CheckCircle2, Sparkles, AlertCircle } from "lucide-react";
 import { CORE_PHONE, CORE_EMAIL, CORE_HOURS, CORE_LOCATION, BRAND_NAME } from "../types";
+import { supabase } from "../lib/supabase";
 import BookingWidget from "../components/interactive/BookingWidget";
 import PageBannerBg from "../components/interactive/PageBannerBg";
 
@@ -18,6 +19,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   // Prefill the subject/message if navigated from pricing card
   useEffect(() => {
@@ -40,20 +42,29 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitError("");
 
-    // Simulated API timeout
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const { error } = await supabase.from('contact_inquiries').insert([
+      {
+        name: formData.name,
+        email: formData.email,
+        message: `Subject: ${formData.subject}\n\n${formData.message}`
+      }
+    ]);
 
-    console.log("Submitting contact form directly via callback hook:", formData);
-    
     setIsSubmitting(false);
-    setSubmitSuccess(true);
-    setFormData({
-      name: "",
-      email: "",
-      subject: "",
-      message: ""
-    });
+
+    if (error) {
+      setSubmitError("Failed to send message. Please try again later.");
+    } else {
+      setSubmitSuccess(true);
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+      });
+    }
   };
 
   return (
@@ -174,6 +185,12 @@ export default function Contact() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {submitError && (
+                    <div className="bg-red-50 border border-red-200 text-red-600 p-4 rounded-xl flex items-start space-x-3 text-sm">
+                      <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                      <span>{submitError}</span>
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>

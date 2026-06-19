@@ -46,10 +46,7 @@ export default function Projects() {
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => {
-                      // Fallback image if file not found
-                      e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
-                    }}
+                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/600x400/f8fafc/94a3b8?text=Project+Image"; }}
                   />
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm border border-slate-100 text-primary text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
                     {project.category}

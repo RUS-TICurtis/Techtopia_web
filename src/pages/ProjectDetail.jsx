@@ -90,10 +90,8 @@ export default function ProjectDetail() {
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
-                }}
+                className="w-full h-[300px] md:h-[500px] object-cover"
+                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/800x500/f8fafc/94a3b8?text=Project+Image"; }}
               />
             </div>
 
