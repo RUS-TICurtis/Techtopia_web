@@ -1,14 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Send, Facebook, Instagram, Linkedin, MessageSquareCode } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Facebook, Instagram, Linkedin, MessageSquareCode, CheckCircle2 } from "lucide-react";
 import { BRAND_NAME, CORE_EMAIL, CORE_PHONE, CORE_LOCATION } from "../types";
+import { supabase } from "../lib/supabase";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterState, setNewsletterState] = useState("idle"); // idle | loading | success | duplicate | error
 
-  const handleNewsletterSubmit = (e) => {
+  const handleNewsletterSubmit = async (e) => {
     e.preventDefault();
-    alert("Thank you for subscribing to our newsletter!");
+    if (!newsletterEmail.trim()) return;
+    setNewsletterState("loading");
+
+    const { error } = await supabase
+      .from('newsletter_subscribers')
+      .insert([{ email: newsletterEmail.trim().toLowerCase() }]);
+
+    if (!error) {
+      setNewsletterState("success");
+      setNewsletterEmail("");
+    } else if (error.code === '23505') {
+      // Unique constraint violation — already subscribed
+      setNewsletterState("duplicate");
+    } else {
+      setNewsletterState("error");
+    }
   };
 
   return (
@@ -74,7 +92,7 @@ export default function Footer() {
               <a
                 href="https://leads.techtopiagh.online/authentication/login"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 className="hover:text-primary transition-colors text-slate-400 flex items-center space-x-1"
               >
                 <span>&rsaquo; Dashboard</span>
@@ -131,21 +149,37 @@ export default function Footer() {
           <p className="text-xs leading-relaxed text-slate-400">
             Sign up for our weekly newsletter to get the latest tech insights and corporate updates direct from Accra.
           </p>
-          <form onSubmit={handleNewsletterSubmit} className="relative mt-2">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="bg-slate-800 text-slate-200 text-xs rounded-xl px-4 py-3 w-full focus:outline-none focus:ring-1 focus:ring-primary border border-transparent placeholder-slate-500"
-              required
-            />
-            <button
-              type="submit"
-              className="absolute right-1 top-1 bg-primary text-white p-2 rounded-lg hover:bg-primary/95 transition-colors cursor-pointer"
-              aria-label="Subscribe"
-            >
-              <Send className="w-3.5 h-3.5" />
-            </button>
-          </form>
+          {newsletterState === "success" ? (
+            <div className="flex items-center gap-2 text-emerald-400 text-xs font-semibold py-3">
+              <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
+              <span>You're subscribed! Welcome to the Techtopia community.</span>
+            </div>
+          ) : (
+            <form onSubmit={handleNewsletterSubmit} className="relative mt-2">
+              <input
+                type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="bg-slate-800 text-slate-200 text-xs rounded-xl px-4 py-3 w-full focus:outline-none focus:ring-1 focus:ring-primary border border-transparent placeholder-slate-500"
+                required
+              />
+              <button
+                type="submit"
+                disabled={newsletterState === "loading"}
+                className="absolute right-1 top-1 bg-primary text-white p-2 rounded-lg hover:bg-primary/95 transition-colors cursor-pointer disabled:opacity-60"
+                aria-label="Subscribe"
+              >
+                <Send className="w-3.5 h-3.5" />
+              </button>
+              {newsletterState === "duplicate" && (
+                <p className="text-xs text-amber-400 mt-1.5">You're already subscribed!</p>
+              )}
+              {newsletterState === "error" && (
+                <p className="text-xs text-red-400 mt-1.5">Something went wrong. Please try again.</p>
+              )}
+            </form>
+          )}
 
           {/* Quick Contact Footer details */}
           <div className="pt-4 flex flex-col space-y-2 text-xs text-slate-400">

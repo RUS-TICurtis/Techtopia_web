@@ -50,6 +50,7 @@ export default function BeforeAfterSlider({
             alt={afterLabel} 
             className="w-full h-full object-cover"
             draggable={false}
+            loading="eager"
           />
           <span className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
             {afterLabel}
@@ -66,6 +67,7 @@ export default function BeforeAfterSlider({
             alt={beforeLabel} 
             className="w-full h-full object-cover filter grayscale opacity-80"
             draggable={false}
+            loading="eager"
           />
           <span className="absolute top-4 left-4 bg-slate-800 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
             {beforeLabel}

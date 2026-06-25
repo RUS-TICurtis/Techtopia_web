@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { Link } from "react-router-dom";
 import { Cpu, ShieldCheck, Sparkles, PhoneCall, Compass, Check } from "lucide-react";
 import { SERVICES_CATALOGUE, PRICING_PLANS } from "../types";
@@ -223,6 +223,7 @@ export default function Services() {
               src="/assets/images/thumbs/laptop-man.png" 
               alt="Laptop Man" 
               className="max-h-48 object-contain animate-bounce-slow"
+              loading="lazy"
             />
           </div>
         </div>

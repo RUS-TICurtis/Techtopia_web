@@ -5,7 +5,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { BRAND_NAME } from "../types";
 import InteractiveMascot from "./interactive/InteractiveMascot";
-import BackgroundMascots from "./interactive/BackgroundMascots";
 import CircuitBackground from "./interactive/CircuitBackground";
 
 export default function Layout({ children }) {
@@ -65,7 +64,8 @@ export default function Layout({ children }) {
       {/* 2. INTERACTIVE MASCOTS & SPARKLES */}
       {!isMobile && !loading && (
         <>
-          {/* <BackgroundMascots /> */}
+          {/* TODO: BackgroundMascots is built but disabled — enable only after
+              profiling scroll performance impact on lower-end devices. */}
           <InteractiveMascot className="fixed bottom-6 left-6 z-[100]" />
         </>
       )}

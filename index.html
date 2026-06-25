@@ -10,6 +10,55 @@
     <title>Techtopia | IT Services & Software Development</title>
     <!-- Favicon -->
     <link rel="shortcut icon" href="/assets/images/logo/favicon.png" />
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://techtopiagh.com/#organization",
+            "name": "Techtopia",
+            "url": "https://techtopiagh.com/",
+            "logo": "https://techtopiagh.com/assets/images/logo/Full%20logo%20(black).svg",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+233 2004 46877",
+              "contactType": "customer service",
+              "email": "info@techtopiagh.com",
+              "areaServed": ["GH", "Africa"],
+              "availableLanguage": ["English"]
+            },
+            "sameAs": [
+              "https://www.facebook.com/profile.php?id=61557210615278",
+              "https://www.instagram.com/techtopia_gh/",
+              "https://www.linkedin.com/company/software-technology-agency/"
+            ]
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://techtopiagh.com/#localBusiness",
+            "name": "Techtopia",
+            "image": "https://techtopiagh.com/assets/images/logo/Full%20logo%20(black).svg",
+            "url": "https://techtopiagh.com/",
+            "telephone": "+233 2004 46877",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Cantoments",
+              "addressLocality": "Accra",
+              "addressRegion": "Greater Accra Region",
+              "addressCountry": "GH"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+              "opens": "09:00",
+              "closes": "17:00"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

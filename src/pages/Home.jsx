@@ -210,6 +210,7 @@ export default function Home() {
               src="/assets/images/thumbs/laptop-man.png" 
               alt="Laptop Man" 
               className="max-h-56 object-contain animate-bounce-slow"
+              loading="lazy"
             />
           </div>
         </div>

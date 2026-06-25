@@ -108,6 +108,7 @@ export default function Hero() {
               src="/assets/images/thumbs/banner-five-thumb.png" 
               alt="Dashboard Thumbnail" 
               className="w-full h-auto drop-shadow-2xl rounded-t-2xl md:rounded-t-[3rem]"
+              loading="lazy"
               onError={(e) => {
                 e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
               }}

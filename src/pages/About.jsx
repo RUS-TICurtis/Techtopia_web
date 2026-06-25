@@ -117,6 +117,7 @@ export default function About() {
                   src={`/assets/images/thumbs/about-banner-img${num}.png`} 
                   alt={`Office Showcase ${num}`} 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                   onError={(e) => {
                     e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
                   }}
@@ -237,7 +238,7 @@ export default function About() {
           <div className="flex flex-wrap justify-center gap-6">
             {BRANDS.map((brand) => (
               <span key={brand.name} className="inline-flex items-center space-x-1.5 px-4 py-2 border border-slate-100 shadow-sm rounded-xl bg-white text-xs font-semibold text-slate-600">
-                <img src={brand.logo} alt={brand.name} className="h-4 w-auto object-contain mr-1" />
+                <img src={brand.logo} alt={brand.name} className="h-4 w-auto object-contain mr-1" loading="lazy" />
                 <span>{brand.name}</span>
               </span>
             ))}
