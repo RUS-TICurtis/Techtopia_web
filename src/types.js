@@ -20,14 +20,14 @@ export const MARQUEE_ITEMS = [
 ];
 
 export const BRANDS = [
-  { name: "Fortress", logo: "/assets/images/thumbs/brand-three-img1.png" },
+  { name: "Fortress Renewables", logo: "/assets/images/thumbs/custom-logo-fortress.png" },
+  { name: "AHG Properties", logo: "/assets/images/thumbs/custom-logo-ahg.png" },
+  { name: "Everybody Matters", logo: "/assets/images/thumbs/custom-logo-everybody.png" },
+  { name: "Ellys Jewelry", logo: "/assets/images/thumbs/custom-logo-ellys.png" },
   { name: "EBS", logo: "/assets/images/thumbs/brand-three-img2.png" },
   { name: "EBM", logo: "/assets/images/thumbs/brand-three-img3.png" },
-  { name: "Pelia", logo: "/assets/images/thumbs/brand-three-img4.png" },
-  { name: "AHG", logo: "/assets/images/thumbs/brand-three-img5.png" },
   { name: "DTM", logo: "/assets/images/thumbs/brand-three-img6.png" },
-  { name: "DTL", logo: "/assets/images/thumbs/brand-three-img7.png" },
-  { name: "Ellys Jewelry", logo: "/assets/images/thumbs/brand-three-img1.png" }
+  { name: "DTL", logo: "/assets/images/thumbs/brand-three-img7.png" }
 ];
 
 export const CORE_VALUES = [

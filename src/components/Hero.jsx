@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { Sparkles, ChevronRight, ArrowRight } from "lucide-react";
 import { BRAND_NAME } from "../types";
 
 export default function Hero() {
+  const slideshowImages = [
+    "/assets/images/thumbs/custom-hero-banner.png",
+    "/assets/images/thumbs/service-details-img.png",
+    "/assets/images/thumbs/project-details-img2.png",
+    "/assets/images/thumbs/automation-thumb.png",
+    "/assets/images/thumbs/workplace-tab-thumb.png"
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slideshowImages.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, []);
+
   // Stagger configurations for child elements
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -99,20 +115,36 @@ export default function Hero() {
             </Link>
           </motion.div>
 
-          {/* Hero Thumbnail */}
+          {/* Hero Thumbnail Slideshow */}
           <motion.div 
             variants={imageVariants}
-            className="inline-flex justify-center w-full max-w-5xl px-4"
+            className="inline-flex justify-center w-full max-w-5xl px-4 relative mt-10"
           >
-            <img 
-              src="/assets/images/thumbs/banner-five-thumb.png" 
-              alt="Dashboard Thumbnail" 
-              className="w-full h-auto drop-shadow-2xl rounded-t-2xl md:rounded-t-[3rem]"
-              loading="lazy"
-              onError={(e) => {
-                e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
-              }}
-            />
+            {/* Floating Techtopia Brand Badge */}
+            <div className="absolute -top-6 md:-top-8 z-20 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md shadow-xl px-5 py-2 md:px-6 md:py-3 rounded-full border border-slate-100 animate-bounce-slow flex items-center gap-3">
+              <img src="/assets/images/logo/Logomark.png" alt="Techtopia Mark" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+              <span className="font-extrabold text-slate-800 tracking-tight text-base md:text-lg">Techtopia</span>
+            </div>
+
+            <div className="w-full relative aspect-[4/3] md:aspect-[16/9] rounded-t-2xl md:rounded-t-[3rem] overflow-hidden drop-shadow-2xl bg-slate-50 border-t-4 border-l border-r border-slate-200">
+              <AnimatePresence mode="popLayout">
+                <motion.img 
+                  key={currentSlide}
+                  src={slideshowImages[currentSlide]}
+                  alt={`Techtopia application view ${currentSlide + 1}`}
+                  className="w-full h-full object-contain absolute inset-0 p-4 md:p-8"
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  loading="eager"
+                  draggable={false}
+                  onError={(e) => {
+                    e.currentTarget.src = "/assets/images/thumbs/coming-soon-img.png";
+                  }}
+                />
+              </AnimatePresence>
+            </div>
           </motion.div>
         </motion.div>
       </div>
