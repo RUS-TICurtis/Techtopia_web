@@ -3,6 +3,7 @@ import { Lock, FileText, CheckCircle, Clock, Plus, Activity } from "lucide-react
 import { motion } from "motion/react";
 import { BRAND_NAME } from "../types";
 import { supabase } from "../lib/supabase";
+import { Helmet } from "react-helmet-async";
 
 export default function Portal() {
   const [session, setSession] = useState(null);
@@ -17,6 +18,9 @@ export default function Portal() {
   const [tickets, setTickets] = useState([]);
   const [projects, setProjects] = useState([]);
   const [slas, setSlas] = useState([]);
+  const [showTicketForm, setShowTicketForm] = useState(false);
+  const [newTicketTitle, setNewTicketTitle] = useState("");
+  const [isCreatingTicket, setIsCreatingTicket] = useState(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -109,14 +113,17 @@ export default function Portal() {
   };
 
   const handleCreateTicket = async () => {
-    const title = prompt("Enter ticket issue description:");
-    if (!title) return;
+    if (!newTicketTitle.trim()) return;
+    setIsCreatingTicket(true);
 
     const { error } = await supabase.from('tickets').insert([
-      { title, user_id: session.user.id }
+      { title: newTicketTitle.trim(), user_id: session.user.id }
     ]);
-    
+
+    setIsCreatingTicket(false);
     if (!error) {
+      setNewTicketTitle("");
+      setShowTicketForm(false);
       fetchDashboardData(session.user.id);
     } else {
       alert("Error creating ticket: " + error.message);
@@ -124,12 +131,24 @@ export default function Portal() {
   };
 
   if (loading) {
-    return <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 font-semibold">Loading Portal...</div>;
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 font-semibold">
+        <Helmet>
+          <title>Loading... | {BRAND_NAME} Client Portal</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
+        Loading Portal...
+      </div>
+    );
   }
 
   if (!session) {
     return (
       <div className="min-h-[70vh] flex items-center justify-center bg-slate-50 py-12 px-6">
+        <Helmet>
+          <title>Client Portal Login | {BRAND_NAME}</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -286,9 +305,42 @@ export default function Portal() {
                 )}
               </div>
 
-              <button onClick={handleCreateTicket} className="w-full bg-white border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2">
-                <Plus className="w-4 h-4" /> Submit New Ticket
-              </button>
+              {/* Inline ticket creation form */}
+              {showTicketForm ? (
+                <div className="space-y-2">
+                  <input
+                    type="text"
+                    value={newTicketTitle}
+                    onChange={(e) => setNewTicketTitle(e.target.value)}
+                    onKeyDown={(e) => e.key === "Enter" && handleCreateTicket()}
+                    placeholder="Briefly describe the issue..."
+                    autoFocus
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-primary/30 focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                  />
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleCreateTicket}
+                      disabled={isCreatingTicket || !newTicketTitle.trim()}
+                      className="flex-1 bg-primary text-white hover:bg-primary/90 transition-colors py-2.5 rounded-xl font-semibold text-sm disabled:opacity-60"
+                    >
+                      {isCreatingTicket ? "Submitting..." : "Submit Ticket"}
+                    </button>
+                    <button
+                      onClick={() => { setShowTicketForm(false); setNewTicketTitle(""); }}
+                      className="px-4 py-2.5 rounded-xl font-semibold text-sm text-slate-500 border border-slate-200 hover:bg-slate-50 transition-colors"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <button
+                  onClick={() => setShowTicketForm(true)}
+                  className="w-full bg-white border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
+                >
+                  <Plus className="w-4 h-4" /> Submit New Ticket
+                </button>
+              )}
             </div>
           </div>
         </div>

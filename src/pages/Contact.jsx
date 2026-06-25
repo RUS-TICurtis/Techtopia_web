@@ -5,8 +5,14 @@ import { CORE_PHONE, CORE_EMAIL, CORE_HOURS, CORE_LOCATION, BRAND_NAME } from ".
 import { supabase } from "../lib/supabase";
 import BookingWidget from "../components/interactive/BookingWidget";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Contact() {
+  const seo = useSEO({
+    title: "Contact Techtopia | Get a Free IT Consultation in Accra, Ghana",
+    description: "Reach out to Techtopia for a free consultation. We offer IT services, software development, and digital marketing in Accra, Ghana. Call or email us today.",
+    canonical: "/contact"
+  });
   const [searchParams] = useSearchParams();
   const preSelectedPackage = searchParams.get("package");
 
@@ -69,6 +75,7 @@ export default function Contact() {
 
   return (
     <div className="w-full">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

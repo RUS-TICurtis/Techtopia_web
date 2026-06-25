@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { PROJECTS } from "../types";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Projects() {
+  const seo = useSEO({
+    title: "Our Projects | Web, App & Digital Solutions in Ghana",
+    description: "Browse Techtopia's portfolio of completed projects — from real estate booking platforms and e-commerce stores to renewable energy dashboards and NGO campaigns.",
+    canonical: "/projects"
+  });
   return (
     <div className="w-full bg-neutral-light">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

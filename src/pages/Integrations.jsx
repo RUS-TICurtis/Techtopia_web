@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Cpu, Layers } from "lucide-react";
 import { INTEGRATIONS, BRAND_NAME } from "../types";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Integrations() {
+  const seo = useSEO({
+    title: "App Integrations | Connect Your Business Tools with Techtopia",
+    description: "Techtopia integrates your systems with Salesforce, Shopify, Slack, Google Analytics, Mailchimp, Zapier, Stripe, and more for seamless business automation.",
+    canonical: "/integrations"
+  });
   return (
     <div className="w-full bg-neutral-light">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

@@ -2,12 +2,19 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { PhoneCall, CheckCircle, Clock, Calendar, ArrowRight, Laptop, Sparkles, Volume2 } from "lucide-react";
 import { SERVICES_CATALOGUE, CORE_PHONE, CORE_HOURS, BRAND_NAME } from "../types";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();
 
   // Locate the specific service item data based on the parameters
   const service = SERVICES_CATALOGUE.find((item) => item.id === serviceId);
+
+  const seo = useSEO({
+    title: service ? `${service.title} | Techtopia Ghana IT Services` : "Service | Techtopia",
+    description: service ? service.description.slice(0, 155) + "..." : "Explore Techtopia's IT services in Ghana.",
+    canonical: service ? `/services/${serviceId}` : "/services"
+  });
 
   // If the parameter is invalid, redirect back to the main services panel
   if (!service) {
@@ -24,6 +31,7 @@ export default function ServiceDetail() {
 
   return (
     <div className="w-full">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

@@ -4,8 +4,14 @@ import { Cpu, ShieldCheck, Sparkles, PhoneCall, Compass, Check } from "lucide-re
 import { SERVICES_CATALOGUE, PRICING_PLANS } from "../types";
 import ServiceCard from "../components/ServiceCard";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Services() {
+  const seo = useSEO({
+    title: "IT Services & Solutions | Software, Design, Support & Marketing",
+    description: "Explore Techtopia's full range of services — custom software development, UI/UX design, IT support, and digital marketing tailored for businesses in Ghana.",
+    canonical: "/services"
+  });
   const diffs = [
     {
       title: "Tailored Solutions, Not Templates",
@@ -27,6 +33,7 @@ export default function Services() {
 
   return (
     <div className="w-full">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

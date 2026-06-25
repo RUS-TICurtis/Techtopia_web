@@ -4,10 +4,17 @@ import { Check, HelpCircle, ArrowRight } from "lucide-react";
 import { PRICING_PLANS, BRAND_NAME } from "../types";
 import RoiCalculator from "../components/interactive/RoiCalculator";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Pricing() {
+  const seo = useSEO({
+    title: "Pricing Plans | Flexible IT Service Packages for Your Business",
+    description: "View Techtopia's Starter, Growth, and Premium service packages. Flexible, custom pricing for IT services, web development, and digital marketing in Ghana.",
+    canonical: "/pricing"
+  });
   return (
     <div className="w-full bg-neutral-light">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

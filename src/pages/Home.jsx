@@ -7,8 +7,16 @@ import Testimonial from "../components/Testimonial";
 import Hero from "../components/Hero";
 import PartnerCarousel from "../components/PartnerCarousel";
 import SmartEngagement from "../components/interactive/SmartEngagement";
+import { useSEO } from "../hooks/useSEO";
+
 
 export default function Home() {
+  const seo = useSEO({
+    title: "Tech Solutions Ghana | IT Services & Software Development in Accra",
+    description: "Techtopia offers top-tier IT services and software development solutions in Ghana. Partner with the best tech company for your business needs.",
+    canonical: "/"
+  });
+
   const steps = [
     {
       num: "01",
@@ -34,6 +42,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
+      {seo}
       {/* 1. HERO SECTION */}
       <Hero />
 

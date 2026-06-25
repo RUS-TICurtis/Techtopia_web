@@ -11,8 +11,14 @@ import {
   BRANDS,
   CORE_PHONE
 } from "../types";
+import { useSEO } from "../hooks/useSEO";
 
 export default function About() {
+  const seo = useSEO({
+    title: "About Techtopia | Ghana's Premier IT Services Company",
+    description: "Learn about Techtopia — Accra's leading technology solutions provider. Meet our expert team, our values, and our mission to drive digital transformation in Ghana.",
+    canonical: "/about"
+  });
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const toggleFaq = (index) => {
@@ -21,6 +27,7 @@ export default function About() {
 
   return (
     <div className="w-full">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

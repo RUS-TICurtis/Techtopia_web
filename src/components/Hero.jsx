@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronRight, ArrowRight } from "lucide-react";
 import { BRAND_NAME } from "../types";
 
 export default function Hero() {
@@ -66,7 +66,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-neutral-dark leading-[1.1] mb-6 max-w-4xl mx-auto"
           >
-            Invest with confidence <br className="hidden md:block"/> Grow your future
+            Ghana&apos;s Leading <br className="hidden md:block" />
+            <span className="text-primary">Technology Solutions</span> Provider
           </motion.h1>
 
           {/* Persuasive Secondary Copy */}
@@ -74,20 +75,28 @@ export default function Hero() {
             variants={itemVariants}
             className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10 font-medium"
           >
-            In today's competitive business landscape, the demand for efficient and cost-effective IT solutions from {BRAND_NAME} has never been more critical.
+            From custom software and web development to IT support and digital marketing — {BRAND_NAME} partners with businesses across Accra to build, scale, and secure their digital future.
           </motion.p>
 
-          {/* Store Badges matching template */}
+          {/* CTA Buttons */}
           <motion.div 
             variants={itemVariants}
-            className="flex items-center justify-center gap-4 mb-14"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
           >
-            <a href="https://play.google.com/store/apps" className="hover:-translate-y-1 transition-transform duration-300 rounded-2xl shadow-lg hover:shadow-xl">
-              <img src="/assets/images/icons/store-two1.png" alt="App Store" className="h-12 md:h-14 w-auto" />
-            </a>
-            <a href="https://www.apple.com/app-store" className="hover:-translate-y-1 transition-transform duration-300 rounded-2xl shadow-lg hover:shadow-xl">
-              <img src="/assets/images/icons/store-two2.png" alt="Google Play" className="h-12 md:h-14 w-auto" />
-            </a>
+            <Link
+              to="/contact"
+              className="theme-btn flex items-center gap-2 group"
+            >
+              Get A Free Quote
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-4 px-6 rounded-none border border-slate-200 hover:border-primary bg-white"
+            >
+              Explore Our Services
+              <ChevronRight className="w-4 h-4" />
+            </Link>
           </motion.div>
 
           {/* Hero Thumbnail */}

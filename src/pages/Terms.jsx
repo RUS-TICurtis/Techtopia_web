@@ -3,10 +3,17 @@ import { Link } from "react-router-dom";
 import { ShieldCheck, Mail, MapPin, Phone } from "lucide-react";
 import { CORE_EMAIL, CORE_PHONE, CORE_LOCATION, BRAND_NAME } from "../types";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Terms() {
+  const seo = useSEO({
+    title: "Terms & Privacy Policy | Techtopia Ghana",
+    description: "Read Techtopia's terms of service and privacy policy. We are committed to transparency, data security, and ethical practices for all our clients in Ghana.",
+    canonical: "/terms"
+  });
   return (
     <div className="w-full">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

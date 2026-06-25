@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MessageSquare, X, Send } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
-import { BRAND_NAME } from "../../types";
+import { BRAND_NAME, CORE_EMAIL, CORE_PHONE } from "../../types";
 import { supabase } from "../../lib/supabase";
 
 export default function ChatbotFAB() {
@@ -65,19 +65,29 @@ export default function ChatbotFAB() {
 
   const getAutoResponse = (text) => {
     const lower = text.toLowerCase();
-    if (lower.includes("pricing") || lower.includes("cost") || lower.includes("how much")) {
-      return "Our pricing depends on the scope of the project. We have Starter, Growth, and Premium packages. Check out our Pricing page or book a scoping consultation!";
+    if (lower.includes("pricing") || lower.includes("cost") || lower.includes("how much") || lower.includes("quote")) {
+      return "Our pricing depends on your project scope. We offer Starter, Growth, and Premium packages — all custom-quoted. Visit our Pricing page or drop us a message at " + CORE_EMAIL + " for a free estimate!";
     }
-    if (lower.includes("contact") || lower.includes("phone") || lower.includes("email")) {
-      return "You can reach us at info@techtopiagh.com or call +233 2004 46877.";
+    if (lower.includes("contact") || lower.includes("phone") || lower.includes("email") || lower.includes("reach")) {
+      return `You can reach us at ${CORE_EMAIL} or call ${CORE_PHONE}. We're available Mon–Fri, 9am–5pm (GMT).`;
     }
-    if (lower.includes("support") || lower.includes("help") || lower.includes("ticket")) {
-      return "If you are an existing client, please log in to the Client Portal to submit a support ticket. Our SLA guarantees a quick response!";
+    if (lower.includes("support") || lower.includes("ticket") || lower.includes("issue") || lower.includes("problem")) {
+      return "For existing clients, please log in to the Client Portal to submit a support ticket — our team monitors it closely. Not a client yet? Email us at " + CORE_EMAIL;
     }
-    if (lower.includes("service") || lower.includes("do you do")) {
-      return "We offer Web & App Development, UI/UX Design, IT Support, and Digital Marketing. What are you looking for?";
+    if (lower.includes("service") || lower.includes("what do you") || lower.includes("do you do") || lower.includes("offer")) {
+      return "We offer: ✅ Web & App Development ✅ UI/UX & Brand Design ✅ IT Support & Infrastructure ✅ Digital Marketing. Which one interests you?";
     }
-    return "Thanks for reaching out! One of our experts will get back to you shortly. Feel free to browse our website in the meantime.";
+    if (lower.includes("location") || lower.includes("where") || lower.includes("office") || lower.includes("accra")) {
+      return "We're based in Accra, Ghana and serve clients remotely across Africa and globally. We can set up a virtual consultation anytime!";
+    }
+    if (lower.includes("project") || lower.includes("portfolio") || lower.includes("work") || lower.includes("example")) {
+      return "Check out our Projects page to see case studies from clients like AHG Properties, Ellys Jewelry, Fortress Renewables, and Everybody Matters Foundation!";
+    }
+    if (lower.includes("urgent") || lower.includes("asap") || lower.includes("emergency")) {
+      return `For urgent matters, please call us directly at ${CORE_PHONE}. We'll do our best to assist you right away.`;
+    }
+    // Human handoff fallback
+    return `Thanks for reaching out to ${BRAND_NAME}! 🙂 Our team will review your message and get back to you within 1 business day. For faster assistance, email us directly at ${CORE_EMAIL} or call ${CORE_PHONE}.`;
   };
 
   const handleSend = async (e) => {

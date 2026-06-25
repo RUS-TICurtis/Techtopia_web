@@ -4,8 +4,14 @@ import { motion, AnimatePresence } from "motion/react";
 import { Plus, Minus, HelpCircle, PhoneCall, Mail } from "lucide-react";
 import { FAQS, CORE_PHONE, CORE_EMAIL, BRAND_NAME } from "../types";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function Faq() {
+  const seo = useSEO({
+    title: "FAQ & Support | Common IT Questions Answered by Techtopia",
+    description: "Get answers to frequently asked questions about Techtopia's IT services, project timelines, support, and software development process in Ghana.",
+    canonical: "/faq"
+  });
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleIndex = (index) => {
@@ -14,6 +20,7 @@ export default function Faq() {
 
   return (
     <div className="w-full bg-neutral-light">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />

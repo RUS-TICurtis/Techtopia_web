@@ -4,6 +4,7 @@ import { ArrowLeft, Clock, Award, ShieldCheck, HelpCircle } from "lucide-react";
 import { PROJECTS, BRAND_NAME, CORE_PHONE } from "../types";
 import BeforeAfterSlider from "../components/interactive/BeforeAfterSlider";
 import PageBannerBg from "../components/interactive/PageBannerBg";
+import { useSEO } from "../hooks/useSEO";
 
 export default function ProjectDetail() {
   const { projectId } = useParams();
@@ -11,12 +12,19 @@ export default function ProjectDetail() {
   // Find the exact project details based on the params
   const project = PROJECTS.find((item) => item.id === projectId);
 
+  const seo = useSEO({
+    title: project ? `${project.title} | Techtopia Project Case Study` : "Project | Techtopia",
+    description: project ? `${project.description} Impact: ${project.impact}` : "View Techtopia's project portfolio in Ghana.",
+    canonical: project ? `/projects/${projectId}` : "/projects"
+  });
+
   if (!project) {
     return <Navigate to="/projects" replace />;
   }
 
   return (
     <div className="w-full bg-neutral-light">
+      {seo}
       {/* 1. BREADCRUMB HEADER */}
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />
