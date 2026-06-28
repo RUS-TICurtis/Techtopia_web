@@ -5,9 +5,7 @@ import { chromium } from 'playwright';
   const page = await browser.newPage();
   
   page.on('console', msg => {
-    if (msg.type() === 'error') {
-      console.log('BROWSER_ERROR:', msg.text());
-    }
+    console.log('BROWSER_LOG:', msg.type(), msg.text());
   });
 
   page.on('pageerror', error => {
@@ -15,8 +13,22 @@ import { chromium } from 'playwright';
   });
 
   try {
-    await page.goto('http://127.0.0.1:3280', { waitUntil: 'networkidle' });
+    await page.goto('http://127.0.0.1:3282', { waitUntil: 'networkidle' });
     console.log('Page loaded successfully');
+    
+    await new Promise(r => setTimeout(r, 1000));
+    
+    // Check if vite-error-overlay exists in shadow DOM or light DOM
+    const viteError = await page.evaluate(() => {
+      const overlay = document.querySelector('vite-error-overlay');
+      if (overlay && overlay.shadowRoot) {
+        return overlay.shadowRoot.innerHTML;
+      }
+      return null;
+    });
+    if (viteError) {
+      console.log('VITE ERROR:', viteError);
+    }
     
     const rootHtml = await page.evaluate(() => {
       const root = document.getElementById('root');
