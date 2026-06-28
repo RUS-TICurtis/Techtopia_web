@@ -33,9 +33,9 @@ jobs:
       uses: treosh/lighthouse-ci-action@v11
       with:
         urls: |
-          http://localhost:3280/
+          http://127.0.0.1:3280/
         buildScript: npm run build
-        serverScript: npm run preview -- --port 3280
+        serverScript: npm run preview -- --port 3280 --host 127.0.0.1 --strictPort
         uploadArtifacts: true
         # Fail the build if Lighthouse scores are too low
         budgetPath: ./.github/lighthouse-budget.json
