@@ -6,11 +6,14 @@ import { BRAND_NAME } from "../types";
 
 export default function Hero() {
   const slideshowImages = [
-    "/assets/images/thumbs/custom-hero-banner.png",
+    "/assets/images/thumbs/app-download-thumb.png",
     "/assets/images/thumbs/service-details-img.png",
     "/assets/images/thumbs/project-details-img2.png",
     "/assets/images/thumbs/automation-thumb.png",
-    "/assets/images/thumbs/workplace-tab-thumb.png"
+    "/assets/images/thumbs/workplace-tab-thumb.png",
+    "/assets/images/thumbs/project-details-img1.png",
+    "/assets/images/thumbs/revenue-chart.png",
+    "/assets/images/thumbs/about-slide-img1.png"
   ];
   const [currentSlide, setCurrentSlide] = useState(0);
 

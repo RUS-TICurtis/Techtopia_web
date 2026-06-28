@@ -36,7 +36,7 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen overflow-x-hidden relative">
+    <div className="flex flex-col min-h-screen overflow-x-clip relative">
       <CircuitBackground />
 
       {/* 1. CUSTOM PRELOADER */}
