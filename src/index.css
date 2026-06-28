@@ -38,6 +38,8 @@
   --color-accent-purple: #7C3AED;
   --color-neutral-dark: #0F0D1D;
   --color-neutral-light: #F3F7FB;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
   /* Dynamic Theme Colors mapped to Tailwind classes */
   --color-theme-bg: var(--theme-bg);
@@ -47,17 +49,19 @@
   --color-theme-border: var(--theme-border);
 }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--theme-bg);
-  color: var(--theme-text);
-  transition: background-color 0.1s ease-out, color 0.1s ease-out;
-}
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--theme-bg);
+    color: var(--theme-text);
+    transition: background-color 0.1s ease-out, color 0.1s ease-out;
+  }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  color: var(--theme-heading);
-  transition: color 0.1s ease-out;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    color: var(--theme-heading);
+    transition: color 0.1s ease-out;
+  }
 }
 
 /* Custom animated cursor styles */

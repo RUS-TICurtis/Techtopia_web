@@ -36,8 +36,8 @@ export default function ServiceDetail() {
       <section className="bg-slate-900 text-white py-16 md:py-20 relative overflow-hidden">
         <PageBannerBg />
         <div className="max-w-7xl mx-auto px-6 relative z-1 text-center md:text-left">
-          <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-2">Service Details</span>
-          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-accent-purple drop-shadow-md">{service.title}</h1>
+          <span className="text-xs font-bold text-accent-purple uppercase tracking-widest block mb-2">Service Details</span>
+          <h1 className="text-3xl md:text-4xl font-extrabold tracking-tight text-white drop-shadow-md">{service.title}</h1>
           <div className="flex justify-center md:justify-start items-center space-x-2 text-xs font-semibold text-slate-400 mt-4">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span>&rsaquo;</span>
