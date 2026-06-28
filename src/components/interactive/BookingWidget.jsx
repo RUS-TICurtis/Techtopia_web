@@ -94,14 +94,14 @@ export default function BookingWidget() {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-6 md:p-8 shadow-xl border border-slate-100 max-w-lg mx-auto w-full">
-      <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-4">
+    <div className="bg-theme-surface rounded-3xl p-6 md:p-8 shadow-xl border border-theme-border max-w-lg mx-auto w-full">
+      <div className="flex items-center gap-3 mb-6 border-b border-theme-border pb-4">
         <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
           <CalendarIcon className="w-5 h-5 text-primary" />
         </div>
         <div>
-          <h3 className="font-bold text-slate-800">Scoping Consultation</h3>
-          <p className="text-xs text-slate-500">30 min • Free Video Call</p>
+          <h3 className="font-bold text-theme-heading">Scoping Consultation</h3>
+          <p className="text-xs text-theme-text">30 min • Free Video Call</p>
         </div>
       </div>
 
@@ -113,7 +113,7 @@ export default function BookingWidget() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
           >
-            <h4 className="text-sm font-semibold text-slate-800 mb-3">1. Select a Date & Time</h4>
+            <h4 className="text-sm font-semibold text-theme-heading mb-3">1. Select a Date & Time</h4>
             
             <div className="flex gap-2 overflow-x-auto pb-4 mb-4 snap-x hide-scrollbar">
               {dates.map((date, i) => {
@@ -128,7 +128,7 @@ export default function BookingWidget() {
                     className={`flex-shrink-0 snap-center w-16 p-2 rounded-2xl border-2 transition-all flex flex-col items-center justify-center ${
                       selectedDate?.toDateString() === date.toDateString() 
                         ? 'border-primary bg-primary/5 text-primary' 
-                        : 'border-slate-100 text-slate-500 hover:border-slate-200'
+                        : 'border-theme-border text-theme-text hover:border-theme-border'
                     }`}
                   >
                     <span className="text-xs font-semibold uppercase">{date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
@@ -155,10 +155,10 @@ export default function BookingWidget() {
                         disabled={isBooked}
                         onClick={() => setSelectedTime(time)}
                         className={`py-2 px-3 rounded-xl border text-sm font-semibold transition-all flex items-center justify-center gap-1.5 ${
-                          isBooked ? 'bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed line-through' :
+                          isBooked ? 'bg-theme-bg border-theme-border text-slate-300 cursor-not-allowed line-through' :
                           selectedTime === time 
                             ? 'bg-primary border-primary text-white shadow-md' 
-                            : 'bg-white border-slate-200 text-slate-600 hover:border-primary'
+                            : 'bg-theme-surface border-theme-border text-theme-text hover:border-primary'
                         }`}
                       >
                         {time}
@@ -186,10 +186,10 @@ export default function BookingWidget() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
           >
-            <button onClick={() => setStep(1)} className="flex items-center gap-1 text-xs font-semibold text-slate-400 hover:text-slate-600 mb-4">
+            <button onClick={() => setStep(1)} className="flex items-center gap-1 text-xs font-semibold text-slate-400 hover:text-theme-text mb-4">
               <ChevronLeft className="w-3 h-3" /> Back
             </button>
-            <h4 className="text-sm font-semibold text-slate-800 mb-4">2. Your Details</h4>
+            <h4 className="text-sm font-semibold text-theme-heading mb-4">2. Your Details</h4>
             
             {errorMsg && (
               <div className="mb-4 p-3 bg-red-50 border border-red-100 text-red-600 text-xs rounded-xl">
@@ -198,9 +198,9 @@ export default function BookingWidget() {
             )}
 
             <form onSubmit={handleBook} className="space-y-4">
-              <input type="text" required placeholder="Full Name" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
-              <input type="email" required placeholder="Work Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary" />
-              <textarea placeholder="Tell us about your project... (Optional)" value={details} onChange={e => setDetails(e.target.value)} rows={3} className="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary resize-none" />
+              <input type="text" required placeholder="Full Name" value={name} onChange={e => setName(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-theme-border text-sm focus:outline-none focus:border-primary" />
+              <input type="email" required placeholder="Work Email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 rounded-xl border border-theme-border text-sm focus:outline-none focus:border-primary" />
+              <textarea placeholder="Tell us about your project... (Optional)" value={details} onChange={e => setDetails(e.target.value)} rows={3} className="w-full px-4 py-3 rounded-xl border border-theme-border text-sm focus:outline-none focus:border-primary resize-none" />
               
               <button type="submit" disabled={isSubmitting} className="w-full theme-btn py-3 rounded-xl flex items-center justify-center disabled:opacity-70">
                 {isSubmitting ? "Confirming..." : "Confirm Booking"}
@@ -219,9 +219,9 @@ export default function BookingWidget() {
             <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-emerald-500" />
             </div>
-            <h3 className="font-bold text-xl text-neutral-dark mb-2">Booking Confirmed!</h3>
-            <p className="text-sm text-slate-500 mb-6">
-              You are scheduled for a Scoping Consultation on <strong className="text-slate-700">{selectedDate?.toLocaleDateString()} at {selectedTime}</strong>. A calendar invite has been sent to your email.
+            <h3 className="font-bold text-xl text-theme-heading mb-2">Booking Confirmed!</h3>
+            <p className="text-sm text-theme-text mb-6">
+              You are scheduled for a Scoping Consultation on <strong className="text-theme-heading">{selectedDate?.toLocaleDateString()} at {selectedTime}</strong>. A calendar invite has been sent to your email.
             </p>
             <button onClick={() => {setStep(1); setSelectedDate(null); setSelectedTime(null); setName(""); setEmail(""); setDetails("");}} className="text-sm font-semibold text-primary hover:underline">
               Book another session

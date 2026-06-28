@@ -15,11 +15,11 @@ export default function LeadMagnet() {
   return (
     <div className="bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 md:p-12 text-white shadow-xl relative overflow-hidden">
       {/* Decorative background circle */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-2xl" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-theme-surface/5 rounded-full -mr-20 -mt-20 blur-2xl" />
       
       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
         <div>
-          <span className="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+          <span className="inline-block px-3 py-1 bg-theme-surface/10 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
             Free Resource
           </span>
           <h2 className="text-3xl md:text-4xl font-black mb-4 leading-tight">
@@ -35,7 +35,7 @@ export default function LeadMagnet() {
           </ul>
         </div>
 
-        <div className="bg-white/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
+        <div className="bg-theme-surface/10 backdrop-blur-md p-6 rounded-2xl border border-white/20">
           {!submitted ? (
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               <h3 className="font-bold text-xl mb-2">Get Your Copy Instantly</h3>
@@ -48,12 +48,12 @@ export default function LeadMagnet() {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/5 border border-white/20 rounded-xl py-3 pl-10 pr-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all"
+                    className="w-full bg-theme-surface/5 border border-white/20 rounded-xl py-3 pl-10 pr-4 text-white placeholder:text-white/40 focus:outline-none focus:border-white focus:ring-1 focus:ring-white transition-all"
                     placeholder="name@company.com"
                   />
                 </div>
               </div>
-              <button type="submit" className="bg-white text-primary hover:bg-slate-50 font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors mt-2">
+              <button type="submit" className="bg-theme-surface text-primary hover:bg-theme-bg font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-colors mt-2">
                 <Download className="w-5 h-5" /> Download Blueprint
               </button>
               <p className="text-[10px] text-center text-white/50 mt-2">

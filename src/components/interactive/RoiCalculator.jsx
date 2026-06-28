@@ -13,13 +13,13 @@ export default function RoiCalculator() {
   const estimatedSavings = annualDowntimeCost - techtopiaCost;
 
   return (
-    <div className="bg-white rounded-3xl p-8 shadow-xl border border-slate-100 mt-12 mb-16">
+    <div className="bg-theme-surface rounded-3xl p-8 shadow-xl border border-theme-border mt-12 mb-16">
       <div className="text-center mb-10">
         <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 text-primary rounded-xl mb-4">
           <Calculator className="w-6 h-6" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-black text-neutral-dark">Calculate Your ROI</h2>
-        <p className="text-slate-500 mt-2 max-w-2xl mx-auto">
+        <h2 className="text-2xl md:text-3xl font-black text-theme-heading">Calculate Your ROI</h2>
+        <p className="text-theme-text mt-2 max-w-2xl mx-auto">
           See how much your business could save annually by switching to our proactive Managed IT Services, eliminating costly downtime.
         </p>
       </div>
@@ -29,7 +29,7 @@ export default function RoiCalculator() {
         <div className="space-y-8">
           <div>
             <div className="flex justify-between mb-2">
-              <label className="font-semibold text-slate-700 text-sm">Number of Employees</label>
+              <label className="font-semibold text-theme-heading text-sm">Number of Employees</label>
               <span className="font-bold text-primary">{employees}</span>
             </div>
             <input 
@@ -44,7 +44,7 @@ export default function RoiCalculator() {
 
           <div>
             <div className="flex justify-between mb-2">
-              <label className="font-semibold text-slate-700 text-sm">Average Hourly Cost per Employee ($)</label>
+              <label className="font-semibold text-theme-heading text-sm">Average Hourly Cost per Employee ($)</label>
               <span className="font-bold text-primary">${hourlyRate}</span>
             </div>
             <input 
@@ -59,7 +59,7 @@ export default function RoiCalculator() {
 
           <div>
             <div className="flex justify-between mb-2">
-              <label className="font-semibold text-slate-700 text-sm">IT Downtime Hours / Month</label>
+              <label className="font-semibold text-theme-heading text-sm">IT Downtime Hours / Month</label>
               <span className="font-bold text-primary">{downtimeHours} hrs</span>
             </div>
             <input 
@@ -75,14 +75,14 @@ export default function RoiCalculator() {
         </div>
 
         {/* Results */}
-        <div className="bg-slate-50 rounded-2xl p-8 flex flex-col justify-center border border-slate-100">
+        <div className="bg-theme-bg rounded-2xl p-8 flex flex-col justify-center border border-theme-border">
           <div className="mb-8">
-            <h4 className="text-slate-500 font-medium text-sm mb-1">Current Annual Cost of IT Downtime</h4>
-            <p className="text-3xl font-black text-slate-800">${annualDowntimeCost.toLocaleString()}</p>
+            <h4 className="text-theme-text font-medium text-sm mb-1">Current Annual Cost of IT Downtime</h4>
+            <p className="text-3xl font-black text-theme-heading">${annualDowntimeCost.toLocaleString()}</p>
           </div>
 
-          <div className="border-t border-slate-200 pt-8">
-            <h4 className="text-slate-500 font-medium text-sm mb-1">Estimated Annual Savings with Us</h4>
+          <div className="border-t border-theme-border pt-8">
+            <h4 className="text-theme-text font-medium text-sm mb-1">Estimated Annual Savings with Us</h4>
             <motion.p 
               key={estimatedSavings}
               initial={{ scale: 1.1, color: '#10b981' }}
@@ -101,10 +101,10 @@ export default function RoiCalculator() {
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-4">
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+            <div className="flex items-center gap-2 text-xs font-semibold text-theme-text">
               <ShieldCheck className="w-4 h-4 text-primary" /> Proactive Security
             </div>
-            <div className="flex items-center gap-2 text-xs font-semibold text-slate-600">
+            <div className="flex items-center gap-2 text-xs font-semibold text-theme-text">
               <Clock className="w-4 h-4 text-primary" /> 24/7 Monitoring
             </div>
           </div>

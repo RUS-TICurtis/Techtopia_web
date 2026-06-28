@@ -1,11 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Mail, Phone, ChevronDown, LogIn } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 import { BRAND_NAME, CORE_EMAIL, CORE_PHONE } from "../types";
+
+import { useTheme } from "../contexts/ThemeProvider";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { darkness } = useTheme();
 
   const navLinks = [
     { name: "Home", path: "/" },
@@ -31,7 +35,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full z-50 bg-white border-b border-slate-100 sticky top-0 select-none">
+    <header className="w-full z-50 bg-theme-surface border-b border-theme-border sticky top-0 select-none">
       {/* Top Banner Context Info */}
       <div className="bg-primary text-white text-xs py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center font-medium">
@@ -56,9 +60,9 @@ export default function Header() {
         {/* Brand Logo & Name */}
         <Link to="/" className="flex items-center space-x-2 group-item" id="nav-logo-link">
           <img 
-            src="/assets/images/logo/Full logo (black).svg" 
+            src={darkness > 50 ? "/assets/images/logo/Full logo (white).svg" : "/assets/images/logo/Full logo (black).svg"} 
             alt={BRAND_NAME} 
-            className="h-8 md:h-10 w-auto max-w-[200px] object-contain" 
+            className="h-8 md:h-10 w-auto max-w-[200px] object-contain transition-opacity duration-300" 
           />
         </Link>
 
@@ -70,16 +74,16 @@ export default function Header() {
             if (link.name === "Services") {
               return (
                 <div key={link.name} className="relative group py-4 -my-2">
-                  <button className="flex items-center text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors cursor-pointer">
+                  <button className="flex items-center text-sm font-semibold text-theme-heading group-hover:text-primary transition-colors cursor-pointer">
                     {link.name}
                     <ChevronDown className="w-4 h-4 ml-1 text-slate-400 group-hover:text-primary transition-colors" />
                   </button>
                   {/* Dropdown Menu Wrapper with padding bridge */}
                   <div className="absolute top-full left-0 pt-2 w-56 hidden group-hover:block transition-all z-50">
-                    <div className="rounded-xl bg-white border border-slate-100 shadow-lg py-2">
+                    <div className="rounded-xl bg-theme-surface border border-theme-border shadow-lg py-2">
                       <Link
                         to="/services"
-                        className="block px-4 py-2.5 text-xs font-bold text-slate-400 uppercase tracking-wider hover:bg-slate-50"
+                        className="block px-4 py-2.5 text-xs font-bold text-slate-400 uppercase tracking-wider hover:bg-theme-bg"
                       >
                         All Services
                       </Link>
@@ -87,7 +91,7 @@ export default function Header() {
                         <Link
                           key={sublink.name}
                           to={sublink.path}
-                          className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                          className="block px-4 py-2.5 text-sm font-semibold text-theme-heading hover:text-primary hover:bg-theme-bg transition-colors"
                         >
                           {sublink.name}
                         </Link>
@@ -101,18 +105,18 @@ export default function Header() {
             if (link.name === "Pages") {
               return (
                 <div key={link.name} className="relative group py-4 -my-2">
-                  <button className="flex items-center text-sm font-semibold text-slate-700 group-hover:text-primary transition-colors cursor-pointer">
+                  <button className="flex items-center text-sm font-semibold text-theme-heading group-hover:text-primary transition-colors cursor-pointer">
                     {link.name}
                     <ChevronDown className="w-4 h-4 ml-1 text-slate-400 group-hover:text-primary transition-colors" />
                   </button>
                   {/* Dropdown Menu Wrapper with padding bridge */}
                   <div className="absolute top-full left-0 pt-2 w-56 hidden group-hover:block transition-all z-50">
-                    <div className="rounded-xl bg-white border border-slate-100 shadow-lg py-2">
+                    <div className="rounded-xl bg-theme-surface border border-theme-border shadow-lg py-2">
                       {pageDropdownLinks.map((sublink) => (
                         <Link
                           key={sublink.name}
                           to={sublink.path}
-                          className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-primary hover:bg-slate-50 transition-colors"
+                          className="block px-4 py-2.5 text-sm font-semibold text-theme-heading hover:text-primary hover:bg-theme-bg transition-colors"
                         >
                           {sublink.name}
                         </Link>
@@ -130,7 +134,7 @@ export default function Header() {
                 className={`text-sm font-semibold transition-all py-1.5 border-b-2 ${
                   isActive
                     ? "border-primary text-primary"
-                    : "border-transparent text-slate-600 hover:text-primary hover:border-slate-300"
+                    : "border-transparent text-theme-text hover:text-primary hover:border-slate-300"
                 }`}
               >
                 {link.name}
@@ -141,9 +145,10 @@ export default function Header() {
 
         {/* CTA Dashboard Login Actions */}
         <div className="hidden lg:flex items-center space-x-4">
+          <ThemeToggle />
           <Link
             to="/portal"
-            className="flex items-center space-x-1.5 text-sm font-semibold text-slate-700 hover:text-primary transition-all py-2 px-4 rounded-xl border border-slate-200 hover:border-primary"
+            className="flex items-center space-x-1.5 text-sm font-semibold text-theme-heading hover:text-primary transition-all py-2 px-4 rounded-xl border border-theme-border hover:border-primary"
           >
             <LogIn className="w-4 h-4 text-slate-400 group-hover:text-primary" />
             <span>Login</span>
@@ -156,19 +161,22 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Mobile Navigation Toggle Button */}
-        <button
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 text-slate-600 hover:text-primary transition-colors cursor-pointer"
-          aria-label="Toggle Menu"
-        >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile Navigation Toggle Button & Mobile Theme Toggle */}
+        <div className="flex items-center space-x-3 lg:hidden">
+          <ThemeToggle />
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-theme-text hover:text-primary transition-colors cursor-pointer"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-xl py-6 px-6 z-50 animate-in fade-in slide-in-from-top-4 duration-200">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-theme-surface border-b border-theme-border shadow-xl py-6 px-6 z-50 animate-in fade-in slide-in-from-top-4 duration-200">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => {
               if (link.name === "Pages") return null;
@@ -177,7 +185,7 @@ export default function Header() {
                   key={link.name}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-base font-semibold text-slate-800 hover:text-primary transition-colors py-2 border-b border-slate-50"
+                  className="text-base font-semibold text-theme-heading hover:text-primary transition-colors py-2 border-b border-slate-50"
                 >
                   {link.name}
                 </Link>
@@ -185,14 +193,14 @@ export default function Header() {
             })}
             
             {/* Quick Solutions Sub-links */}
-            <div className="pl-4 py-2 border-l-2 border-slate-100 flex flex-col space-y-2">
+            <div className="pl-4 py-2 border-l-2 border-theme-border flex flex-col space-y-2">
               <span className="text-xs font-bold text-slate-400 tracking-widest block mb-1">OUR SOLUTIONS</span>
               {solutionsLinks.map((sublink) => (
                 <Link
                   key={sublink.name}
                   to={sublink.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                  className="text-sm font-medium text-theme-text hover:text-primary"
                 >
                   {sublink.name}
                 </Link>
@@ -200,14 +208,14 @@ export default function Header() {
             </div>
 
             {/* Additional Pages Sub-links */}
-            <div className="pl-4 py-2 border-l-2 border-slate-100 flex flex-col space-y-2">
+            <div className="pl-4 py-2 border-l-2 border-theme-border flex flex-col space-y-2">
               <span className="text-xs font-bold text-slate-400 tracking-widest block mb-1">ADDITIONAL PAGES</span>
               {pageDropdownLinks.map((sublink) => (
                 <Link
                   key={sublink.name}
                   to={sublink.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-slate-600 hover:text-primary"
+                  className="text-sm font-medium text-theme-text hover:text-primary"
                 >
                   {sublink.name}
                 </Link>
@@ -219,9 +227,9 @@ export default function Header() {
               <Link
                 to="/portal"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center space-x-2 text-sm font-semibold text-slate-800 py-3 rounded-xl border border-slate-200 hover:border-primary text-center"
+                className="flex items-center justify-center space-x-2 text-sm font-semibold text-theme-heading py-3 rounded-xl border border-theme-border hover:border-primary text-center"
               >
-                <LogIn className="w-4 h-4 text-slate-500" />
+                <LogIn className="w-4 h-4 text-theme-text" />
                 <span>Client Portal Login</span>
               </Link>
               <Link

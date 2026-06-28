@@ -7,7 +7,7 @@ export default function PartnerCarousel() {
   const duplicatedBrands = [...BRANDS, ...BRANDS, ...BRANDS];
 
   return (
-    <div className="w-full overflow-hidden relative py-6 bg-white select-none flex">
+    <div className="w-full overflow-hidden relative py-6 bg-theme-surface select-none flex">
       {/* Edge gradient overlays for smooth fade look */}
       <div className="absolute top-0 left-0 w-20 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
       <div className="absolute top-0 right-0 w-20 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
@@ -36,7 +36,7 @@ export default function PartnerCarousel() {
                     e.currentTarget.style.display = "none";
                   }}
                 />
-                <span className="font-display font-extrabold text-[11px] uppercase tracking-widest text-slate-800 whitespace-nowrap">
+                <span className="font-display font-extrabold text-[11px] uppercase tracking-widest text-theme-heading whitespace-nowrap">
                   {brand.name}
                 </span>
               </div>

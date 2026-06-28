@@ -132,7 +132,7 @@ export default function Portal() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 text-slate-500 font-semibold">
+      <div className="min-h-screen flex items-center justify-center bg-theme-bg text-theme-text font-semibold">
         <Helmet>
           <title>Loading... | {BRAND_NAME} Client Portal</title>
           <meta name="robots" content="noindex, nofollow" />
@@ -144,7 +144,7 @@ export default function Portal() {
 
   if (!session) {
     return (
-      <div className="min-h-[70vh] flex items-center justify-center bg-slate-50 py-12 px-6">
+      <div className="min-h-[70vh] flex items-center justify-center bg-theme-bg py-12 px-6">
         <Helmet>
           <title>Client Portal Login | {BRAND_NAME}</title>
           <meta name="robots" content="noindex, nofollow" />
@@ -152,17 +152,17 @@ export default function Portal() {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white p-8 rounded-3xl shadow-xl border border-slate-100 max-w-md w-full"
+          className="bg-theme-surface p-8 rounded-3xl shadow-xl border border-theme-border max-w-md w-full"
         >
           <div className="flex justify-center mb-6">
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
               <Lock className="w-8 h-8 text-primary" />
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-center text-neutral-dark mb-2">
+          <h2 className="text-2xl font-bold text-center text-theme-heading mb-2">
             {isSignUp ? "Create Account" : "Client Portal"}
           </h2>
-          <p className="text-sm text-slate-500 text-center mb-8">
+          <p className="text-sm text-theme-text text-center mb-8">
             {isSignUp ? "Sign up to track your projects." : `Secure access to your ${BRAND_NAME} dashboard.`}
           </p>
           
@@ -174,24 +174,24 @@ export default function Portal() {
 
           <form onSubmit={handleAuth} className="space-y-4">
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">Email Address</label>
+              <label className="block text-sm font-semibold text-theme-heading mb-1">Email Address</label>
               <input 
                 type="email" 
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" 
+                className="w-full px-4 py-3 rounded-xl border border-theme-border focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" 
                 placeholder="client@company.com" 
               />
             </div>
             <div>
-              <label className="block text-sm font-semibold text-slate-700 mb-1">Password</label>
+              <label className="block text-sm font-semibold text-theme-heading mb-1">Password</label>
               <input 
                 type="password" 
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" 
+                className="w-full px-4 py-3 rounded-xl border border-theme-border focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" 
                 placeholder="••••••••" 
               />
             </div>
@@ -216,14 +216,14 @@ export default function Portal() {
   const activeSla = slas.length > 0 ? slas[0] : { uptime: 100, avg_response_time: "N/A" };
 
   return (
-    <div className="min-h-screen bg-slate-50 py-12 px-6">
+    <div className="min-h-screen bg-theme-bg py-12 px-6">
       <div className="max-w-6xl mx-auto">
         <header className="flex justify-between items-end mb-8">
           <div>
-            <h1 className="text-3xl font-bold text-neutral-dark">Welcome back, {session.user.email.split('@')[0]}</h1>
-            <p className="text-slate-500 mt-1">Here is the status of your current projects and tickets.</p>
+            <h1 className="text-3xl font-bold text-theme-heading">Welcome back, {session.user.email.split('@')[0]}</h1>
+            <p className="text-theme-text mt-1">Here is the status of your current projects and tickets.</p>
           </div>
-          <button onClick={handleLogout} className="text-sm font-semibold text-slate-500 hover:text-red-500 transition-colors">
+          <button onClick={handleLogout} className="text-sm font-semibold text-theme-text hover:text-red-500 transition-colors">
             Logout
           </button>
         </header>
@@ -231,20 +231,20 @@ export default function Portal() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Active Projects */}
           <div className="lg:col-span-2 space-y-6">
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+            <div className="bg-theme-surface p-6 rounded-2xl border border-theme-border shadow-sm">
+              <h3 className="text-lg font-bold text-theme-heading mb-4 flex items-center gap-2">
                 <FileText className="w-5 h-5 text-primary" /> Active Projects
               </h3>
               
               {projects.length === 0 ? (
-                <p className="text-sm text-slate-500 text-center py-6 bg-slate-50 rounded-xl border border-slate-100">No active projects found.</p>
+                <p className="text-sm text-theme-text text-center py-6 bg-theme-bg rounded-xl border border-theme-border">No active projects found.</p>
               ) : (
                 <div className="space-y-4">
                   {projects.map(proj => (
-                    <div key={proj.id} className="border border-slate-100 rounded-xl p-4 flex justify-between items-center bg-slate-50/50 hover:bg-white hover:border-primary/20 transition-all">
+                    <div key={proj.id} className="border border-theme-border rounded-xl p-4 flex justify-between items-center bg-theme-bg/50 hover:bg-theme-surface hover:border-primary/20 transition-all">
                       <div>
-                        <h4 className="font-semibold text-slate-800">{proj.name}</h4>
-                        <p className="text-xs text-slate-500">Phase: {proj.phase}</p>
+                        <h4 className="font-semibold text-theme-heading">{proj.name}</h4>
+                        <p className="text-xs text-theme-text">Phase: {proj.phase}</p>
                       </div>
                       <div className="text-right">
                         <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${proj.status === 'On Track' ? 'bg-emerald-100 text-emerald-700' : 'bg-amber-100 text-amber-700'}`}>
@@ -261,16 +261,16 @@ export default function Portal() {
             </div>
             
             {/* SLAs */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-              <h3 className="text-lg font-bold text-slate-800 mb-4 flex items-center gap-2">
+            <div className="bg-theme-surface p-6 rounded-2xl border border-theme-border shadow-sm">
+              <h3 className="text-lg font-bold text-theme-heading mb-4 flex items-center gap-2">
                 <Activity className="w-5 h-5 text-primary" /> Service Level Agreement (SLA)
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <div className="bg-theme-bg rounded-xl p-4 border border-theme-border">
                   <span className="text-xs font-bold text-slate-400 uppercase">Uptime this month</span>
                   <p className="text-2xl font-black text-emerald-500 mt-1">{activeSla.uptime}%</p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                <div className="bg-theme-bg rounded-xl p-4 border border-theme-border">
                   <span className="text-xs font-bold text-slate-400 uppercase">Avg Response Time</span>
                   <p className="text-2xl font-black text-primary mt-1">{activeSla.avg_response_time}</p>
                 </div>
@@ -282,23 +282,23 @@ export default function Portal() {
           <div className="space-y-6">
             <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-bold text-slate-800">Support Tickets</h3>
+                <h3 className="text-lg font-bold text-theme-heading">Support Tickets</h3>
               </div>
               
               <div className="space-y-3 mb-6 max-h-[300px] overflow-y-auto pr-1">
                 {tickets.length === 0 ? (
-                  <p className="text-sm text-slate-500 text-center py-4 bg-white rounded-xl border border-slate-100">No tickets found.</p>
+                  <p className="text-sm text-theme-text text-center py-4 bg-theme-surface rounded-xl border border-theme-border">No tickets found.</p>
                 ) : (
                   tickets.map(ticket => (
-                    <div key={ticket.id} className="bg-white p-3 rounded-xl border border-slate-200 shadow-sm flex items-start gap-3">
+                    <div key={ticket.id} className="bg-theme-surface p-3 rounded-xl border border-theme-border shadow-sm flex items-start gap-3">
                       {ticket.status === 'resolved' || ticket.status === 'closed' ? (
                         <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
                       ) : (
                         <Clock className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
                       )}
                       <div>
-                        <h5 className="text-sm font-semibold text-slate-800">{ticket.title}</h5>
-                        <p className="text-xs text-slate-500 capitalize">Status: {ticket.status}</p>
+                        <h5 className="text-sm font-semibold text-theme-heading">{ticket.title}</h5>
+                        <p className="text-xs text-theme-text capitalize">Status: {ticket.status}</p>
                       </div>
                     </div>
                   ))
@@ -315,7 +315,7 @@ export default function Portal() {
                     onKeyDown={(e) => e.key === "Enter" && handleCreateTicket()}
                     placeholder="Briefly describe the issue..."
                     autoFocus
-                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-primary/30 focus:outline-none focus:ring-1 focus:ring-primary bg-white"
+                    className="w-full px-4 py-2.5 text-sm rounded-xl border border-primary/30 focus:outline-none focus:ring-1 focus:ring-primary bg-theme-surface"
                   />
                   <div className="flex gap-2">
                     <button
@@ -327,7 +327,7 @@ export default function Portal() {
                     </button>
                     <button
                       onClick={() => { setShowTicketForm(false); setNewTicketTitle(""); }}
-                      className="px-4 py-2.5 rounded-xl font-semibold text-sm text-slate-500 border border-slate-200 hover:bg-slate-50 transition-colors"
+                      className="px-4 py-2.5 rounded-xl font-semibold text-sm text-theme-text border border-theme-border hover:bg-theme-bg transition-colors"
                     >
                       Cancel
                     </button>
@@ -336,7 +336,7 @@ export default function Portal() {
               ) : (
                 <button
                   onClick={() => setShowTicketForm(true)}
-                  className="w-full bg-white border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
+                  className="w-full bg-theme-surface border border-primary/20 text-primary hover:bg-primary hover:text-white transition-colors py-2.5 rounded-xl font-semibold text-sm flex items-center justify-center gap-2"
                 >
                   <Plus className="w-4 h-4" /> Submit New Ticket
                 </button>

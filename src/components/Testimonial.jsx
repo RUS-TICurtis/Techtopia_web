@@ -25,7 +25,7 @@ export default function Testimonial() {
   const active = TESTIMONIALS[activeIndex];
 
   return (
-    <div className="w-full relative bg-white border border-slate-100 rounded-3xl p-8 md:p-12 shadow-sm">
+    <div className="w-full relative bg-theme-surface border border-theme-border rounded-3xl p-8 md:p-12 shadow-sm">
       {/* Absolute quote mark on background */}
       <Quote className="absolute top-6 right-8 w-24 h-24 text-slate-100/70 select-none pointer-events-none" />
 
@@ -46,7 +46,7 @@ export default function Testimonial() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="text-lg md:text-xl font-medium text-slate-700 leading-relaxed italic"
+              className="text-lg md:text-xl font-medium text-theme-heading leading-relaxed italic"
             >
               &ldquo;{active.quote}&rdquo;
             </motion.p>
@@ -54,16 +54,16 @@ export default function Testimonial() {
         </div>
 
         {/* Client representative profile & navigation dots bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-8 border-t border-slate-100/80 gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center pt-8 border-t border-theme-border/80 gap-4">
           <div className="flex items-center space-x-4">
             {/* Visual avatar wrapper block */}
             <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-primary/20 to-secondary/20 flex items-center justify-center font-bold text-primary">
               {active.company.charAt(0)}
             </div>
             <div>
-              <h5 className="font-bold text-neutral-dark">{active.author}</h5>
+              <h5 className="font-bold text-theme-heading">{active.author}</h5>
               <span className="text-xs font-semibold text-slate-400 block pt-0.5">
-                {active.role} &mdash; <strong className="text-slate-600">{active.company}</strong>
+                {active.role} &mdash; <strong className="text-theme-text">{active.company}</strong>
               </span>
             </div>
           </div>
@@ -88,14 +88,14 @@ export default function Testimonial() {
             <div className="flex space-x-1.5">
               <button
                 onClick={prevSlide}
-                className="w-10 h-10 rounded-xl border border-slate-200 hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer text-slate-500"
+                className="w-10 h-10 rounded-xl border border-theme-border hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer text-theme-text"
                 aria-label="Previous Slide"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button
                 onClick={nextSlide}
-                className="w-10 h-10 rounded-xl border border-slate-200 hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer text-slate-500"
+                className="w-10 h-10 rounded-xl border border-theme-border hover:border-primary hover:text-primary flex items-center justify-center transition-colors cursor-pointer text-theme-text"
                 aria-label="Next Slide"
               >
                 <ChevronRight className="w-5 h-5" />

@@ -1,6 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
 
+:root {
+  --theme-darkness: 0%;
+
+  /* Base Light Colors */
+  --light-bg: #F3F7FB;
+  --light-surface: #FFFFFF;
+  --light-text: #585858;
+  --light-heading: #0F0D1D;
+  --light-border: #E2E8F0;
+
+  /* Base Dark Colors */
+  --dark-bg: #0B0A14;
+  --dark-surface: #1E1B31;
+  --dark-text: #94A3B8;
+  --dark-heading: #F8FAFC;
+  --dark-border: #334155;
+
+  /* Interpolated Variables */
+  --theme-bg: color-mix(in srgb, var(--dark-bg) var(--theme-darkness), var(--light-bg));
+  --theme-surface: color-mix(in srgb, var(--dark-surface) var(--theme-darkness), var(--light-surface));
+  --theme-text: color-mix(in srgb, var(--dark-text) var(--theme-darkness), var(--light-text));
+  --theme-heading: color-mix(in srgb, var(--dark-heading) var(--theme-darkness), var(--light-heading));
+  --theme-border: color-mix(in srgb, var(--dark-border) var(--theme-darkness), var(--light-border));
+}
+
 @theme {
   --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Sora", sans-serif;
@@ -13,17 +38,26 @@
   --color-accent-purple: #7C3AED;
   --color-neutral-dark: #0F0D1D;
   --color-neutral-light: #F3F7FB;
+
+  /* Dynamic Theme Colors mapped to Tailwind classes */
+  --color-theme-bg: var(--theme-bg);
+  --color-theme-surface: var(--theme-surface);
+  --color-theme-text: var(--theme-text);
+  --color-theme-heading: var(--theme-heading);
+  --color-theme-border: var(--theme-border);
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-neutral-light);
-  color: #585858;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  transition: background-color 0.1s ease-out, color 0.1s ease-out;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  color: var(--color-neutral-dark);
+  color: var(--theme-heading);
+  transition: color 0.1s ease-out;
 }
 
 /* Custom animated cursor styles */

@@ -196,7 +196,7 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom copyright branding bar */}
-      <div className="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500 space-y-4 md:space-y-0">
+      <div className="max-w-7xl mx-auto px-6 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-theme-text space-y-4 md:space-y-0">
         <div>
           <span>Copyright &copy; {currentYear} <strong>{BRAND_NAME}</strong>. All rights reserved.</span>
         </div>

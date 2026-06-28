@@ -35,13 +35,13 @@ export default function NeedsQuiz() {
   };
 
   return (
-    <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 max-w-4xl mx-auto">
+    <div className="bg-theme-surface rounded-3xl p-8 md:p-12 shadow-xl border border-theme-border max-w-4xl mx-auto">
       <div className="text-center mb-8">
         <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-xs font-bold uppercase tracking-wider mb-3">
           Interactive Assessment
         </span>
-        <h2 className="text-2xl md:text-3xl font-black text-neutral-dark">Find Your Perfect IT Solution</h2>
-        <p className="text-slate-500 mt-2">Answer two quick questions to get a personalized recommendation.</p>
+        <h2 className="text-2xl md:text-3xl font-black text-theme-heading">Find Your Perfect IT Solution</h2>
+        <p className="text-theme-text mt-2">Answer two quick questions to get a personalized recommendation.</p>
       </div>
 
       <div className="relative min-h-[300px]">
@@ -55,13 +55,13 @@ export default function NeedsQuiz() {
               exit={{ opacity: 0, x: -20 }}
               className="flex flex-col items-center"
             >
-              <h3 className="text-xl font-bold mb-6 text-slate-800">What is your company size?</h3>
+              <h3 className="text-xl font-bold mb-6 text-theme-heading">What is your company size?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-2xl">
                 {["1-10 Employees (Startup)", "11-50 Employees (Growing)", "50+ Employees (Enterprise)"].map((size) => (
                   <button
                     key={size}
                     onClick={() => handleSizeSelect(size)}
-                    className="p-4 border-2 border-slate-100 hover:border-primary hover:bg-primary/5 rounded-2xl text-left font-semibold text-slate-700 transition-all group"
+                    className="p-4 border-2 border-theme-border hover:border-primary hover:bg-primary/5 rounded-2xl text-left font-semibold text-theme-heading transition-all group"
                   >
                     <div className="w-6 h-6 rounded-full border-2 border-slate-300 group-hover:border-primary mb-3 flex items-center justify-center">
                       <div className="w-2.5 h-2.5 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -82,25 +82,25 @@ export default function NeedsQuiz() {
               exit={{ opacity: 0, x: -20 }}
               className="flex flex-col items-center"
             >
-              <h3 className="text-xl font-bold mb-6 text-slate-800">What is your biggest current challenge?</h3>
+              <h3 className="text-xl font-bold mb-6 text-theme-heading">What is your biggest current challenge?</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-3xl">
-                <button onClick={() => handleChallengeSelect("outdated")} className="p-5 border-2 border-slate-100 hover:border-primary hover:bg-primary/5 rounded-2xl text-left transition-all">
+                <button onClick={() => handleChallengeSelect("outdated")} className="p-5 border-2 border-theme-border hover:border-primary hover:bg-primary/5 rounded-2xl text-left transition-all">
                   <Code className="w-8 h-8 text-slate-400 mb-3" />
-                  <h4 className="font-bold text-slate-800 mb-1">Outdated Systems</h4>
-                  <p className="text-xs text-slate-500">Legacy software is slowing us down.</p>
+                  <h4 className="font-bold text-theme-heading mb-1">Outdated Systems</h4>
+                  <p className="text-xs text-theme-text">Legacy software is slowing us down.</p>
                 </button>
-                <button onClick={() => handleChallengeSelect("security")} className="p-5 border-2 border-slate-100 hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl text-left transition-all">
+                <button onClick={() => handleChallengeSelect("security")} className="p-5 border-2 border-theme-border hover:border-emerald-500 hover:bg-emerald-50 rounded-2xl text-left transition-all">
                   <ShieldCheck className="w-8 h-8 text-slate-400 mb-3" />
-                  <h4 className="font-bold text-slate-800 mb-1">Security & Uptime</h4>
-                  <p className="text-xs text-slate-500">We need reliable, secure IT infrastructure.</p>
+                  <h4 className="font-bold text-theme-heading mb-1">Security & Uptime</h4>
+                  <p className="text-xs text-theme-text">We need reliable, secure IT infrastructure.</p>
                 </button>
-                <button onClick={() => handleChallengeSelect("growth")} className="p-5 border-2 border-slate-100 hover:border-amber-500 hover:bg-amber-50 rounded-2xl text-left transition-all">
+                <button onClick={() => handleChallengeSelect("growth")} className="p-5 border-2 border-theme-border hover:border-amber-500 hover:bg-amber-50 rounded-2xl text-left transition-all">
                   <Settings className="w-8 h-8 text-slate-400 mb-3" />
-                  <h4 className="font-bold text-slate-800 mb-1">Scaling Operations</h4>
-                  <p className="text-xs text-slate-500">We need automation and digital marketing.</p>
+                  <h4 className="font-bold text-theme-heading mb-1">Scaling Operations</h4>
+                  <p className="text-xs text-theme-text">We need automation and digital marketing.</p>
                 </button>
               </div>
-              <button onClick={() => setStep(1)} className="mt-8 flex items-center gap-1 text-sm text-slate-400 hover:text-slate-600 font-semibold">
+              <button onClick={() => setStep(1)} className="mt-8 flex items-center gap-1 text-sm text-slate-400 hover:text-theme-text font-semibold">
                 <ChevronLeft className="w-4 h-4" /> Back
               </button>
             </motion.div>
@@ -114,18 +114,18 @@ export default function NeedsQuiz() {
               animate={{ opacity: 1, scale: 1 }}
               className="flex flex-col items-center"
             >
-              <div className="w-full max-w-2xl bg-slate-50 rounded-2xl p-8 border border-slate-100 text-center">
+              <div className="w-full max-w-2xl bg-theme-bg rounded-2xl p-8 border border-theme-border text-center">
                 <div className="flex justify-center mb-6">
                   {getRecommendation().icon}
                 </div>
-                <h3 className="text-2xl font-bold text-neutral-dark mb-4">{getRecommendation().title}</h3>
-                <p className="text-slate-600 mb-8">{getRecommendation().desc}</p>
+                <h3 className="text-2xl font-bold text-theme-heading mb-4">{getRecommendation().title}</h3>
+                <p className="text-theme-text mb-8">{getRecommendation().desc}</p>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className="theme-btn">
                     Book a Free Consultation
                   </button>
-                  <button onClick={() => setStep(1)} className="px-6 py-3 rounded-xl border-2 border-slate-200 text-slate-600 font-bold hover:border-slate-300 transition-colors">
+                  <button onClick={() => setStep(1)} className="px-6 py-3 rounded-xl border-2 border-theme-border text-theme-text font-bold hover:border-slate-300 transition-colors">
                     Retake Quiz
                   </button>
                 </div>

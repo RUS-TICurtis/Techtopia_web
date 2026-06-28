@@ -49,15 +49,15 @@ export default function ServiceDetail() {
       </section>
 
       {/* 2. SPLIT LAYOUT SIDEBAR & main CONTENTS */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-theme-surface">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
           
           {/* SIDEBAR COLUMN (col-span-4) */}
           <aside className="lg:col-span-4 flex flex-col space-y-8 lg:sticky lg:top-24 h-fit">
             
             {/* Nav Categories */}
-            <div className="bg-slate-50/50 border border-slate-100 rounded-2xl p-6">
-              <h4 className="font-extrabold text-neutral-dark text-sm mb-4 uppercase tracking-wider">All Services</h4>
+            <div className="bg-theme-bg/50 border border-theme-border rounded-2xl p-6">
+              <h4 className="font-extrabold text-theme-heading text-sm mb-4 uppercase tracking-wider">All Services</h4>
               <nav className="flex flex-col space-y-2">
                 {sidebarLinks.map((link) => {
                   const isActive = link.id === service.id;
@@ -68,7 +68,7 @@ export default function ServiceDetail() {
                       className={`flex justify-between items-center text-sm font-semibold py-3 px-4 rounded-xl transition-all ${
                         isActive
                            ? "bg-primary text-white shadow-md shadow-primary/10"
-                           : "text-slate-700 bg-white hover:bg-slate-100 border border-slate-150"
+                           : "text-theme-heading bg-theme-surface hover:bg-theme-bg border border-slate-150"
                       }`}
                     >
                       <span>{link.name}</span>
@@ -80,15 +80,15 @@ export default function ServiceDetail() {
             </div>
 
             {/* Opening Hours Info Box */}
-            <div className="bg-slate-50/50 border border-slate-100 rounded-2xl p-6">
-              <div className="flex items-center space-x-2 font-bold text-neutral-dark text-sm mb-4 uppercase tracking-wider">
+            <div className="bg-theme-bg/50 border border-theme-border rounded-2xl p-6">
+              <div className="flex items-center space-x-2 font-bold text-theme-heading text-sm mb-4 uppercase tracking-wider">
                 <Clock className="w-5 h-5 text-primary" />
                 <span>Office Hours</span>
               </div>
-              <ul className="space-y-2 text-xs font-semibold text-slate-500">
+              <ul className="space-y-2 text-xs font-semibold text-theme-text">
                 <li className="flex justify-between py-1.5 border-b border-slate-150">
                   <span>Mon - Fri</span>
-                  <span className="text-neutral-dark font-bold">09.00 AM - 5.00 PM</span>
+                  <span className="text-theme-heading font-bold">09.00 AM - 5.00 PM</span>
                 </li>
                 <li className="flex justify-between py-1.5 border-b border-slate-150">
                   <span>Saturday</span>
@@ -103,7 +103,7 @@ export default function ServiceDetail() {
 
             {/* Need Help Card banner */}
             <div className="bg-gradient-to-tr from-secondary to-primary/95 text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-full -mr-8 -mt-8" />
+              <div className="absolute top-0 right-0 w-24 h-24 bg-theme-surface/5 rounded-full -mr-8 -mt-8" />
               <PhoneCall className="w-10 h-10 text-white/50 mb-4" />
               <h4 className="font-extrabold text-sm uppercase tracking-wider mb-2">Need Immediate Help?</h4>
               <p className="text-xs text-white/80 leading-relaxed mb-6">
@@ -111,7 +111,7 @@ export default function ServiceDetail() {
               </p>
               <a
                 href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`}
-                className="bg-white text-primary font-bold text-xs uppercase tracking-widest text-center block py-3 rounded-xl transition-all shadow hover:shadow-lg"
+                className="bg-theme-surface text-primary font-bold text-xs uppercase tracking-widest text-center block py-3 rounded-xl transition-all shadow hover:shadow-lg"
               >
                 Call {CORE_PHONE}
               </a>
@@ -125,22 +125,22 @@ export default function ServiceDetail() {
             {/* Visual Icon block Header */}
             <div>
               <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-1">Scoping Detail</span>
-              <h2 className="text-3xl font-extrabold tracking-tight text-neutral-dark leading-tight">
+              <h2 className="text-3xl font-extrabold tracking-tight text-theme-heading leading-tight">
                 {service.subtitle}
               </h2>
             </div>
 
             {/* Service introduction markdown texts */}
-            <p className="text-sm md:text-base text-slate-600 leading-relaxed">
+            <p className="text-sm md:text-base text-theme-text leading-relaxed">
               {service.description}
             </p>
 
             {/* Dynamic Services Lists under detail page */}
-            <div className="bg-slate-50/50 border border-slate-100 rounded-2xl p-8">
-              <h3 className="text-lg font-bold text-neutral-dark mb-4">Core Scope Elements</h3>
+            <div className="bg-theme-bg/50 border border-theme-border rounded-2xl p-8">
+              <h3 className="text-lg font-bold text-theme-heading mb-4">Core Scope Elements</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {service.servicesList.map((item) => (
-                  <div key={item} className="flex items-center space-x-2 text-slate-800 font-semibold text-sm">
+                  <div key={item} className="flex items-center space-x-2 text-theme-heading font-semibold text-sm">
                     <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center font-black text-xs">&rsaquo;</span>
                     <span>{item}</span>
                   </div>
@@ -150,10 +150,10 @@ export default function ServiceDetail() {
 
             {/* Render case study IF configured */}
             {service.caseStudy && (
-              <div className="border border-slate-100 rounded-2xl p-8 bg-white shadow-sm space-y-4">
+              <div className="border border-theme-border rounded-2xl p-8 bg-theme-surface shadow-sm space-y-4">
                 <span className="text-xs font-extrabold text-primary uppercase tracking-widest block">Success Case Study</span>
-                <h4 className="text-lg font-bold text-neutral-dark">Platform Delivery & Impact</h4>
-                <p className="text-xs leading-relaxed text-slate-500">
+                <h4 className="text-lg font-bold text-theme-heading">Platform Delivery & Impact</h4>
+                <p className="text-xs leading-relaxed text-theme-text">
                   {service.caseStudy}
                 </p>
               </div>
@@ -161,12 +161,12 @@ export default function ServiceDetail() {
 
             {/* Why Choose list */}
             <div>
-              <h3 className="text-xl font-bold text-neutral-dark mb-6">Why Choose {BRAND_NAME} for this solution?</h3>
+              <h3 className="text-xl font-bold text-theme-heading mb-6">Why Choose {BRAND_NAME} for this solution?</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {service.benefits.map((benefit, idx) => (
                   <div key={idx} className="flex items-start space-x-3.5">
                     <CheckCircle className="w-5 h-5 text-emerald-500 flex-shrink-0 mt-0.5" />
-                    <p className="text-xs leading-relaxed text-slate-600 font-medium">
+                    <p className="text-xs leading-relaxed text-theme-text font-medium">
                       {benefit}
                     </p>
                   </div>
@@ -175,7 +175,7 @@ export default function ServiceDetail() {
             </div>
 
             {/* CTA panel bottom */}
-            <div className="border-t border-slate-100 pt-8 flex items-center justify-between flex-wrap gap-4">
+            <div className="border-t border-theme-border pt-8 flex items-center justify-between flex-wrap gap-4">
               <p className="text-xs text-slate-400 font-semibold leading-none">Estimate and project turnaround time typically takes 15 days.</p>
               <Link
                 to="/contact"

@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeProvider";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -17,27 +18,29 @@ import ChatbotFAB from "./components/interactive/ChatbotFAB";
 
 export default function App() {
   return (
-    <Router>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/:serviceId" element={<ServiceDetail />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:projectId" element={<ProjectDetail />} />
-          <Route path="/integrations" element={<Integrations />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/portal" element={<Portal />} />
-          
-          {/* Catch-all unrecognized paths */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <ChatbotFAB />
-      </Layout>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/:serviceId" element={<ServiceDetail />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/projects/:projectId" element={<ProjectDetail />} />
+            <Route path="/integrations" element={<Integrations />} />
+            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/portal" element={<Portal />} />
+            
+            {/* Catch-all unrecognized paths */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <ChatbotFAB />
+        </Layout>
+      </Router>
+    </ThemeProvider>
   );
 }

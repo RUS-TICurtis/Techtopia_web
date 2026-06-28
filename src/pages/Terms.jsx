@@ -29,21 +29,21 @@ export default function Terms() {
       </section>
 
       {/* 2. EDITORIAL TERMS BODY LAYOUT */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-theme-surface">
         <div className="max-w-4xl mx-auto px-6 text-left">
           {/* Main Info Callout */}
-          <div className="p-6 rounded-2xl bg-slate-50 border border-slate-100 flex items-start space-x-4 mb-12">
+          <div className="p-6 rounded-2xl bg-theme-bg border border-theme-border flex items-start space-x-4 mb-12">
             <ShieldCheck className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-            <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-semibold">
+            <p className="text-xs md:text-sm text-theme-text leading-relaxed font-semibold">
               These Terms and Conditions outline the rules and regulations for the use of our website, products, and services. By accessing or using our website ("Site"), you agree to comply with these terms. If you do not agree with any part of these terms, please do not use our services.
             </p>
           </div>
 
           {/* Sub-sections grid */}
-          <div className="space-y-10 prose max-w-none text-slate-600 text-sm leading-relaxed">
+          <div className="space-y-10 prose max-w-none text-theme-text text-sm leading-relaxed">
             
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">1. Definitions</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">1. Definitions</h3>
               <p>
                 <strong>Company</strong>, "we," "us," or "our" refers to <strong>{BRAND_NAME}</strong>.
                 <br />
@@ -54,7 +54,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">2. Use of the Website & Services</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">2. Use of the Website & Services</h3>
               <div className="space-y-4">
                 <p>
                   <strong>2.1 Eligibility:</strong> To use our services, you must be at least 18 years old or have parental/guardian consent if you are a minor.
@@ -74,14 +74,14 @@ export default function Terms() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">3. Intellectual Property</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">3. Intellectual Property</h3>
               <p>
                 All content on this Site, including logos, designs, text, graphics, and software, is owned by <strong>{BRAND_NAME}</strong> and protected under intellectual property laws. Unauthorized use, reproduction, or distribution without prior agreement is strictly prohibited.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">4. Payments & Refund Policies</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">4. Payments & Refund Policies</h3>
               <div className="space-y-4">
                 <p>
                   <strong>4.1 Pricing:</strong> All prices for our Services will be clearly communicated in our custom proposal before engagement. Prices may be subject to change.
@@ -96,7 +96,7 @@ export default function Terms() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">5. Limitation of Liability</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">5. Limitation of Liability</h3>
               <p>
                 <strong>{BRAND_NAME}</strong> is not liable for:
                 <ul className="list-disc pl-5 space-y-1.5 mt-2">
@@ -108,47 +108,47 @@ export default function Terms() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">6. Third-Party Links & Services</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">6. Third-Party Links & Services</h3>
               <p>
                 Our Site may contain links to third-party web pages. We do not control or endorse their content, and we are not responsible for any transactions, data leaks, or interactions with third-party services.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">7. Termination of Services</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">7. Termination of Services</h3>
               <p>
                 We reserve the right to terminate or suspend access to our Site or services at any time, without prior notice, if we determine a violation of these terms has occurred.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">8. Privacy Policy</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">8. Privacy Policy</h3>
               <p>
                 Your use of our Site is also governed by our <strong>Privacy Policy</strong>, which outlines how we collect, use, and protect your data. Under no circumstances do we sell, rent, or lease your personal information to third parties.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">9. Changes to Terms</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">9. Changes to Terms</h3>
               <p>
                 We may update these Terms and Conditions at any time. Continued use of our Site or services after changes indicates your acceptance of the revised legal terms.
               </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-neutral-dark mb-3">10. Governing Law & Dispute Resolution</h3>
+              <h3 className="text-lg font-bold text-theme-heading mb-3">10. Governing Law & Dispute Resolution</h3>
               <p>
                 These terms are governed by the laws of the <strong>Republic of Ghana</strong>. Any disputes arising from this legal framework shall be resolved through arbitration or legal proceedings in Ghana first.
               </p>
             </div>
 
             {/* Contact Address Footer */}
-            <div className="border-t border-slate-100 pt-8">
-              <h3 className="text-lg font-bold text-neutral-dark mb-4">11. Contact Information</h3>
-              <p className="text-xs leading-relaxed text-slate-500 mb-6">
+            <div className="border-t border-theme-border pt-8">
+              <h3 className="text-lg font-bold text-theme-heading mb-4">11. Contact Information</h3>
+              <p className="text-xs leading-relaxed text-theme-text mb-6">
                 If you have any questions or concerns about these Terms and Conditions, please contact our legal scoping team at:
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-semibold text-slate-700">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs font-semibold text-theme-heading">
                 <div className="flex items-center space-x-2">
                   <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                   <a href={`mailto:${CORE_EMAIL}`} className="hover:underline">{CORE_EMAIL}</a>

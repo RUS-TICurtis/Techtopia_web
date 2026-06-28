@@ -48,7 +48,7 @@ export default function SmartEngagement() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="py-20 bg-slate-50 border-y border-slate-100"
+      className="py-20 bg-theme-bg border-y border-theme-border"
     >
       <div 
         className="max-w-7xl mx-auto px-6"

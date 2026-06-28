@@ -91,61 +91,61 @@ export default function Contact() {
       </section>
 
       {/* 2. SPLIT CONTACT SYSTEM GRID */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-theme-surface">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* LEFT COLUMN: CONTACT CARDS & INFRASTRUCTURE MAP (col-span-12 lg:col-span-5) */}
           <div className="lg:col-span-5 flex flex-col space-y-8">
             <span className="text-primary text-xs font-extrabold uppercase tracking-widest block">Ghana Head Office</span>
-            <h2 className="text-3xl font-extrabold tracking-tight text-neutral-dark mb-4 leading-tight">
+            <h2 className="text-3xl font-extrabold tracking-tight text-theme-heading mb-4 leading-tight">
               Get in Touch Directly With Techtopia
             </h2>
 
             {/* Tactile Cards */}
             <div className="space-y-4">
               {/* Call Card */}
-              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-theme-bg border border-theme-border">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Call Us</h4>
-                  <a href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`} className="text-sm font-bold text-neutral-dark hover:text-primary transition-colors block">
+                  <a href={`tel:${CORE_PHONE.replace(/\s+/g, "")}`} className="text-sm font-bold text-theme-heading hover:text-primary transition-colors block">
                     {CORE_PHONE}
                   </a>
-                  <span className="text-[10px] text-slate-500 font-semibold">{CORE_HOURS}</span>
+                  <span className="text-[10px] text-theme-text font-semibold">{CORE_HOURS}</span>
                 </div>
               </div>
 
               {/* Email Card */}
-              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-theme-bg border border-theme-border">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</h4>
-                  <a href={`mailto:${CORE_EMAIL}`} className="text-sm font-bold text-neutral-dark hover:text-primary transition-colors block">
+                  <a href={`mailto:${CORE_EMAIL}`} className="text-sm font-bold text-theme-heading hover:text-primary transition-colors block">
                     {CORE_EMAIL}
                   </a>
-                  <span className="text-[10px] text-slate-500 font-semibold">24-hour scoping requests</span>
+                  <span className="text-[10px] text-theme-text font-semibold">24-hour scoping requests</span>
                 </div>
               </div>
 
               {/* Location Card */}
-              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-slate-50 border border-slate-100">
+              <div className="flex items-start space-x-4 p-5 rounded-2xl bg-theme-bg border border-theme-border">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Location</h4>
-                  <span className="text-sm font-bold text-neutral-dark block">{CORE_LOCATION}</span>
-                  <span className="text-[10px] text-slate-500 font-semibold">Accra Metropolitan Area, Ghana</span>
+                  <span className="text-sm font-bold text-theme-heading block">{CORE_LOCATION}</span>
+                  <span className="text-[10px] text-theme-text font-semibold">Accra Metropolitan Area, Ghana</span>
                 </div>
               </div>
             </div>
 
             {/* Geolocation Embed Iframe mapped directly from Accra */}
-            <div className="w-full rounded-2xl overflow-hidden border border-slate-150 h-64 shadow-sm relative group bg-slate-100">
+            <div className="w-full rounded-2xl overflow-hidden border border-slate-150 h-64 shadow-sm relative group bg-theme-bg">
               <iframe
                 title="Accra Location Map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127066.72273040644!2d-0.2621306941005995!3d5.591373806788055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9084b2b7a773%3A0xbed14ed8650e2dd3!2sAccra!5e0!3m2!1sen!2sgh!4v1743117852929!5m2!1sen!2sgh"
@@ -158,27 +158,27 @@ export default function Contact() {
           </div>
 
           {/* RIGHT COLUMN: INTERACTIVE INPUT FORM (col-span-12 lg:col-span-7) */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+          <div className="lg:col-span-7 bg-theme-bg border border-theme-border rounded-3xl p-8 md:p-12 relative overflow-hidden">
             {/* abstract sparkle graphics */}
             <div className="absolute top-6 right-6 text-primary/10">
               <Sparkles className="w-16 h-16" />
             </div>
 
             <div className="relative z-1">
-              <h3 className="text-2xl font-bold tracking-tight text-neutral-dark mb-2">
+              <h3 className="text-2xl font-bold tracking-tight text-theme-heading mb-2">
                 Ready to Get Started?
               </h3>
-              <p className="text-sm text-slate-500 leading-relaxed mb-8">
+              <p className="text-sm text-theme-text leading-relaxed mb-8">
                 We'd love to hear from you! Whether you have a question about our services, need robust support, or want to collaborate on a dynamic software venture, feel free to reach out.
               </p>
 
               {/* Form submit alert feedback on success */}
               {submitSuccess ? (
-                <div className="bg-emerald-50 border border-emerald-200 text-slate-800 p-6 rounded-2xl flex items-start space-x-4 animate-in fade-in duration-300">
+                <div className="bg-emerald-50 border border-emerald-200 text-theme-heading p-6 rounded-2xl flex items-start space-x-4 animate-in fade-in duration-300">
                   <CheckCircle2 className="w-6 h-6 text-emerald-500 flex-shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="font-extrabold text-sm text-neutral-dark mb-1">Message Sent Successfully!</h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <h4 className="font-extrabold text-sm text-theme-heading mb-1">Message Sent Successfully!</h4>
+                    <p className="text-xs text-theme-text leading-relaxed">
                       Thank you for contacting Techtopia. Our Accra corporate scoping team will review your parameters and get back to you within 24 hours.
                     </p>
                     <button
@@ -201,28 +201,28 @@ export default function Contact() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {/* Name */}
                     <div>
-                      <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Name *</label>
+                      <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-theme-heading mb-2">Your Name *</label>
                       <input
                         type="text"
                         name="name"
                         id="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className="form-control bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-slate-700 w-full focus:outline-none"
+                        className="form-control bg-theme-surface border border-theme-border focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-theme-heading w-full focus:outline-none"
                         placeholder="John Doe"
                         required
                       />
                     </div>
                     {/* Email */}
                     <div>
-                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Your Email *</label>
+                      <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-theme-heading mb-2">Your Email *</label>
                       <input
                         type="email"
                         name="email"
                         id="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className="form-control bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-slate-700 w-full focus:outline-none"
+                        className="form-control bg-theme-surface border border-theme-border focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-theme-heading w-full focus:outline-none"
                         placeholder="john@example.com"
                         required
                       />
@@ -231,13 +231,13 @@ export default function Contact() {
 
                   {/* Subject select / preset */}
                   <div>
-                    <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Subject / Scope Requirement</label>
+                    <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-theme-heading mb-2">Subject / Scope Requirement</label>
                     <select
                       name="subject"
                       id="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className="form-control bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-slate-600 w-full focus:outline-none cursor-pointer"
+                      className="form-control bg-theme-surface border border-theme-border focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-theme-text w-full focus:outline-none cursor-pointer"
                     >
                       <option value="">Select an option</option>
                       <option value="Inquiry regarding Starter Package">Starter Enterprise Package Setup</option>
@@ -250,13 +250,13 @@ export default function Contact() {
 
                   {/* Message body */}
                   <div>
-                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Write Message *</label>
+                    <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-theme-heading mb-2">Write Message *</label>
                     <textarea
                       name="message"
                       id="message"
                       value={formData.message}
                       onChange={handleChange}
-                      className="form-control bg-white border border-slate-200 focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-slate-700 w-full focus:outline-none min-h-[160px]"
+                      className="form-control bg-theme-surface border border-theme-border focus:border-primary focus:ring-1 focus:ring-primary rounded-xl px-4 py-3 text-sm text-theme-heading w-full focus:outline-none min-h-[160px]"
                       placeholder="Tell us about your organization's challenges, timeline constraints, or specific software objectives..."
                       required
                     />
@@ -285,12 +285,12 @@ export default function Contact() {
             </div>
 
             {/* SEAMLESS BOOKING WIDGET */}
-            <div className="mt-12 pt-12 border-t border-slate-200">
+            <div className="mt-12 pt-12 border-t border-theme-border">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold tracking-tight text-neutral-dark">
+                <h3 className="text-xl font-bold tracking-tight text-theme-heading">
                   Prefer a direct meeting?
                 </h3>
-                <p className="text-sm text-slate-500">Book a slot on our calendar below.</p>
+                <p className="text-sm text-theme-text">Book a slot on our calendar below.</p>
               </div>
               <BookingWidget />
             </div>

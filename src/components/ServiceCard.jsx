@@ -45,7 +45,7 @@ export default function ServiceCard({ service }) {
       default:
         return {
           icon: <Laptop className="w-8 h-8 text-primary" />,
-          bgColor: "bg-slate-100",
+          bgColor: "bg-theme-bg",
           borderColor: "hover:border-primary",
           badgeColor: "bg-primary/10 text-primary",
           bgGradient: "from-slate-50 to-slate-100",
@@ -59,7 +59,7 @@ export default function ServiceCard({ service }) {
   return (
     <Link
       to={`/services/${service.id}`}
-      className={`group block p-8 rounded-2xl bg-white border border-slate-100 shadow-sm transition-all hover:-translate-y-1.5 hover:shadow-lg ${theme.borderColor}`}
+      className={`group block p-8 rounded-2xl bg-theme-surface border border-theme-border shadow-sm transition-all hover:-translate-y-1.5 hover:shadow-lg ${theme.borderColor}`}
     >
       <div className="flex flex-col h-full justify-between">
         <div>
@@ -72,7 +72,7 @@ export default function ServiceCard({ service }) {
             {service.title}
           </h3>
 
-          <p className="text-sm text-slate-500 leading-relaxed mb-6 line-clamp-3">
+          <p className="text-sm text-theme-text leading-relaxed mb-6 line-clamp-3">
             {service.description}
           </p>
         </div>

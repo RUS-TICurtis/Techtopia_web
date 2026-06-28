@@ -71,7 +71,7 @@ export default function Hero() {
           {/* Tagline matching template's "what we offering" pill */}
           <motion.div 
             variants={itemVariants}
-            className="bg-white py-2 px-7 rounded-full text-primary font-bold text-sm tracking-wide uppercase inline-flex items-center gap-2 mb-6 shadow-sm border border-slate-100"
+            className="bg-theme-surface py-2 px-7 rounded-full text-primary font-bold text-sm tracking-wide uppercase inline-flex items-center gap-2 mb-6 shadow-sm border border-theme-border"
           >
             <Sparkles className="w-4 h-4 text-primary" />
             Empowering Digital Futures
@@ -80,7 +80,7 @@ export default function Hero() {
           {/* Majestic Heading */}
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-neutral-dark leading-[1.1] mb-6 max-w-4xl mx-auto"
+            className="text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight text-theme-heading leading-[1.1] mb-6 max-w-4xl mx-auto"
           >
             Ghana&apos;s Leading <br className="hidden md:block" />
             <span className="text-primary">Technology Solutions</span> Provider
@@ -89,7 +89,7 @@ export default function Hero() {
           {/* Persuasive Secondary Copy */}
           <motion.p 
             variants={itemVariants}
-            className="text-lg md:text-xl text-slate-500 leading-relaxed max-w-2xl mx-auto mb-10 font-medium"
+            className="text-lg md:text-xl text-theme-text leading-relaxed max-w-2xl mx-auto mb-10 font-medium"
           >
             From custom software and web development to IT support and digital marketing — {BRAND_NAME} partners with businesses across Accra to build, scale, and secure their digital future.
           </motion.p>
@@ -108,7 +108,7 @@ export default function Hero() {
             </Link>
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-primary transition-colors py-4 px-6 rounded-none border border-slate-200 hover:border-primary bg-white"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-theme-text hover:text-primary transition-colors py-4 px-6 rounded-none border border-theme-border hover:border-primary bg-theme-surface"
             >
               Explore Our Services
               <ChevronRight className="w-4 h-4" />
@@ -121,12 +121,12 @@ export default function Hero() {
             className="inline-flex justify-center w-full max-w-5xl px-4 relative mt-10"
           >
             {/* Floating Techtopia Brand Badge */}
-            <div className="absolute -top-6 md:-top-8 z-20 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-md shadow-xl px-5 py-2 md:px-6 md:py-3 rounded-full border border-slate-100 animate-bounce-slow flex items-center gap-3">
+            <div className="absolute -top-6 md:-top-8 z-20 left-1/2 -translate-x-1/2 bg-theme-surface/95 backdrop-blur-md shadow-xl px-5 py-2 md:px-6 md:py-3 rounded-full border border-theme-border animate-bounce-slow flex items-center gap-3">
               <img src="/assets/images/logo/Logomark.png" alt="Techtopia Mark" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
-              <span className="font-extrabold text-slate-800 tracking-tight text-base md:text-lg">Techtopia</span>
+              <span className="font-extrabold text-theme-heading tracking-tight text-base md:text-lg">Techtopia</span>
             </div>
 
-            <div className="w-full relative aspect-[4/3] md:aspect-[16/9] rounded-t-2xl md:rounded-t-[3rem] overflow-hidden drop-shadow-2xl bg-slate-50 border-t-4 border-l border-r border-slate-200">
+            <div className="w-full relative aspect-[4/3] md:aspect-[16/9] rounded-t-2xl md:rounded-t-[3rem] overflow-hidden drop-shadow-2xl bg-theme-bg border-t-4 border-l border-r border-theme-border">
               <AnimatePresence mode="popLayout">
                 <motion.img 
                   key={currentSlide}

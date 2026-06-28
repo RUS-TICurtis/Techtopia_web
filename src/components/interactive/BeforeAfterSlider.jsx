@@ -28,8 +28,8 @@ export default function BeforeAfterSlider({
   return (
     <div className="my-12">
       <div className="text-center mb-6">
-        <h3 className="text-2xl font-bold text-neutral-dark mb-2">Transformation Showcase</h3>
-        <p className="text-slate-500 text-sm">Drag the slider to compare before and after.</p>
+        <h3 className="text-2xl font-bold text-theme-heading mb-2">Transformation Showcase</h3>
+        <p className="text-theme-text text-sm">Drag the slider to compare before and after.</p>
       </div>
 
       <div 
@@ -44,7 +44,7 @@ export default function BeforeAfterSlider({
         onTouchStart={startDrag}
       >
         {/* AFTER IMAGE (Background) */}
-        <div className="absolute inset-0 bg-slate-100">
+        <div className="absolute inset-0 bg-theme-bg">
           <img 
             src={afterImage} 
             alt={afterLabel} 
@@ -76,10 +76,10 @@ export default function BeforeAfterSlider({
 
         {/* SLIDER HANDLE */}
         <div 
-          className="absolute top-0 bottom-0 w-1 bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-none"
+          className="absolute top-0 bottom-0 w-1 bg-theme-surface shadow-[0_0_10px_rgba(0,0,0,0.5)] flex items-center justify-center pointer-events-none"
           style={{ left: `${sliderPosition}%`, transform: 'translateX(-50%)' }}
         >
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-xl text-primary pointer-events-auto cursor-ew-resize">
+          <div className="w-10 h-10 bg-theme-surface rounded-full flex items-center justify-center shadow-xl text-primary pointer-events-auto cursor-ew-resize">
             <MoveHorizontal className="w-6 h-6" />
           </div>
         </div>

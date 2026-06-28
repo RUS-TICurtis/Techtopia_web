@@ -47,7 +47,7 @@ export default function Home() {
       <Hero />
 
       {/* 2. BRANDS LOGO SCROLL */}
-      <section className="bg-white border-y border-slate-100 py-8 overflow-hidden">
+      <section className="bg-theme-surface border-y border-theme-border py-8 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <p className="text-center text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">
             Trusted by Brands & Enterprises Across Ghana
@@ -62,7 +62,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 lg:mb-16 gap-6">
             <div>
               <span className="text-primary text-xs font-extrabold uppercase tracking-widest block mb-3">Our Offerings</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-dark">
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-theme-heading">
                 We Solve Business Problems With Technology
               </h2>
             </div>
@@ -84,12 +84,12 @@ export default function Home() {
       </section>
 
       {/* 4. ACCRA LOCAL HIGH FIDELITY HIGHLIGHT - WHO WE ARE */}
-      <section className="bg-slate-50 border-y border-slate-100 py-20 md:py-24">
+      <section className="bg-theme-bg border-y border-theme-border py-20 md:py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Metrics indicators bento Left */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <div className="bg-primary/95 text-white p-8 rounded-3xl relative overflow-hidden shadow-xl shadow-primary/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-12 -mt-12" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-theme-surface/5 rounded-full -mr-12 -mt-12" />
               <div className="relative z-1">
                 <span className="text-[10px] font-extrabold uppercase tracking-widest text-primary-content/80 block mb-2 opacity-75">Local Performance Standard</span>
                 <h3 className="text-4xl font-black mb-4">100%</h3>
@@ -108,22 +108,22 @@ export default function Home() {
           {/* Text block Right */}
           <div className="lg:col-span-7 order-1 lg:order-2 text-left">
             <span className="text-primary text-xs font-extrabold uppercase tracking-widest block mb-3">Who We Are</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-dark mb-6 leading-tight">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-theme-heading mb-6 leading-tight">
               Techtopia is the Leading Technology Solutions Provider in Ghana
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8">
+            <p className="text-theme-text leading-relaxed mb-8">
               With a team of experienced professionals, we are committed to helping our clients achieve digital transformation, streamline operations, and secure their future in an ever-evolving tech landscape. At Techtopia, we believe in the power of technology to drive growth and innovation. Whether you are a startup or an established enterprise, we tailor our solutions to meet your unique needs, ensuring you stay ahead in today's competitive market.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-              <div className="flex items-center space-x-2 text-slate-800 font-semibold text-sm">
+              <div className="flex items-center space-x-2 text-theme-heading font-semibold text-sm">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                 <span>Expert Team</span>
               </div>
-              <div className="flex items-center space-x-2 text-slate-800 font-semibold text-sm">
+              <div className="flex items-center space-x-2 text-theme-heading font-semibold text-sm">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                 <span>Custom Solutions</span>
               </div>
-              <div className="flex items-center space-x-2 text-slate-800 font-semibold text-sm">
+              <div className="flex items-center space-x-2 text-theme-heading font-semibold text-sm">
                 <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
                 <span>Commitment to Excellence</span>
               </div>
@@ -140,23 +140,23 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-xl mx-auto mb-16">
             <span className="text-primary text-xs font-extrabold uppercase tracking-widest block mb-3">How We Partner</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-dark">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-theme-heading">
               Our Standard Work Process
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {/* Visual connector line in desktop */}
-            <div className="hidden lg:block absolute top-[44px] left-1/10 right-1/10 h-0.5 bg-slate-100 z-0" />
+            <div className="hidden lg:block absolute top-[44px] left-1/10 right-1/10 h-0.5 bg-theme-bg z-0" />
 
             {steps.map((step) => (
               <div key={step.num} className="flex flex-col items-center lg:items-start text-center lg:text-left relative z-1">
                 {/* Number Circle bubble */}
-                <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 hover:border-primary hover:text-primary transition-colors flex items-center justify-center font-black text-slate-800 text-lg shadow-sm mb-6">
+                <div className="w-12 h-12 rounded-xl bg-theme-surface border border-theme-border hover:border-primary hover:text-primary transition-colors flex items-center justify-center font-black text-theme-heading text-lg shadow-sm mb-6">
                   {step.num}
                 </div>
-                <h4 className="text-lg font-bold text-neutral-dark mb-3">{step.title}</h4>
-                <p className="text-sm text-slate-500 leading-relaxed max-w-xs">{step.desc}</p>
+                <h4 className="text-lg font-bold text-theme-heading mb-3">{step.title}</h4>
+                <p className="text-sm text-theme-text leading-relaxed max-w-xs">{step.desc}</p>
               </div>
             ))}
           </div>
@@ -164,11 +164,11 @@ export default function Home() {
       </section>
 
       {/* 6. TRUSTED SOLUTIONS CUSTOMER TESTIMONIALS */}
-      <section className="bg-slate-50 border-t border-slate-100 py-20 md:py-24">
+      <section className="bg-theme-bg border-t border-theme-border py-20 md:py-24">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <div className="max-w-lg mx-auto mb-16">
             <span className="text-primary text-xs font-extrabold uppercase tracking-widest block mb-3">What They Say</span>
-            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-dark">
+            <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-theme-heading">
               Truly Trusted IT Business Solutions Provider
             </h2>
           </div>
@@ -184,7 +184,7 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-1">
           <div className="md:col-span-8 text-center md:text-left">
-            <span className="inline-block px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-bold uppercase tracking-wider mb-4 opacity-90">
+            <span className="inline-block px-3 py-1 rounded-full bg-theme-surface/5 border border-white/10 text-xs font-bold uppercase tracking-wider mb-4 opacity-90">
               Have a project in mind? We'd love to help!
             </span>
             <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-8 leading-tight">
